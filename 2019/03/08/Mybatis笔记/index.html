@@ -14,7 +14,23 @@ typeAliases 类型别名
 typeHandlers 类型处理器
 objectFactory 对象工厂
 plugins 插件
-env">
+environments 环境
+environment 环境变量
+transactionManager 事务管理器
+dataSource 数据源
+
+
+
+
+databaseIdProvider 数据库厂商标识
+mappers 映射器
+
+
+
+​
+
+在Mybatis-config.xml中引入jdbc.properties资源文件
+12&amp;lt;!-- 引入外部资源文件，resource：相对路径，url：绝对路径 --&amp;gt;	&amp;lt;properties resource=&#34;jdbc.properties&#34; /&amp;gt;">
   
 
   
@@ -35,7 +51,7 @@ env">
 <meta property="og:site_name" content="等风来">
 <meta property="og:description" content="MybatisTips Mybatis-config.xml有严格的顺序  configuration 配置 properties 属性 settings 设置 typeAliases 类型别名 typeHandlers 类型处理器 objectFactory 对象工厂 plugins 插件 environments 环境 environment 环境变量 transactionManager 事">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-08T14:13:08.733Z">
+<meta property="og:updated_time" content="2019-03-08T14:24:21.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis笔记">
 <meta name="twitter:description" content="MybatisTips Mybatis-config.xml有严格的顺序  configuration 配置 properties 属性 settings 设置 typeAliases 类型别名 typeHandlers 类型处理器 objectFactory 对象工厂 plugins 插件 environments 环境 environment 环境变量 transactionManager 事">
@@ -99,7 +115,7 @@ env">
             
             <a href="/2019/03/08/Mybatis笔记/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.vip/2019/03/08/Mybatis笔记/" data-id="cjt055bl40005tovo7fhy5jn7" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.vip/2019/03/08/Mybatis笔记/" data-id="cjt05y8gg00023svosvcegwu9" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -133,6 +149,9 @@ env">
 <li><p>在Mybatis-config.xml中引入jdbc.properties资源文件</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入外部资源文件，resource：相对路径，url：绝对路径 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"jdbc.properties"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<a id="more"></a>
+<ol start="3">
 <li><p>开启驼峰匹配</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 开启驼峰匹配：经典的数据库列名（多个单词下划线连接）映射到经典的java属性名（多个单词驼峰连接） --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"mapUnderscoreToCamelCase"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
