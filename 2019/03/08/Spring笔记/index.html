@@ -4,6 +4,13 @@
   <meta charset="utf-8">
   
   
+  <meta name="description" content="Spring注解
+多例
+12&amp;lt;!-- 多例 --&amp;gt;	&amp;lt;bean id=&#34;prototypeBean&#34; class=&#34;cn.itcast.spring.c_xmlscope.PrototypeBean&#34; scope=&#34;prototype&#34;/&amp;gt;
+
+初始化方法和销毁前方法
+1234">
+  
 
   
   <meta name="keywords" content="关键字，关键字">
@@ -13,16 +20,20 @@
   
   
   
-  <title>等风来</title>
+  <title>spring笔记 | 等风来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="关键字，关键字">
-<meta property="og:type" content="website">
-<meta property="og:title" content="等风来">
-<meta property="og:url" content="http://calcifer.vip/index.html">
+  <meta name="description" content="Spring注解 多例 12&amp;lt;!-- 多例 --&amp;gt;	&amp;lt;bean id=&quot;prototypeBean&quot; class=&quot;cn.itcast.spring.c_xmlscope.PrototypeBean&quot; scope=&quot;prototype&quot;/&amp;gt;  初始化方法和销毁前方法 12345&amp;lt;!-- 生命周期调用的两个方法 	init-method:初始化时（后）调用的，bean中">
+<meta name="keywords" content="Java,Spring,学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring笔记">
+<meta property="og:url" content="http://calcifer.vip/2019/03/08/Spring笔记/index.html">
 <meta property="og:site_name" content="等风来">
+<meta property="og:description" content="Spring注解 多例 12&amp;lt;!-- 多例 --&amp;gt;	&amp;lt;bean id=&quot;prototypeBean&quot; class=&quot;cn.itcast.spring.c_xmlscope.PrototypeBean&quot; scope=&quot;prototype&quot;/&amp;gt;  初始化方法和销毁前方法 12345&amp;lt;!-- 生命周期调用的两个方法 	init-method:初始化时（后）调用的，bean中">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-08T14:13:31.894Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="等风来">
+<meta name="twitter:title" content="spring笔记">
+<meta name="twitter:description" content="Spring注解 多例 12&amp;lt;!-- 多例 --&amp;gt;	&amp;lt;bean id=&quot;prototypeBean&quot; class=&quot;cn.itcast.spring.c_xmlscope.PrototypeBean&quot; scope=&quot;prototype&quot;/&amp;gt;  初始化方法和销毁前方法 12345&amp;lt;!-- 生命周期调用的两个方法 	init-method:初始化时（后）调用的，bean中">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -66,146 +77,15 @@
 </header>
 
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main">
-  
-    <article id="post-Mybatis笔记" class="post-Mybatis笔记 post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Spring笔记" class="post-Spring笔记 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
         
   
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/Mybatis笔记/">Mybatis笔记</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/03/08/Mybatis笔记/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.vip/2019/03/08/Mybatis笔记/" data-id="cjt055bl40005tovo7fhy5jn7" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><ol>
-<li><p>Mybatis-config.xml有严格的顺序</p>
-<ul>
-<li>configuration 配置<ul>
-<li>properties 属性</li>
-<li>settings 设置</li>
-<li>typeAliases 类型别名</li>
-<li>typeHandlers 类型处理器</li>
-<li>objectFactory 对象工厂</li>
-<li>plugins 插件</li>
-<li>environments 环境<ul>
-<li>environment 环境变量<ul>
-<li>transactionManager 事务管理器</li>
-<li>dataSource 数据源</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>databaseIdProvider 数据库厂商标识</li>
-<li>mappers 映射器</li>
-</ul>
-</li>
-</ul>
-<p>​</p>
-</li>
-<li><p>在Mybatis-config.xml中引入jdbc.properties资源文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入外部资源文件，resource：相对路径，url：绝对路径 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"jdbc.properties"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>开启驼峰匹配</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 开启驼峰匹配：经典的数据库列名（多个单词下划线连接）映射到经典的java属性名（多个单词驼峰连接） --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"mapUnderscoreToCamelCase"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>typeAliases方式一(基本不用)</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 类型别名：type-pojo类的全路径，alias-别名名称（可随便写，推荐和类名一致） --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">type</span>=<span class="string">"cn.itcast.mybatis.pojo.User"</span> <span class="attr">alias</span>=<span class="string">"user"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>typeAliases方式二</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 开启别名包扫描，name：包路径，扫描的别名就是类名，并且大小写不敏感 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"cn.itcast.mybatis.pojo"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>内建类型别名(==大小写不敏感==)</p>
-<p>基本类型的别名为==下划线加基本类型名==,int类型的别名为 <code>_int</code>或<code>_integer</code> </p>
-<p>包装类型将首字母小写即可,BigDecimal的别名为<code>bigdecimal</code>或<code>decimal</code></p>
-</li>
-<li><p>Mapper.xml引入Mybatis-config.xml的方式</p>
-<ol>
-<li><p>方式一:resource</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"MyMapper.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>方式二:file</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mapper</span> <span class="attr">url</span>=<span class="string">"file:///var/mappers/MyMapper.xml"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>方式三:class 配置接口全路径</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"cn.itcast.mybatis.mapper.UserMapper"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>映射文件和接口在同一目录下</p>
-<p>映射文件和接口同名</p>
-<p>映射文件namespace和接口全路径一致</p>
-</li>
-<li><p>方式四:package</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mapper</span> <span class="attr">name</span>=<span class="string">"cn.itcast.mybatis.mapper"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>原理同方式三</p>
-</li>
-</ol>
-</li>
-<li><p>动态sql</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"ids"</span> <span class="attr">item</span>=<span class="string">"id"</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">close</span>=<span class="string">")"</span>&gt;</span></span><br><span class="line">			#&#123;id&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
-<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ol>
-<li><p>配置文件</p>
-<p>全局配置文件：mybatis-config.xml    作用：配置数据源，引入映射文件</p>
-<p>XxMapper.xml：映射文件    作用：配置sql语句、参数、结果集封装类型等。</p>
-</li>
-<li><p>sqlSessionFactory 作用:获取sqlSession</p>
-<p>获取方式:new SqlSessionFactoryBuilder().buid(inputStream)</p>
-</li>
-</ol>
-<h3 id="Mybatis-config-xml示例"><a href="#Mybatis-config-xml示例" class="headerlink" title="Mybatis-config.xml示例"></a>Mybatis-config.xml示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE configuration</span></span><br><span class="line"><span class="meta">  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</span></span><br><span class="line"><span class="meta">  "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 引入外部资源文件，resource：相对路径，url：绝对路径 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"jdbc.properties"</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 行为参数，name:参数名，value：参数值，默认为false，true：开启驼峰匹配，即从经典的数据库列名到经典的java属性名 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"mapUnderscoreToCamelCase"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 类型别名：type：类型的全路径，alias：别名名称，推荐和class类名一致 --&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- &lt;typeAlias type="cn.itcast.mybatis.pojo.User" alias="User"/&gt; --&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 别名扫描，name:包的路径 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"cn.itcast.mybatis.pojo"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 环境：说明可以配置多个，default:指定生效的环境 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- id:环境的唯一标识 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 事务管理器，type：类型 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span> /&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 数据源：type-池类型的数据源 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$&#123;driver&#125;"</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;url&#125;"</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;password&#125;"</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 事务管理器，type：类型 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span> /&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 数据源：type-池类型的数据源 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$&#123;driver&#125;"</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;url&#125;"</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;password&#125;"</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 映射文件 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"CommonSQL.xml"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"UserMapper.xml"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"UserDaoMapper.xml"</span> /&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">			1.映射文件和mapper接口在同一个目录下</span></span><br><span class="line"><span class="comment">			2.命名一致</span></span><br><span class="line"><span class="comment">			3.命名空间必须是接口的全路径</span></span><br><span class="line"><span class="comment">		 --&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- &lt;mapper class="cn.itcast.mybatis.mapper.UserMapper" /&gt; --&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- &lt;package name="cn.itcast.mybatis.mapper"/&gt; --&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="手动使用Mybatis示例"><a href="#手动使用Mybatis示例" class="headerlink" title="手动使用Mybatis示例"></a>手动使用Mybatis示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		SqlSession sqlSession = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">// 指定mybatis的全局配置文件</span></span><br><span class="line">			String resource = <span class="string">"mybatis-config.xml"</span>;</span><br><span class="line">			<span class="comment">// 读取mybatis-config.xml配置文件</span></span><br><span class="line">			InputStream inputStream = Resources.getResourceAsStream(resource);</span><br><span class="line">			<span class="comment">// 构建sqlSessionFactory</span></span><br><span class="line">			SqlSessionFactory sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(inputStream);</span><br><span class="line">			<span class="comment">// 获取sqlSession回话</span></span><br><span class="line">			sqlSession = sqlSessionFactory.openSession();</span><br><span class="line">			<span class="comment">// 执行查询操作，获取结果集。参数：1-命名空间（namespace）+“.”+statementId,2-sql的占位符参数</span></span><br><span class="line">			User user = sqlSession.selectOne(<span class="string">"UserMapper.queryUserById"</span>, <span class="number">1l</span>);</span><br><span class="line">			System.out.println(user);</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			<span class="comment">// 关闭连接</span></span><br><span class="line">			<span class="keyword">if</span> (sqlSession != <span class="keyword">null</span>) &#123;</span><br><span class="line">				sqlSession.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/08/Mybatis笔记/">
-    <time datetime="2019-03-08T14:10:49.000Z" class="entry-date">
-        2019-03-08
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/Java/">Java</a>, <a class="article-category-link" href="/categories/Java/Mybatis/">Mybatis</a>
-  </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/">Mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Spring笔记" class="post-Spring笔记 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/Spring笔记/">spring笔记</a>
+    <h1 class="entry-title article-title">
+      spring笔记
     </h1>
   
 
@@ -336,121 +216,40 @@
 </article>
 
 
-
-
-
-
-  
-    <article id="post-关于" class="post-关于 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/关于/">关于</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/03/08/关于/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.vip/2019/03/08/关于/" data-id="cjt055bl40006tovoam9fpbxv" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="calcifer"><a href="#calcifer" class="headerlink" title="calcifer"></a>calcifer</h1><p>宫崎骏动漫电影《哈尔的移动城堡》中的火魔，在下着流星雨的湿地高原的夜晚与少年哈尔以“心脏”订下契约，之后居住在城堡壁炉中，是移动城堡的动力来源。</p>
-<img src="/2019/03/08/关于/qiyue.jpeg" title="契约">
-<img src="/2019/03/08/关于/haibao1.png" title="海报">
-<img src="/2019/03/08/关于/haibao2.png" title="海报">
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/08/关于/">
-    <time datetime="2019-03-08T10:46:15.000Z" class="entry-date">
-        2019-03-08
-    </time>
-</a>
     
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/闲言碎语/">闲言碎语</a>
-  </div>
-
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
     
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Hello-World" class="post-Hello-World post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/Hello-World/">Hello World</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/03/08/Hello-World/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.vip/2019/03/08/Hello-World/" data-id="cjt055bki0000tovoj4oxhmle" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>愿我们都能被这个世界温柔相待<br><img src="/2019/03/08/Hello-World/jm.jpg"></p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/08/Hello-World/">
-    <time datetime="2019-03-08T06:09:57.000Z" class="entry-date">
-        2019-03-08
-    </time>
-</a>
+        <span class="nav-previous"><a href="/2019/03/08/Mybatis笔记/" rel="prev"><span class="meta-nav">←</span> Mybatis笔记</a></span>
     
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/闲言碎语/">闲言碎语</a>
-  </div>
-
     
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li></ul>
-
-    </footer>
-</article>
+        <span class="nav-next"><a href="/2019/03/08/关于/" rel="next">关于 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
 
 
 
 
+
+
+<section id="comments">
+ 
+<script id="dsq-count-scr" src="https://calcifer-1.disqus.com/count.js" async></script>
+
+<div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://calcifer-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
 
 
   
-  
+</section>
+
 
 </div></div>
         <div id="secondary" class="widget-area" role="complementary">
