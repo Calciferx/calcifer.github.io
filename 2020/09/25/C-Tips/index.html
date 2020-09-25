@@ -4,6 +4,14 @@
   <meta charset="utf-8">
   
   
+  <meta name="description" content="C++ Tips
+int占用的位数与实现有关
+
+C++有一种C语言没有的初始化语法
+12int owls = 101 // 传统C语言初始化语法int wrens(432) // C++特有的初始化语法
+
+C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，">
+  
 
   
   <meta name="keywords" content="关键字，关键字">
@@ -13,16 +21,22 @@
   
   
   
-  <title>等风来</title>
+  <title>C++-Tips | 等风来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="关键字，关键字">
-<meta property="og:type" content="website">
-<meta property="og:title" content="等风来">
-<meta property="og:url" content="http://calcifer.top/index.html">
+  <meta name="description" content="C++ Tips int占用的位数与实现有关  C++有一种C语言没有的初始化语法 12int owls = 101 // 传统C语言初始化语法int wrens(432) // C++特有的初始化语法  C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。 注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用">
+<meta name="keywords" content="学习笔记,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++-Tips">
+<meta property="og:url" content="http://calcifer.top/2020/09/25/C-Tips/index.html">
 <meta property="og:site_name" content="等风来">
+<meta property="og:description" content="C++ Tips int占用的位数与实现有关  C++有一种C语言没有的初始化语法 12int owls = 101 // 传统C语言初始化语法int wrens(432) // C++特有的初始化语法  C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。 注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://calcifer.top/2020/09/25/C-Tips/1556261819939.png">
+<meta property="og:updated_time" content="2020-09-25T01:42:50.939Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="等风来">
+<meta name="twitter:title" content="C++-Tips">
+<meta name="twitter:description" content="C++ Tips int占用的位数与实现有关  C++有一种C语言没有的初始化语法 12int owls = 101 // 传统C语言初始化语法int wrens(432) // C++特有的初始化语法  C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。 注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用">
+<meta name="twitter:image" content="http://calcifer.top/2020/09/25/C-Tips/1556261819939.png">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -78,17 +92,15 @@ var _hmt = _hmt || [];
 </header>
 
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main">
-  
-    <article id="post-C-Tips" class="post-C-Tips post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-C-Tips" class="post-C-Tips post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
         
   
-    <h1 class="entry-title">
-      <a class="article-title" href="/2020/09/25/C-Tips/">C++-Tips</a>
+    <h1 class="entry-title article-title">
+      C++-Tips
     </h1>
   
 
@@ -301,344 +313,38 @@ var _hmt = _hmt || [];
 </article>
 
 
-
-
-
-
-  
-    <article id="post-Python-Tips" class="post-Python-Tips post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/04/19/Python-Tips/">Python Tips</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/04/19/Python-Tips/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/04/19/Python-Tips/" data-id="ckfhmncug000bq8u8cm59o83x" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <ol>
-<li><p>Python 为弱类型语言，区分大小写，注释用 # 号</p>
-</li>
-<li><p>Python2默认不支持中文，需在程序开头添加注释<code>#coding=utf-8</code>或者<code>-*- coding:utf-8 -*-</code>(python语法规范推荐使用后者)。</p>
-</li>
-<li><p>Python基本数据类型</p>
-<p><img src="/2019/04/19/Python-Tips/python基本数据类型.png" alt="python基本数据类型"></p>
-<ul>
-<li>复数表示方法为 <code>1+2j</code>(<strong>不是i，是j</strong>)。</li>
-<li>布尔类型赋值只能用True 或False (<strong>必须首字母大写！</strong>) ，不能用 0 或 1。</li>
-</ul>
-</li>
-<li><p>格式化输出使用 % 号</p></li></ol>
-        
-          <p class="article-more-link">
-            <a href="/2019/04/19/Python-Tips/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/04/19/Python-Tips/">
-    <time datetime="2019-04-19T08:23:40.000Z" class="entry-date">
-        2019-04-19
-    </time>
-</a>
     
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/Python/">Python</a>
-  </div>
-
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
     
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Mybatis笔记" class="post-Mybatis笔记 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/Mybatis笔记/">Mybatis笔记</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/03/08/Mybatis笔记/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Mybatis笔记/" data-id="ckfhmncua0005q8u8smp2o011" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><ol>
-<li><p>Mybatis-config.xml有严格的顺序</p>
-<ul>
-<li>configuration 配置<ul>
-<li>properties 属性</li>
-<li>settings 设置</li>
-<li>typeAliases 类型别名</li>
-<li>typeHandlers 类型处理器</li>
-<li>objectFactory 对象工厂</li>
-<li>plugins 插件</li>
-<li>environments 环境<ul>
-<li>environment 环境变量<ul>
-<li>transactionManager 事务管理器</li>
-<li>dataSource 数据源</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>databaseIdProvider 数据库厂商标识</li>
-<li>mappers 映射器</li>
-</ul>
-</li>
-</ul>
-<p>​</p>
-</li>
-<li><p>在Mybatis-config.xml中引入jdbc.properties资源文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入外部资源文件，resource：相对路径，url：绝对路径 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"jdbc.properties"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/08/Mybatis笔记/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/08/Mybatis笔记/">
-    <time datetime="2019-03-08T14:10:49.000Z" class="entry-date">
-        2019-03-08
-    </time>
-</a>
     
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/Java/">Java</a>, <a class="article-category-link" href="/categories/Java/Mybatis/">Mybatis</a>
-  </div>
-
+        <span class="nav-next"><a href="/2019/04/19/Python-Tips/" rel="next">Python Tips <span class="meta-nav">→</span></a></span>
     
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/">Mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-    </footer>
-</article>
+</nav><!-- .nav-single -->
 
 
 
 
 
 
-  
-    <article id="post-Spring笔记" class="post-Spring笔记 post type-post status-publish format-standard hentry">
-    <!---->
+<section id="comments">
+ 
+<script id="dsq-count-scr" src="https://calcifer-1.disqus.com/count.js" async></script>
 
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/Spring笔记/">spring笔记</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/03/08/Spring笔记/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Spring笔记/" data-id="ckfhmncue0007q8u8kz519zop" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><ol>
-<li><p>多例</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 多例 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"prototypeBean"</span> <span class="attr">class</span>=<span class="string">"cn.itcast.spring.c_xmlscope.PrototypeBean"</span> <span class="attr">scope</span>=<span class="string">"prototype"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化方法和销毁前方法</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 生命周期调用的两个方法 </span></span><br><span class="line"><span class="comment">	init-method:初始化时（后）调用的，bean中的共有方法即可</span></span><br><span class="line"><span class="comment">	destroy-method:销毁时（前）被调用的。</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"lifeCycleBean"</span> <span class="attr">class</span>=<span class="string">"cn.itcast.spring.d_xmllifecycle.LifeCycleBean"</span> <span class="attr">init-method</span>=<span class="string">"init"</span> <span class="attr">destroy-method</span>=<span class="string">"destroy"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>constructor-arg属性注入</p></li></ol>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/08/Spring笔记/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/08/Spring笔记/">
-    <time datetime="2019-03-08T14:07:59.000Z" class="entry-date">
-        2019-03-08
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/Java/">Java</a>, <a class="article-category-link" href="/categories/Java/Spring/">Spring</a>
-  </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
+<div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://calcifer-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
 
 
   
-    <article id="post-关于" class="post-关于 post type-post status-publish format-standard hentry">
-    <!---->
+</section>
 
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/关于/">关于</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/03/08/关于/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/关于/" data-id="ckfhmncuc0006q8u88rthaxw5" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="calcifer"><a href="#calcifer" class="headerlink" title="calcifer"></a>calcifer</h1><p>宫崎骏动漫电影《哈尔的移动城堡》中的火魔，在下着流星雨的湿地高原的夜晚与少年哈尔以“心脏”订下契约，之后居住在城堡壁炉中，是移动城堡的动力来源。<br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/08/关于/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/08/关于/">
-    <time datetime="2019-03-08T10:46:15.000Z" class="entry-date">
-        2019-03-08
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/闲言碎语/">闲言碎语</a>
-  </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Hello-World" class="post-Hello-World post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/Hello-World/">Hello World</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/03/08/Hello-World/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Hello-World/" data-id="ckfhmncu30000q8u80qheqx92" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>愿我们都能被这个世界温柔相待<br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/08/Hello-World/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/08/Hello-World/">
-    <time datetime="2019-03-08T06:09:57.000Z" class="entry-date">
-        2019-03-08
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/闲言碎语/">闲言碎语</a>
-  </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-  
 
 </div></div>
         <div id="secondary" class="widget-area" role="complementary">
