@@ -80,6 +80,321 @@ var _hmt = _hmt || [];
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-非线性回归" class="post-非线性回归 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/09/26/非线性回归/">非线性回归</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="/2020/09/26/非线性回归/#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/非线性回归/" data-id="ckfj0s07l001d2ou89o95r0vy" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="非线性回归"><a href="#非线性回归" class="headerlink" title="非线性回归"></a>非线性回归</h1><ol>
+<li>代码<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用numpy生成200个随机点</span></span><br><span class="line">x_data = np.linspace(<span class="number">-0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)[:,np.newaxis]</span><br><span class="line">noise = np.random.normal(<span class="number">0</span>,<span class="number">0.02</span>,x_data.shape)</span><br><span class="line">y_data = np.square(x_data) + noise</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义两个placeholder</span></span><br><span class="line">x = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">1</span>])</span><br><span class="line">y = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义神经网络中间层</span></span><br><span class="line">Weights_L1 = tf.Variable(tf.random_normal([<span class="number">1</span>,<span class="number">10</span>]))</span><br><span class="line">biases_L1 = tf.Variable(tf.zeros([<span class="number">1</span>,<span class="number">10</span>]))</span><br><span class="line">Wx_plus_b_L1 = tf.matmul(x,Weights_L1) + biases_L1</span><br><span class="line">L1 = tf.nn.tanh(Wx_plus_b_L1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义神经网络输出层</span></span><br><span class="line">Weights_L2 = tf.Variable(tf.random_normal([<span class="number">10</span>,<span class="number">1</span>]))</span><br><span class="line">biases_L2 = tf.Variable(tf.zeros([<span class="number">1</span>,<span class="number">1</span>]))</span><br><span class="line">Wx_plus_b_L2 = tf.matmul(L1,Weights_L2) + biases_L2</span><br><span class="line">prediction = tf.nn.tanh(Wx_plus_b_L2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#二次代价函数</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-prediction))</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用梯度下降法训练</span></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.1</span>).minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    <span class="comment">#变量初始化</span></span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">2000</span>):</span><br><span class="line">        sess.run(train_step,feed_dict=&#123;x:x_data,y:y_data&#125;)</span><br><span class="line">        </span><br><span class="line">    <span class="comment">#获得预测值</span></span><br><span class="line">    prediction_value = sess.run(prediction,feed_dict=&#123;x:x_data&#125;)</span><br><span class="line">    <span class="comment">#画图</span></span><br><span class="line">    plt.figure()</span><br><span class="line">    plt.scatter(x_data,y_data)</span><br><span class="line">    plt.plot(x_data,prediction_value,<span class="string">'r-'</span>,lw=<span class="number">5</span>) <span class="comment">#红色、实线</span></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/26/非线性回归/#more" class="more-link">More <span class="meta-nav">→</span></a>
+          </p>
+        
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/09/26/非线性回归/">
+    <time datetime="2020-09-26T01:51:24.000Z" class="entry-date">
+        2020-09-26
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/非线性回归/">非线性回归</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-TensorFlow基础" class="post-TensorFlow基础 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/09/26/TensorFlow基础/">TensorFlow基础</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="/2020/09/26/TensorFlow基础/#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/TensorFlow基础/" data-id="ckfj0s06w000c2ou85ebxisai" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="TensorFlow-基础"><a href="#TensorFlow-基础" class="headerlink" title="TensorFlow 基础"></a>TensorFlow 基础</h1><ol>
+<li><p><strong>np.newaxis 增加一个维度 </strong></p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 numpy 生成200个随机点</span></span><br><span class="line">x_data = np.linspace(<span class="number">-0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)</span><br><span class="line"><span class="comment">#结果的shape为(200,)</span></span><br><span class="line">x_data = np.linspace(<span class="number">-0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)[:,np.newaxis]</span><br><span class="line"><span class="comment">#结果的shape为(200,1)</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">array(</span><br><span class="line">  [[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>],</span><br><span class="line">   [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>],</span><br><span class="line">   [<span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>, <span class="number">34</span>],</span><br><span class="line">   [<span class="number">41</span>, <span class="number">42</span>, <span class="number">43</span>, <span class="number">44</span>],</span><br><span class="line">   [<span class="number">51</span>, <span class="number">52</span>, <span class="number">53</span>, <span class="number">54</span>],</span><br><span class="line">   [<span class="number">61</span>, <span class="number">62</span>, <span class="number">63</span>, <span class="number">64</span>],</span><br><span class="line">   [<span class="number">71</span>, <span class="number">72</span>, <span class="number">73</span>, <span class="number">74</span>],</span><br><span class="line">   [<span class="number">81</span>, <span class="number">82</span>, <span class="number">83</span>, <span class="number">84</span>],</span><br><span class="line">   [<span class="number">91</span>, <span class="number">92</span>, <span class="number">93</span>, <span class="number">94</span>]])</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array[:,<span class="number">0</span>]的结果为</span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array([<span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span>, <span class="number">41</span>, <span class="number">51</span>, <span class="number">61</span>, <span class="number">71</span>, <span class="number">81</span>, <span class="number">91</span>])</span><br><span class="line"><span class="comment">#即取array的第一列元素组成一个行向量</span></span><br><span class="line"><span class="comment">#以上操作只适用于numpy定义的array，直接由Python定义的普通array不支持这种操作</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/26/TensorFlow基础/#more" class="more-link">More <span class="meta-nav">→</span></a>
+          </p>
+        
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/09/26/TensorFlow基础/">
+    <time datetime="2020-09-26T01:43:47.000Z" class="entry-date">
+        2020-09-26
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-MNIST数据集分类简单版本" class="post-MNIST数据集分类简单版本 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/09/26/MNIST数据集分类简单版本/">MNIST数据集分类简单版本</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="/2020/09/26/MNIST数据集分类简单版本/#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/MNIST数据集分类简单版本/" data-id="ckfj0s06n00022ou88q1saxmz" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="MNIST数据集分类简单版本"><a href="#MNIST数据集分类简单版本" class="headerlink" title="MNIST数据集分类简单版本"></a>MNIST数据集分类简单版本</h1><ol>
+<li><p>代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"></span><br><span class="line"><span class="comment">#载入数据集</span></span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data"</span>,one_hot = <span class="literal">True</span>)</span><br><span class="line"><span class="comment">#每个批次的大小</span></span><br><span class="line">batch_size = <span class="number">100</span></span><br><span class="line"><span class="comment">#计算一共有多少个批次</span></span><br><span class="line">n_batch = mnist.train.num_examples // batch_size</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义两个placeholder</span></span><br><span class="line">x = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">784</span>])</span><br><span class="line">y = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个简单的神经网络</span></span><br><span class="line">w = tf.Variable(tf.zeros([<span class="number">784</span>,<span class="number">10</span>]))</span><br><span class="line">b = tf.Variable(tf.zeros([<span class="number">10</span>]))</span><br><span class="line">prediction = tf.nn.softmax(tf.matmul(x,w)+b)</span><br><span class="line"></span><br><span class="line"><span class="comment">#二次代价函数</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-prediction))</span><br><span class="line"><span class="comment">#使用梯度下降法</span></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.2</span>).minimize(loss)</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"><span class="comment">#初始化变量</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"><span class="comment">#结果存放在一个布尔型列表中</span></span><br><span class="line">correct_prediction = tf.equal(tf.argmax(y,<span class="number">1</span>),tf.argmax(prediction,<span class="number">1</span>))<span class="comment">#argmax返回一维张量中最大的值所在的位置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#求准确率</span></span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">21</span>):</span><br><span class="line">        <span class="keyword">for</span> batch <span class="keyword">in</span> range(n_batch):</span><br><span class="line">            batch_xs,batch_ys = mnist.train.next_batch(batch_size)</span><br><span class="line">            sess.run(train_step,feed_dict = &#123;x:batch_xs,y:batch_ys&#125;)</span><br><span class="line">            </span><br><span class="line">        acc = sess.run(accuracy,feed_dict = &#123;x:mnist.test.images,y:mnist.test.labels&#125;)</span><br><span class="line">        print(<span class="string">"Iter"</span> + str(epoch) + <span class="string">",Testing Accuracy"</span> + str(acc))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结果</p>
+<blockquote>
+<p>Extracting MNIST_data\train-images-idx3-ubyte.gz<br>Extracting MNIST_data\train-labels-idx1-ubyte.gz<br>Extracting MNIST_data\t10k-images-idx3-ubyte.gz<br>Extracting MNIST_data\t10k-labels-idx1-ubyte.gz<br>Iter0,Testing Accuracy0.8327<br>Iter1,Testing Accuracy0.8718<br>Iter2,Testing Accuracy0.8817<br>Iter3,Testing Accuracy0.8878<br>Iter4,Testing Accuracy0.894<br>Iter5,Testing Accuracy0.8969<br>Iter6,Testing Accuracy0.8993<br>Iter7,Testing Accuracy0.9017<br>Iter8,Testing Accuracy0.9029<br>Iter9,Testing Accuracy0.9053<br>Iter10,Testing Accuracy0.9056<br>Iter11,Testing Accuracy0.907<br>Iter12,Testing Accuracy0.9085<br>Iter13,Testing Accuracy0.9092<br>Iter14,Testing Accuracy0.9105<br>Iter15,Testing Accuracy0.9109<br>Iter16,Testing Accuracy0.912<br>Iter17,Testing Accuracy0.9127<br>Iter18,Testing Accuracy0.9141<br>Iter19,Testing Accuracy0.9134<br>Iter20,Testing Accuracy0.9136</p>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/09/26/MNIST数据集分类简单版本/">
+    <time datetime="2020-09-26T01:39:56.000Z" class="entry-date">
+        2020-09-26
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-8086ASM" class="post-8086ASM post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/09/26/8086ASM/">8086ASM</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="/2020/09/26/8086ASM/#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/8086ASM/" data-id="ckfj0s06j00002ou8ixf87ych" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <ol>
+<li><p>8086CPU为16位处理器，寄存器最大宽度为16位，能够一次性处理、传输、暂时存储的信息的最大长度是16位。</p>
+</li>
+<li><p>8086CPU有20位地址总线，采用在内部使用两个16位地址合成的方法来形成一个20位的物理地址。<strong>物理地址 = 段地址 x 16 + 偏移地址</strong></p>
+</li>
+<li><p>CS:IP 指示了CPU当前要读取指令的地址。8086CPU<strong>不支持</strong>使用mov指令修改CS:IP 的内容，需使用jmp指令。</p>
+<ul>
+<li>jmp 段地址: 偏移地址</li>
+<li>jmp 某一合法寄存器（此种用法只修改IP寄存器的内容）</li>
+</ul></li></ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/26/8086ASM/#more" class="more-link">More <span class="meta-nav">→</span></a>
+          </p>
+        
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/09/26/8086ASM/">
+    <time datetime="2020-09-26T01:34:48.000Z" class="entry-date">
+        2020-09-26
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/汇编语言/">汇编语言</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/8086ASM/">8086ASM</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-js" class="post-js post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/09/26/js/">js</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="/2020/09/26/js/#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/js/" data-id="ckfj0s07n001f2ou8xkqi7913" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><ol>
+<li><p>变量声明未初始化，类型为undefined</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">typeof</span> a; <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">typeof</span> a  <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用构造方法定义数组时，一个参数表示数组大小，多个参数表示数组元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>); <span class="comment">//定义一个长度为5的数组，元素为undefined</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>); <span class="comment">//定义一个数组[5,2,3]</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">//定义一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr = []; <span class="comment">//定义一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>]; <span class="comment">// 定义一个数组[5,2,3]</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="string">"red"</span>,<span class="literal">true</span>]; <span class="comment">//数组元素类型可以不同</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">8</span>; <span class="comment">//数组长度为1</span></span><br><span class="line">arr[<span class="number">2</span>] = <span class="number">8</span>; <span class="comment">//数组长度为3，arr[1]为undefined</span></span><br></pre></td></tr></table></figure></li></ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/26/js/#more" class="more-link">More <span class="meta-nav">→</span></a>
+          </p>
+        
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/09/26/js/">
+    <time datetime="2020-09-26T01:32:11.000Z" class="entry-date">
+        2020-09-26
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-C-Tips" class="post-C-Tips post type-post status-publish format-standard hentry">
     <!---->
 
@@ -88,16 +403,16 @@ var _hmt = _hmt || [];
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/2020/09/25/C-Tips/">C++-Tips</a>
+      <a class="article-title" href="/2020/08/25/C-Tips/">C++笔记</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="/2020/09/25/C-Tips/#comments" class="leave-reply">评论</a>
+            <a href="/2020/08/25/C-Tips/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/25/C-Tips/" data-id="ckfhmncu70002q8u80sdx96ck" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/08/25/C-Tips/" data-id="ckfj0s06q00052ou8kd2tjqj4" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -115,176 +430,19 @@ var _hmt = _hmt || [];
 <li><p>C语言中const变量是只读变量，有自己的存储空间</p>
 <p>C++中的const常量<br>可能分配存储空间,也可能不分配存储空间<br>当const常量为全局，并且需要在其它文件中使用，会分配存储空间<br>当使用&amp;操作符，取const常量的地址时，会分配存储空间<br>当const int &amp;a = 10; const修饰引用时，也会分配存储空间</p>
 </li>
-<li><p>C语言中枚举本质就是整型，枚举变量可以用任意整形赋值。而C++中枚举变量，只能用被枚举出来的元素初始化。</p>
-</li>
-<li><ul>
-<li>引用没有定义,是一种关系型声明。声明它和原有某一变量(实体)的关<br>系。故而类型与原类型保持一致,且不分配内存。与被引用的变量有相同的地<br>址。<ul>
-<li>声明的时候必须初始化,一经声明,不可变更。</li>
-<li>可对引用,再次引用。多次引用的结果,是某一变量具有多个别名。</li>
-<li>&amp;符号前有数据类型时,是引用。其它皆为取地址。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><ul>
-<li>引用在C++中的内部实现是一个常指针<ul>
-<li>C++编译器在编译过程中使用常指针作为引用的内部实现，因此引用所占<br>用的空间大小与指针相同。</li>
-<li>从使用的角度，引用会让人误会其只是一个别名，没有自己的存储空间。<br>这是C++为了实用性而做出的细节隐藏。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>C++支持默认参数</p>
-</li>
-<li><p>占位符参数，只有参数类型声明，没有参数名声明，可与默认参数结合使用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b, <span class="keyword">int</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">func1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)<span class="comment">//必须传三个参数</span></span><br><span class="line">---------------------------</span><br><span class="line"><span class="comment">//定义</span></span><br><span class="line">     <span class="function"><span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> = <span class="number">3</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">func2(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">func2(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)<span class="comment">//传两个或三个参数都可以</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回值类型不同不可以构成重载</p>
-<p>重载实现原理：用 v c i f l d 表示 void char int float long double 及其引用，重载函数在本质上是相互独立的不同函数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> a)</span></span>;	<span class="comment">//func_c(char a)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> a, <span class="keyword">int</span> b, <span class="keyword">double</span> c)</span></span>;	<span class="comment">//func_cid(char a, int b, double c)</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个函数，不能既作重载，又有默认参数。因为当少写一个参数时系统无法确认是重载还是默认参数。</p>
-</li>
-<li><p>函数重载与函数指针。当使用重载函数名对函数指针进行赋值时，根据重载规则挑选与函数指针参数列表一致的候选者，严格匹配候选者的函数类型与函数指针的函数类型</p>
-</li>
-<li><p>在用class定义类时，所有成员的默认属性为private</p>
-</li>
-<li><p>构造函数无返回值，与类名同名，可重载。析构函数无返回值，无参，不可重载。析构函数的作用,并不是删除对象,而在对象销毁前完成的一些清理工作。</p>
-</li>
-<li><p>拷贝构造函数的应用场景</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Student s2 = s1;	<span class="comment">//用对象 s1 初始化对象 s2</span></span><br><span class="line"><span class="function">Student <span class="title">s2</span><span class="params">(s1)</span></span>;		<span class="comment">//用对象 s1 初始化对象 s2</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(Student s)</span>	<span class="comment">//用实参初始化形参时会调用拷贝构造函数</span></span></span><br><span class="line"><span class="function">     </span></span><br><span class="line"><span class="function">s3 </span>= s1;	<span class="comment">//使用=操作符，不是调用拷贝构造函数</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><ul>
-<li><p>函数的返回值是一个元素(复杂类型的), 返回的是一个新的匿名对象(所以会调用匿名对象类的copy构造函数)</p>
-</li>
-<li><p>如果用匿名对象 初始化 另外一个同类型的对象，匿名对象 转成 有名对象</p>
-<p>如果用匿名对象 赋值给 另外一个同类型的对象，匿名对象 被析构</p>
-</li>
-</ul>
-</li>
-<li><p>当类中没有定义拷贝构造函数时，编译器默认提供一个默认拷贝构造函数，简单的进行成员变量的值复制，即浅拷贝，要实现深拷贝，必须要自定义拷贝构造函数。</p>
-</li>
-<li><p>当一个类成员也是一个类或者是一个结构，而且这个成员它只有一个带参数的构造函数时，对这个类成员进行初始化就需要使用初始化列表。</p>
-<p> 当类成员中含有一个const对象时，或者是一个引用时，他们也必须通过成员初始化列表进行初始化，因为这两种对象要在声明后马上初始化，而在构造函数中，做的是对他们的赋值，这样是不被允许的。</p>
-<p> 初始化列表中的初始化顺序，与类成员定义时声明顺序有关，与初始化列表中的前后顺序无关。</p>
-<p> 先执行初始化列表中的初始化，再执行构造方法中的语句。</p>
-<p> 构造和析构顺序相反，先构造的后析构。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Student():abc1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>),abc2(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>),m(<span class="number">100</span>)</span><br><span class="line">     &#123;</span><br><span class="line">          ...</span><br><span class="line">     &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	ABC abc1;</span><br><span class="line">	ABC abc2;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> m;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>new 和 delete 是运算符，不是函数，执行效率更高。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line"><span class="comment">//开辟⼀个存放整数的存储空间，返回⼀个指向该存储空间的地址(即指针)</span></span><br><span class="line"><span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">100</span>);</span><br><span class="line"><span class="comment">//开辟⼀个存放整数的空间，并指定该整数的初值为100，返回⼀个指向该存储空间的地址</span></span><br></pre></td></tr></table></figure>
-<p>new 运算符动态分配堆内存：</p>
-<p>使用形式：<strong>指针变量 = new 类型（类型）;</strong></p>
-<p>​             <strong>指针变量 = new 类型[表达式];</strong></p>
-<p>作用：从堆内存分配一块“类型”大小的存储空间，返回首地址，其中：“常量”是初始化值，可缺省。创建数组对象时，不能为对象指定初始化值。</p>
-<p><strong>分配不成功时返回空指针NULL</strong></p>
-<p>delete 运算符释放已分配的内存空间：</p>
-<p>使用形式：<strong>delete 指针变量；</strong></p>
-<p>​             <strong>delete [] 指针变量；</strong></p>
-<p>其中：“指针变量”必须是一个new返回的指针</p>
-<p><strong>malloc不会调用类的构造函数，而new 会调用类的构造函数</strong></p>
-<p><strong>free不会调用类的析构函数，而delete会调用类的析构函数</strong></p>
-</li>
-<li><p>static 成员是命名空间属于类的全局变量，存储在data区。</p>
-<p><strong>static 成员只能类外初始化。</strong></p>
-<p><strong>静态成员函数只能访问静态数据成员。</strong>原因:非静态成员函数,在调用时this 指<br>针被当作参数传进。而静态成员函数属于类,不属于对象,没有 this 指针。</p>
-</li>
-<li><p>若类成员函数的形参和类的属性名字相同，通过this指针来解决。</p>
-<p>类的成员函数可通过const修饰。</p>
-<p>函数返回元素和返回引用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Test&amp; <span class="title">add</span><span class="params">(Test &amp;t2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     ...</span><br><span class="line">     <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>同类对象间无私处， 异类对象间有友元。</p>
-</li>
-<li><p>前向声明是一种不完全型声明，即只需提供类名（无需提供类实现）即可。仅可用于声明指针和引用。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>;</span> <span class="comment">//前置声明</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>友元类</p>
-<p>一个类的友元类的所有成员函数都是该类的友元函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">     ...</span><br><span class="line">     public:</span><br><span class="line">     	friend class B;	//声明B是A的友元类</span><br><span class="line">     	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>友元声明不受其所在的类的声明区域public private和protected的影响。</p>
-<p>友元关系不能被继承。</p>
-<p>友元关系不具有传递性。</p>
-</li>
-<li><p>运算符重载的本质是函数重载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">函数类型 operator运算符名称(形参列表)&#123;</span><br><span class="line">     重载实体；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Complex <span class="keyword">operator</span>+(<span class="keyword">const</span> Complex &amp;c1, <span class="keyword">const</span> Complex &amp;c2);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>C++不允许用户自己定义新的运算符，只能对已有的C++运算符进行重载。</p>
-<p><img src="/2020/09/25/C-Tips/1556261819939.png" alt="不可以被重载的运算符"></p>
-<p>注：<code>a.*p</code>即<code>*(a.p)</code></p>
-<p>重载不能改变运算符运算对象（即操作数）的个数。</p>
-<p>重载不能改变运算符的优先级别</p>
-<p>重载不能改变运算符的结合性</p>
-<p>运算符重载函数可以是类的成员函数，也可以是类的友元函数，还可以是既非类的成员函数也不是友元函数的普通函数。</p>
-<p><strong>一定要注意在连等式中，返回引用和返回对象的区别</strong></p>
-<p><strong>C++如果重载&amp;&amp;或者||将无法实现短路规则</strong></p>
-<p><strong>成员函数重载和友元函数重载不能同时存在</strong></p>
-<p><strong>重载=操作符时注意free指针类型的成员变量指向的空间，防止内存泄漏</strong></p>
-<p>重载<code>-&gt;</code>时：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p-&gt;m = <span class="number">10</span>;	<span class="comment">//(p.operator-&gt;())-&gt;m = 10</span></span><br></pre></td></tr></table></figure>
-<p>-&gt;和*重载格式</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">类名&amp; <span class="keyword">operator</span>*()&#123;</span><br><span class="line">     函数体</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">类名* <span class="keyword">operator</span>-&gt;()&#123;</span><br><span class="line">     函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><ul>
-<li><p>在子类对象构造时，需要调用父类构造函数对其继承得来的成员进行初始化。</p>
-<p>在子类对象析构时，需要调用父类析构函数对其继承得来的成员进行清理。</p>
-</li>
-<li><p>子类对象在创建时会首先调用父类的构造函数</p>
-<p>父类构造函数执行结束后，执行子类的构造函数</p>
-<p>当父类的构造函数有参数时，需要在子类的初始化列表中显式调用</p>
-<p>析构函数调用的先后顺序与构造函数相反</p>
-</li>
-</ul>
-</li>
-<li><p>继承中同名成员变量的处理方法</p>
-<ul>
-<li>当子类成员变量与父类成员变量同名时，子类依然从父类继承同名成员，在子类中通过作用域分辨符::进行同名成员区分（在派生类中使用基类的同名成员，显式地使用类名限定符），同名成员存储在内存中的不同位置。</li>
-<li>事实上子类拥有父类的所有成员，就像子类对象中包含父类对象。继承的实质是基类成员的作用域延伸到所有派生类，派生类的重名成员屏蔽基类的同名成员。</li>
-</ul>
-</li>
-<li><p>基类定义的static成员，将被所有派生类共享，派生类中访问静态成员，用 类名::成员 的形式显式说明 或通过对象访问 对象名.成员</p>
-</li>
-<li><p>如果一个派生类从多个基类派生，而这些基类又有一个共同的基类，则在对该基类中声明的名字进行访问时，可能产生二义性。</p>
-<p>如果在多条继承路径上有一个公共的基类，那么在继承路径的某处汇合点，这个公共基类就会在派生类的对象中产生多个基类子对象。</p>
-<p>要使这个公共基类在派生类中只产生一个子对象，必须对这个基类声明为虚继承，使这个基类成为虚基类。</p>
-<p>虚继承声明使用关键字 virtual</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><span class="keyword">public</span> :<span class="keyword">int</span> b;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B1</span> :</span><span class="keyword">virtual</span> <span class="keyword">public</span> B &#123;<span class="keyword">private</span> :<span class="keyword">int</span> b1;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B2</span> :</span><span class="keyword">virtual</span> <span class="keyword">public</span> B &#123;<span class="keyword">private</span> :<span class="keyword">int</span> b2;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> :</span><span class="keyword">public</span> B1, <span class="keyword">public</span> B2 &#123;<span class="keyword">private</span> :<span class="keyword">float</span> d;&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>子类重写父类virtual函数时，使用指向子类对象的父类指针或引用调用该函数，调用的是重写后的子类函数。即多态。</p>
-<p>子类重定义父类函数时，使用指向子类对象的父类指针或引用调用该函数，调用的是父类函数。而Java中无需显式声明，默认即是多态。</p>
-</li>
-<li><p>重定义(隐藏) 是指派生类的函数屏蔽了与其同名的基类函数，规则如下：</p>
-<p>如果派生类的函数和基类的函数同名，但是参数不同，此时，不管有无virtual，基类的函数被隐藏。</p>
-<p>如果派生类的函数与基类的函数同名，并且参数也相同，但是基类函数没有virtual关键字，此时，基类的函数被隐藏。</p>
-</li>
-<li><p>要使多态发生时析构函数正确地从子类开始执行，需要在父类析构函数前加virtual，即虚析构函数。</p>
-</li>
-<li><p>vptr指针在构造父类的时候是分步初始化的。</p>
-</li>
-<li><p>函数模板</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> 类型参数表&gt;  <span class="comment">//typename也可用class</span></span><br><span class="line">返回类型 函数模板名(函数参数列表)&#123;</span><br><span class="line">     函数模板定义体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>函数模板，只适用于函数的参数个数相同而类型不同，且函数体相同的情况。如果个数不同，则不能用函数模板。</p>
-<p>编译器并不是把函数模板处理成能够处理任意类的函数。</p>
-<p>编译器从函数模板通过具体类型产生不同的函数。</p>
-<p>编译器会对函数模板进行两次编译,在声明的地方对模板代码本身进行编译；在调用的地方对参数替换后的代码进行编译。</p>
-</li>
-<li><p>C++类型转换</p>
-<p>static_cast&lt;目标类型&gt;(标识符)    静态类型转换</p>
-<p>reinterpreter_cast&lt;目标类型&gt;(标识符)    重新解释类型转换</p>
-<p>dynamic_cast&lt;目标类型&gt;(标识符)    子类和父类之间的多态类型转换</p>
-<p>const_cast&lt;目标类型&gt;(标识符)    去掉const属性转换，目标类类型只能是指针或引用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num2 = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt; (num);</span><br><span class="line">Dog *pDog = <span class="keyword">dynamic_cast</span>&lt;Dog *&gt;(base);	<span class="comment">//向下转换，若失败返回null</span></span><br><span class="line">A a1 = <span class="keyword">const_cast</span>&lt;A&gt;(a);</span><br><span class="line">A &amp;a2 = <span class="keyword">const_cast</span>&lt;A&amp;&gt;(a);</span><br><span class="line">A *a3 = <span class="keyword">const_cast</span>&lt;A*&gt;(&amp;a);</span><br><span class="line"><span class="comment">//reinterpret_cast可以强制类型转换</span></span><br><span class="line">Dog *pDog = <span class="keyword">static_cast</span>&lt;Dog *&gt;(base);</span><br><span class="line">Book *book = <span class="keyword">reinterpret_cast</span>&lt;Book *&gt;(base);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
+<li><p>C语言中枚举本质就是整型，枚举变量可以用任意整形赋值。而C++中枚举变量，只能用被枚举出来的元素初始化。</p></li></ol>
+        
+          <p class="article-more-link">
+            <a href="/2020/08/25/C-Tips/#more" class="more-link">More <span class="meta-nav">→</span></a>
+          </p>
+        
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2020/09/25/C-Tips/">
-    <time datetime="2020-09-25T01:31:37.000Z" class="entry-date">
-        2020-09-25
+    <a href="/2020/08/25/C-Tips/">
+    <time datetime="2020-08-25T01:31:37.000Z" class="entry-date">
+        2020-08-25
     </time>
 </a>
     
@@ -323,7 +481,7 @@ var _hmt = _hmt || [];
             
             <a href="/2019/04/19/Python-Tips/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/04/19/Python-Tips/" data-id="ckfhmncug000bq8u8cm59o83x" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/04/19/Python-Tips/" data-id="ckfj0s06v000b2ou803b2jup7" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -392,7 +550,7 @@ var _hmt = _hmt || [];
             
             <a href="/2019/03/08/Mybatis笔记/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Mybatis笔记/" data-id="ckfhmncua0005q8u8smp2o011" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Mybatis笔记/" data-id="ckfj0s06s00062ou8skxz9nab" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -477,7 +635,7 @@ var _hmt = _hmt || [];
             
             <a href="/2019/03/08/Spring笔记/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Spring笔记/" data-id="ckfhmncue0007q8u8kz519zop" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Spring笔记/" data-id="ckfj0s07k001c2ou8abk9gxch" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -541,7 +699,7 @@ var _hmt = _hmt || [];
             
             <a href="/2019/03/08/关于/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/关于/" data-id="ckfhmncuc0006q8u88rthaxw5" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/关于/" data-id="ckfj0s07p001h2ou8caef1w0f" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -581,63 +739,12 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Hello-World" class="post-Hello-World post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
   
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/Hello-World/">Hello World</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="/2019/03/08/Hello-World/#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Hello-World/" data-id="ckfhmncu30000q8u80qheqx92" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>愿我们都能被这个世界温柔相待<br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/08/Hello-World/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/03/08/Hello-World/">
-    <time datetime="2019-03-08T06:09:57.000Z" class="entry-date">
-        2019-03-08
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/闲言碎语/">闲言碎语</a>
-  </div>
-
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂七杂八/">杂七杂八</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
+    <nav id="pagination">
+      <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      </nav>
+    </nav>
   
 
 </div></div>
@@ -656,7 +763,7 @@ var _hmt = _hmt || [];
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲言碎语/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编语言/">汇编语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲言碎语/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
     </div>
   </aside>
 
@@ -668,23 +775,23 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
-            <a href="/2020/09/25/C-Tips/">C++-Tips</a>
+            <a href="/2020/09/26/非线性回归/">非线性回归</a>
           </li>
         
           <li>
-            <a href="/2019/04/19/Python-Tips/">Python Tips</a>
+            <a href="/2020/09/26/TensorFlow基础/">TensorFlow基础</a>
           </li>
         
           <li>
-            <a href="/2019/03/08/Mybatis笔记/">Mybatis笔记</a>
+            <a href="/2020/09/26/MNIST数据集分类简单版本/">MNIST数据集分类简单版本</a>
           </li>
         
           <li>
-            <a href="/2019/03/08/Spring笔记/">spring笔记</a>
+            <a href="/2020/09/26/8086ASM/">8086ASM</a>
           </li>
         
           <li>
-            <a href="/2019/03/08/关于/">关于</a>
+            <a href="/2020/09/26/js/">js</a>
           </li>
         
       </ul>
@@ -696,7 +803,7 @@ var _hmt = _hmt || [];
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/8086ASM/">8086ASM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性回归/">非线性回归</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -705,7 +812,7 @@ var _hmt = _hmt || [];
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/杂七杂八/" style="font-size: 20px;">杂七杂八</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a>
+      <a href="/tags/8086ASM/" style="font-size: 10px;">8086ASM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/机器学习/" style="font-size: 20px;">机器学习</a> <a href="/tags/杂七杂八/" style="font-size: 15px;">杂七杂八</a> <a href="/tags/笔记/" style="font-size: 15px;">笔记</a> <a href="/tags/非线性回归/" style="font-size: 10px;">非线性回归</a>
     </div>
   </aside>
 

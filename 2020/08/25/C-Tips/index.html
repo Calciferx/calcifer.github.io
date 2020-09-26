@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="C++ Tips
+int占用的位数与实现有关
+
+C++有一种C语言没有的初始化语法
+12int owls = 101 // 传统C语言初始化语法int wrens(432) // C++特有的初始化语法
+
+C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。
+注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用。
+
+C语言中const变量是只读变量，有自己的存储空间
+C++中的const常量可能分配存储空间,也可能不分配存储空间当const常量为全局，并且需要在其它文件中使用，会分配存储空间当使用&amp;amp;操作符，取const常量的地址时，会分配存储空间当const int &amp;amp;a = 10; const修饰引用时，也会分配存储空间
+
+C语言中枚举本质就是整型，枚举变量可以用任意整形赋值。而C++中枚举变量，只能用被枚举出来的元素初始化。">
+  
+
+  
+  <meta name="keywords" content="关键字，关键字">
+  
+  
+  
+  
+  
+  
+  <title>C++笔记 | 等风来</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="C++ Tips int占用的位数与实现有关  C++有一种C语言没有的初始化语法 12int owls = 101 // 传统C语言初始化语法int wrens(432) // C++特有的初始化语法  C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。 注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用">
+<meta name="keywords" content="学习笔记,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++笔记">
+<meta property="og:url" content="http://calcifer.top/2020/08/25/C-Tips/index.html">
+<meta property="og:site_name" content="等风来">
+<meta property="og:description" content="C++ Tips int占用的位数与实现有关  C++有一种C语言没有的初始化语法 12int owls = 101 // 传统C语言初始化语法int wrens(432) // C++特有的初始化语法  C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。 注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://calcifer.top/2020/08/25/C-Tips/1556261819939.png">
+<meta property="og:updated_time" content="2020-09-26T01:34:16.300Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++笔记">
+<meta name="twitter:description" content="C++ Tips int占用的位数与实现有关  C++有一种C语言没有的初始化语法 12int owls = 101 // 传统C语言初始化语法int wrens(432) // C++特有的初始化语法  C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。 注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用">
+<meta name="twitter:image" content="http://calcifer.top/2020/08/25/C-Tips/1556261819939.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <!--
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+  -->
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="等风来" rel="home">等风来</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">花开要守候一个冬季，只需一夜春风</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?540262c4e40cafbb27776376a8d53586";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-C-Tips" class="post-C-Tips post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      C++笔记
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="/2020/08/25/C-Tips/#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/08/25/C-Tips/" data-id="ckfj0s06q00052ou8kd2tjqj4" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="C-Tips"><a href="#C-Tips" class="headerlink" title="C++ Tips"></a>C++ Tips</h1><ol>
+<li><p>int占用的位数与实现有关</p>
+</li>
+<li><p>C++有一种C语言没有的初始化语法</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> owls = <span class="number">101</span> <span class="comment">// 传统C语言初始化语法</span></span><br><span class="line"><span class="keyword">int</span> wrens(<span class="number">432</span>) <span class="comment">// C++特有的初始化语法</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。</p>
+<p><strong>注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用。</strong></p>
+</li>
+<li><p>C语言中const变量是只读变量，有自己的存储空间</p>
+<p>C++中的const常量<br>可能分配存储空间,也可能不分配存储空间<br>当const常量为全局，并且需要在其它文件中使用，会分配存储空间<br>当使用&amp;操作符，取const常量的地址时，会分配存储空间<br>当const int &amp;a = 10; const修饰引用时，也会分配存储空间</p>
+</li>
+<li><p>C语言中枚举本质就是整型，枚举变量可以用任意整形赋值。而C++中枚举变量，只能用被枚举出来的元素初始化。</p>
+<a id="more"></a>
+</li>
+<li><ul>
+<li>引用没有定义,是一种关系型声明。声明它和原有某一变量(实体)的关<br>系。故而类型与原类型保持一致,且不分配内存。与被引用的变量有相同的地<br>址。<ul>
+<li>声明的时候必须初始化,一经声明,不可变更。</li>
+<li>可对引用,再次引用。多次引用的结果,是某一变量具有多个别名。</li>
+<li>&amp;符号前有数据类型时,是引用。其它皆为取地址。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>引用在C++中的内部实现是一个常指针<ul>
+<li>C++编译器在编译过程中使用常指针作为引用的内部实现，因此引用所占<br>用的空间大小与指针相同。</li>
+<li>从使用的角度，引用会让人误会其只是一个别名，没有自己的存储空间。<br>这是C++为了实用性而做出的细节隐藏。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>C++支持默认参数</p>
+</li>
+<li><p>占位符参数，只有参数类型声明，没有参数名声明，可与默认参数结合使用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b, <span class="keyword">int</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">func1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)<span class="comment">//必须传三个参数</span></span><br><span class="line">---------------------------</span><br><span class="line"><span class="comment">//定义</span></span><br><span class="line">     <span class="function"><span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> = <span class="number">3</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用</span></span><br><span class="line">func2(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">func2(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)<span class="comment">//传两个或三个参数都可以</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回值类型不同不可以构成重载</p>
+<p>重载实现原理：用 v c i f l d 表示 void char int float long double 及其引用，重载函数在本质上是相互独立的不同函数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> a)</span></span>;	<span class="comment">//func_c(char a)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> a, <span class="keyword">int</span> b, <span class="keyword">double</span> c)</span></span>;	<span class="comment">//func_cid(char a, int b, double c)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一个函数，不能既作重载，又有默认参数。因为当少写一个参数时系统无法确认是重载还是默认参数。</p>
+</li>
+<li><p>函数重载与函数指针。当使用重载函数名对函数指针进行赋值时，根据重载规则挑选与函数指针参数列表一致的候选者，严格匹配候选者的函数类型与函数指针的函数类型</p>
+</li>
+<li><p>在用class定义类时，所有成员的默认属性为private</p>
+</li>
+<li><p>构造函数无返回值，与类名同名，可重载。析构函数无返回值，无参，不可重载。析构函数的作用,并不是删除对象,而在对象销毁前完成的一些清理工作。</p>
+</li>
+<li><p>拷贝构造函数的应用场景</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Student s2 = s1;	<span class="comment">//用对象 s1 初始化对象 s2</span></span><br><span class="line"><span class="function">Student <span class="title">s2</span><span class="params">(s1)</span></span>;		<span class="comment">//用对象 s1 初始化对象 s2</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(Student s)</span>	<span class="comment">//用实参初始化形参时会调用拷贝构造函数</span></span></span><br><span class="line"><span class="function">     </span></span><br><span class="line"><span class="function">s3 </span>= s1;	<span class="comment">//使用=操作符，不是调用拷贝构造函数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><ul>
+<li><p>函数的返回值是一个元素(复杂类型的), 返回的是一个新的匿名对象(所以会调用匿名对象类的copy构造函数)</p>
+</li>
+<li><p>如果用匿名对象 初始化 另外一个同类型的对象，匿名对象 转成 有名对象</p>
+<p>如果用匿名对象 赋值给 另外一个同类型的对象，匿名对象 被析构</p>
+</li>
+</ul>
+</li>
+<li><p>当类中没有定义拷贝构造函数时，编译器默认提供一个默认拷贝构造函数，简单的进行成员变量的值复制，即浅拷贝，要实现深拷贝，必须要自定义拷贝构造函数。</p>
+</li>
+<li><p>当一个类成员也是一个类或者是一个结构，而且这个成员它只有一个带参数的构造函数时，对这个类成员进行初始化就需要使用初始化列表。</p>
+<p> 当类成员中含有一个const对象时，或者是一个引用时，他们也必须通过成员初始化列表进行初始化，因为这两种对象要在声明后马上初始化，而在构造函数中，做的是对他们的赋值，这样是不被允许的。</p>
+<p> 初始化列表中的初始化顺序，与类成员定义时声明顺序有关，与初始化列表中的前后顺序无关。</p>
+<p> 先执行初始化列表中的初始化，再执行构造方法中的语句。</p>
+<p> 构造和析构顺序相反，先构造的后析构。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Student():abc1(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>),abc2(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>),m(<span class="number">100</span>)</span><br><span class="line">     &#123;</span><br><span class="line">          ...</span><br><span class="line">     &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	ABC abc1;</span><br><span class="line">	ABC abc2;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> m;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>new 和 delete 是运算符，不是函数，执行效率更高。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line"><span class="comment">//开辟⼀个存放整数的存储空间，返回⼀个指向该存储空间的地址(即指针)</span></span><br><span class="line"><span class="keyword">new</span> <span class="keyword">int</span>(<span class="number">100</span>);</span><br><span class="line"><span class="comment">//开辟⼀个存放整数的空间，并指定该整数的初值为100，返回⼀个指向该存储空间的地址</span></span><br></pre></td></tr></table></figure>
+<p>new 运算符动态分配堆内存：</p>
+<p>使用形式：<strong>指针变量 = new 类型（类型）;</strong></p>
+<p>​             <strong>指针变量 = new 类型[表达式];</strong></p>
+<p>作用：从堆内存分配一块“类型”大小的存储空间，返回首地址，其中：“常量”是初始化值，可缺省。创建数组对象时，不能为对象指定初始化值。</p>
+<p><strong>分配不成功时返回空指针NULL</strong></p>
+<p>delete 运算符释放已分配的内存空间：</p>
+<p>使用形式：<strong>delete 指针变量；</strong></p>
+<p>​             <strong>delete [] 指针变量；</strong></p>
+<p>其中：“指针变量”必须是一个new返回的指针</p>
+<p><strong>malloc不会调用类的构造函数，而new 会调用类的构造函数</strong></p>
+<p><strong>free不会调用类的析构函数，而delete会调用类的析构函数</strong></p>
+</li>
+<li><p>static 成员是命名空间属于类的全局变量，存储在data区。</p>
+<p><strong>static 成员只能类外初始化。</strong></p>
+<p><strong>静态成员函数只能访问静态数据成员。</strong>原因:非静态成员函数,在调用时this 指<br>针被当作参数传进。而静态成员函数属于类,不属于对象,没有 this 指针。</p>
+</li>
+<li><p>若类成员函数的形参和类的属性名字相同，通过this指针来解决。</p>
+<p>类的成员函数可通过const修饰。</p>
+<p>函数返回元素和返回引用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Test&amp; <span class="title">add</span><span class="params">(Test &amp;t2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     ...</span><br><span class="line">     <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同类对象间无私处， 异类对象间有友元。</p>
+</li>
+<li><p>前向声明是一种不完全型声明，即只需提供类名（无需提供类实现）即可。仅可用于声明指针和引用。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>;</span> <span class="comment">//前置声明</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>友元类</p>
+<p>一个类的友元类的所有成员函数都是该类的友元函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">     ...</span><br><span class="line">     public:</span><br><span class="line">     	friend class B;	//声明B是A的友元类</span><br><span class="line">     	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>友元声明不受其所在的类的声明区域public private和protected的影响。</p>
+<p>友元关系不能被继承。</p>
+<p>友元关系不具有传递性。</p>
+</li>
+<li><p>运算符重载的本质是函数重载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">函数类型 operator运算符名称(形参列表)&#123;</span><br><span class="line">     重载实体；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Complex <span class="keyword">operator</span>+(<span class="keyword">const</span> Complex &amp;c1, <span class="keyword">const</span> Complex &amp;c2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>C++不允许用户自己定义新的运算符，只能对已有的C++运算符进行重载。</p>
+<p><img src="/2020/08/25/C-Tips/1556261819939.png" alt="不可以被重载的运算符"></p>
+<p>注：<code>a.*p</code>即<code>*(a.p)</code></p>
+<p>重载不能改变运算符运算对象（即操作数）的个数。</p>
+<p>重载不能改变运算符的优先级别</p>
+<p>重载不能改变运算符的结合性</p>
+<p>运算符重载函数可以是类的成员函数，也可以是类的友元函数，还可以是既非类的成员函数也不是友元函数的普通函数。</p>
+<p><strong>一定要注意在连等式中，返回引用和返回对象的区别</strong></p>
+<p><strong>C++如果重载&amp;&amp;或者||将无法实现短路规则</strong></p>
+<p><strong>成员函数重载和友元函数重载不能同时存在</strong></p>
+<p><strong>重载=操作符时注意free指针类型的成员变量指向的空间，防止内存泄漏</strong></p>
+<p>重载<code>-&gt;</code>时：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p-&gt;m = <span class="number">10</span>;	<span class="comment">//(p.operator-&gt;())-&gt;m = 10</span></span><br></pre></td></tr></table></figure>
+<p>-&gt;和*重载格式</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">类名&amp; <span class="keyword">operator</span>*()&#123;</span><br><span class="line">     函数体</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">类名* <span class="keyword">operator</span>-&gt;()&#123;</span><br><span class="line">     函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><ul>
+<li><p>在子类对象构造时，需要调用父类构造函数对其继承得来的成员进行初始化。</p>
+<p>在子类对象析构时，需要调用父类析构函数对其继承得来的成员进行清理。</p>
+</li>
+<li><p>子类对象在创建时会首先调用父类的构造函数</p>
+<p>父类构造函数执行结束后，执行子类的构造函数</p>
+<p>当父类的构造函数有参数时，需要在子类的初始化列表中显式调用</p>
+<p>析构函数调用的先后顺序与构造函数相反</p>
+</li>
+</ul>
+</li>
+<li><p>继承中同名成员变量的处理方法</p>
+<ul>
+<li>当子类成员变量与父类成员变量同名时，子类依然从父类继承同名成员，在子类中通过作用域分辨符::进行同名成员区分（在派生类中使用基类的同名成员，显式地使用类名限定符），同名成员存储在内存中的不同位置。</li>
+<li>事实上子类拥有父类的所有成员，就像子类对象中包含父类对象。继承的实质是基类成员的作用域延伸到所有派生类，派生类的重名成员屏蔽基类的同名成员。</li>
+</ul>
+</li>
+<li><p>基类定义的static成员，将被所有派生类共享，派生类中访问静态成员，用 类名::成员 的形式显式说明 或通过对象访问 对象名.成员</p>
+</li>
+<li><p>如果一个派生类从多个基类派生，而这些基类又有一个共同的基类，则在对该基类中声明的名字进行访问时，可能产生二义性。</p>
+<p>如果在多条继承路径上有一个公共的基类，那么在继承路径的某处汇合点，这个公共基类就会在派生类的对象中产生多个基类子对象。</p>
+<p>要使这个公共基类在派生类中只产生一个子对象，必须对这个基类声明为虚继承，使这个基类成为虚基类。</p>
+<p>虚继承声明使用关键字 virtual</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><span class="keyword">public</span> :<span class="keyword">int</span> b;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B1</span> :</span><span class="keyword">virtual</span> <span class="keyword">public</span> B &#123;<span class="keyword">private</span> :<span class="keyword">int</span> b1;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B2</span> :</span><span class="keyword">virtual</span> <span class="keyword">public</span> B &#123;<span class="keyword">private</span> :<span class="keyword">int</span> b2;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> :</span><span class="keyword">public</span> B1, <span class="keyword">public</span> B2 &#123;<span class="keyword">private</span> :<span class="keyword">float</span> d;&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子类重写父类virtual函数时，使用指向子类对象的父类指针或引用调用该函数，调用的是重写后的子类函数。即多态。</p>
+<p>子类重定义父类函数时，使用指向子类对象的父类指针或引用调用该函数，调用的是父类函数。而Java中无需显式声明，默认即是多态。</p>
+</li>
+<li><p>重定义(隐藏) 是指派生类的函数屏蔽了与其同名的基类函数，规则如下：</p>
+<p>如果派生类的函数和基类的函数同名，但是参数不同，此时，不管有无virtual，基类的函数被隐藏。</p>
+<p>如果派生类的函数与基类的函数同名，并且参数也相同，但是基类函数没有virtual关键字，此时，基类的函数被隐藏。</p>
+</li>
+<li><p>要使多态发生时析构函数正确地从子类开始执行，需要在父类析构函数前加virtual，即虚析构函数。</p>
+</li>
+<li><p>vptr指针在构造父类的时候是分步初始化的。</p>
+</li>
+<li><p>函数模板</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> 类型参数表&gt;  <span class="comment">//typename也可用class</span></span><br><span class="line">返回类型 函数模板名(函数参数列表)&#123;</span><br><span class="line">     函数模板定义体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数模板，只适用于函数的参数个数相同而类型不同，且函数体相同的情况。如果个数不同，则不能用函数模板。</p>
+<p>编译器并不是把函数模板处理成能够处理任意类的函数。</p>
+<p>编译器从函数模板通过具体类型产生不同的函数。</p>
+<p>编译器会对函数模板进行两次编译,在声明的地方对模板代码本身进行编译；在调用的地方对参数替换后的代码进行编译。</p>
+</li>
+<li><p>C++类型转换</p>
+<p>static_cast&lt;目标类型&gt;(标识符)    静态类型转换</p>
+<p>reinterpreter_cast&lt;目标类型&gt;(标识符)    重新解释类型转换</p>
+<p>dynamic_cast&lt;目标类型&gt;(标识符)    子类和父类之间的多态类型转换</p>
+<p>const_cast&lt;目标类型&gt;(标识符)    去掉const属性转换，目标类类型只能是指针或引用</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num2 = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt; (num);</span><br><span class="line">Dog *pDog = <span class="keyword">dynamic_cast</span>&lt;Dog *&gt;(base);	<span class="comment">//向下转换，若失败返回null</span></span><br><span class="line">A a1 = <span class="keyword">const_cast</span>&lt;A&gt;(a);</span><br><span class="line">A &amp;a2 = <span class="keyword">const_cast</span>&lt;A&amp;&gt;(a);</span><br><span class="line">A *a3 = <span class="keyword">const_cast</span>&lt;A*&gt;(&amp;a);</span><br><span class="line"><span class="comment">//reinterpret_cast可以强制类型转换</span></span><br><span class="line">Dog *pDog = <span class="keyword">static_cast</span>&lt;Dog *&gt;(base);</span><br><span class="line">Book *book = <span class="keyword">reinterpret_cast</span>&lt;Book *&gt;(base);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/08/25/C-Tips/">
+    <time datetime="2020-08-25T01:31:37.000Z" class="entry-date">
+        2020-08-25
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2020/09/26/js/" rel="prev"><span class="meta-nav">←</span> js</a></span>
+    
+    
+        <span class="nav-next"><a href="/2019/04/19/Python-Tips/" rel="next">Python Tips <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+<section id="comments">
+ 
+<script id="dsq-count-scr" src="https://calcifer-1.disqus.com/count.js" async></script>
+
+<div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://calcifer-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+
+  
+</section>
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value name="s" id="s">
+        <input type="submit" id="searchsubmit" value="搜索">
+    </div>
+</form></aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编语言/">汇编语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲言碎语/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/26/非线性回归/">非线性回归</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/26/TensorFlow基础/">TensorFlow基础</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/26/MNIST数据集分类简单版本/">MNIST数据集分类简单版本</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/26/8086ASM/">8086ASM</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/26/js/">js</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/8086ASM/">8086ASM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性回归/">非线性回归</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/8086ASM/" style="font-size: 10px;">8086ASM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/机器学习/" style="font-size: 20px;">机器学习</a> <a href="/tags/杂七杂八/" style="font-size: 15px;">杂七杂八</a> <a href="/tags/笔记/" style="font-size: 15px;">笔记</a> <a href="/tags/非线性回归/" style="font-size: 10px;">非线性回归</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2020 Calcifer All rights reserved.</p>
+    <p style="display: inline-block;">Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+    <div style="float: right">本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img style="vertical-align: top; height: 25px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAxMTEgMzgiPgogIDxnIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xKSI+CiAgICA8cGF0aCBkPSJNMzAuOCw0LjEgTDMwLjgsNC4xIEwzMC44LDQuMSBMMzAuOCw0LjEgTDMwLjgsNC4xIEMzMC4xLDMuNiAyOS40LDMuMSAyOC42LDIuNyBDMjguMSwyLjQgMjcuNCwyLjUgMjcsMyBMMjIuMyw5LjIgTDIyLDkuNiBDMjEuNSwxMC4zIDIwLjcsMTAuNiAxOS45LDEwLjYgTDE5LDEwLjYgQzE2LjcsMTAuNyAxNC40LDExLjkgMTIuOSwxMy45IEMxMS43LDE1LjUgMTEuMSwxNy40IDExLjIsMTkuMyBDMTEuMiwxOS42IDExLjQsMTkuOSAxMS43LDIwLjEgQzEyLjMsMjAuNCAxMi44LDIxIDEzLDIxLjcgQzEzLjIsMjIuOCAxMi41LDIzLjggMTEuNSwyNC4xIEMxMC4zLDI0LjUgOSwyMy43IDguNywyMi41IEM4LjUsMjEuOCA4LjcsMjEuMiA5LjEsMjAuNyBDOS4zLDIwLjQgOS40LDIwLjEgOS40LDE5LjcgQzkuMiwxNy4zIDkuOCwxNC44IDExLjQsMTIuNyBDMTMuNCwxMC4xIDE2LjQsOC43IDE5LjUsOC43IEMyMC4xLDguNyAyMC42LDguNCAyMSw3LjkgTDI1LjMsMi4yIEMyNS42LDEuOCAyNS40LDEuMSAyNC45LDEgQzE3LjcsLTEgOS43LDEuNCA0LjgsNy43IEMtMS40LDE1LjggMC4xLDI3LjUgOC4yLDMzLjggQzksMzQuNCA5LjcsMzQuOSAxMC42LDM1LjQgQzExLjEsMzUuNyAxMS44LDM1LjYgMTIuMiwzNS4xIEwxNi45LDI4LjkgTDE3LjIsMjguNSBDMTcuNywyNy44IDE4LjUsMjcuNSAxOS4zLDI3LjUgTDIwLjIsMjcuNSBDMjIuNSwyNy40IDI0LjgsMjYuMiAyNi4zLDI0LjIgQzI3LjUsMjIuNiAyOC4xLDIwLjcgMjgsMTguOCBDMjgsMTguNSAyNy44LDE4LjIgMjcuNSwxOCBDMjYuOSwxNy43IDI2LjQsMTcuMSAyNi4yLDE2LjQgQzI2LDE1LjMgMjYuNywxNC4zIDI3LjcsMTQgQzI4LjksMTMuNiAzMC4yLDE0LjQgMzAuNSwxNS42IEMzMC43LDE2LjMgMzAuNSwxNi45IDMwLjEsMTcuNCBDMjkuOSwxNy43IDI5LjgsMTggMjkuOCwxOC40IEMzMCwyMC44IDI5LjQsMjMuMyAyNy44LDI1LjQgQzI1LjgsMjggMjIuOCwyOS40IDE5LjcsMjkuNCBDMTkuMSwyOS40IDE4LjYsMjkuNyAxOC4yLDMwLjIgTDE0LDM1LjYgQzEzLjcsMzYgMTMuOSwzNi43IDE0LjQsMzYuOCBDMjEuNiwzOC45IDI5LjcsMzYuNSAzNC41LDMwLjEgQzQwLjcsMjIgMzksMTAuMyAzMC44LDQuMSBaIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MyA4KSI+CiAgICAgIDxwYXRoIGQ9Ik0xOC42LDIgTDE4LjYsMS42IEMxOC42LDEuMiAxOC4zLDEgMTgsMSBMMy41LDEgQzMuMiwxIDIuOSwxLjMgMi45LDEuNiBMMi45LDIuNSBDMi45LDIuOCAzLjIsMy4xIDMuNSwzLjEgTDE1LjgsMy4xIEMxNi4yLDMuMSAxNi40LDMuNCAxNi40LDMuOCBDMTYuMSw2LjEgMTUsMTAuNCAxMS42LDE0LjUgQzExLjQsMTQuOCAxMC45LDE0LjggMTAuNywxNC41IEM3LjksMTAuOSA3LDcuMiA2LjgsNS44IEM2LjcsNS41IDYuNSw1LjMgNi4yLDUuMyBMNS43LDUuMyBMNS4zLDUuMyBDNSw1LjMgNC43LDUuNiA0LjgsNiBDNS4xLDcuNiA2LjEsMTEuOSA5LjUsMTYgQzkuNywxNi4yIDkuNywxNi42IDkuNSwxNi44IEM1LjUsMjAuNSAxLjgsMjEuMyAwLjUsMjEuNSBDMC4yLDIxLjUgNy4xMDU0MjczNmUtMTUsMjEuOCA3LjEwNTQyNzM2ZS0xNSwyMi4xIEw3LjEwNTQyNzM2ZS0xNSwyMyBDNy4xMDU0MjczNmUtMTUsMjMuMyAwLjMsMjMuNiAwLjYsMjMuNiBDMi4xLDIzLjQgNi4zLDIyLjUgMTAuOCwxOC4zIEMxMSwxOC4xIDExLjQsMTguMSAxMS42LDE4LjMgQzEzLjgsMjAuMyAxNi42LDIyLjMgMjAuNCwyMy41IEMyMC43LDIzLjYgMjEsMjMuNCAyMS4xLDIzLjEgTDIxLjQsMjIuMyBDMjEuNSwyMiAyMS4zLDIxLjcgMjEsMjEuNiBDMTcuNSwyMC41IDE1LDE4LjcgMTMsMTYuOSBDMTIuOCwxNi43IDEyLjgsMTYuMyAxMywxNi4xIEMxOC41LDkuNCAxOC42LDIuMyAxOC42LDIgWiIvPgogICAgICA8cGF0aCBkPSJNMjguNiwwLjEgTDI3LjcsMC4xIEMyNy40LDAuMSAyNy4xLDAuNCAyNy4xLDAuNyBMMjcuMSwzLjggQzI3LjEsNC4xIDI2LjgsNC40IDI2LjUsNC40IEwyNC40LDQuNCBDMjQuMSw0LjQgMjMuOCw0LjcgMjMuOCw1IEwyMy44LDUuOSBDMjMuOCw2LjIgMjQuMSw2LjUgMjQuNCw2LjUgTDI2LjUsNi41IEMyNi44LDYuNSAyNy4xLDYuOCAyNy4xLDcuMSBMMjcuMSwxMS42IEMyNy4xLDExLjkgMjYuOCwxMi4yIDI2LjUsMTIuMiBMMjQuNCwxMi4yIEMyNC4xLDEyLjIgMjMuOCwxMi41IDIzLjgsMTIuOCBMMjMuOCwxMy43IEMyMy44LDE0IDI0LjEsMTQuMyAyNC40LDE0LjMgTDI2LjUsMTQuMyBDMjYuOCwxNC4zIDI3LjEsMTQuNiAyNy4xLDE0LjkgTDI3LjEsMTkuMiBDMjcuMSwyMC4xIDI2LjcsMjEuNiAyNC40LDIxLjggQzI0LjEsMjEuOCAyMy45LDIyLjEgMjMuOSwyMi40IEwyMy45LDIzIEMyMy45LDIzLjMgMjQuMiwyMy42IDI0LjUsMjMuNiBDMjYuOCwyMy40IDI5LjIsMjIuMSAyOS4yLDE4LjkgTDI5LjIsMTQuNiBDMjkuMiwxNC4zIDI5LjUsMTQgMjkuOCwxNCBMMzEuNywxNCBDMzIsMTQgMzIuMywxMy43IDMyLjMsMTMuNCBMMzIuMywxMi41IEMzMi4zLDEyLjIgMzIsMTEuOSAzMS43LDExLjkgTDI5LjgsMTEuOSBDMjkuNSwxMS45IDI5LjIsMTEuNiAyOS4yLDExLjMgTDI5LjIsNi44IEMyOS4yLDYuNSAyOS41LDYuMiAyOS44LDYuMiBMMzEuNyw2LjIgQzMyLDYuMiAzMi4zLDUuOSAzMi4zLDUuNiBMMzIuMyw0LjcgQzMyLjMsNC40IDMyLDQuMSAzMS43LDQuMSBMMjkuOCw0LjEgQzI5LjUsNC4xIDI5LjIsMy44IDI5LjIsMy41IEwyOS4yLDAuNiBDMjkuMiwwLjMgMjksMC4xIDI4LjYsMC4xIFoiLz4KICAgICAgPHBhdGggZD0iTTMzLjIsMjIuOCBDMzMuMiwyMy4xIDMzLjUsMjMuNCAzMy44LDIzLjQgTDQwLjMsMjMuNCBDNDMuMiwyMy40IDQ1LjUsMjEuMiA0NS41LDE4LjQgTDQ1LjUsNC43IEM0NS41LDQuNCA0NS4yLDQuMSA0NC45LDQuMSBMMzMuOCw0LjEgQzMzLjUsNC4xIDMzLjIsNC40IDMzLjIsNC43IEwzMy4yLDIyLjggWiBNNDAuNCwyMS40IEwzNS45LDIxLjQgQzM1LjYsMjEuNCAzNS4zLDIxLjEgMzUuMywyMC44IEwzNS4zLDE0LjYgQzM1LjMsMTQuMyAzNS42LDE0IDM1LjksMTQgTDQzLDE0IEM0My4zLDE0IDQzLjYsMTQuMyA0My42LDE0LjYgTDQzLjYsMTguNCBDNDMuNiwyMC4xIDQyLjEsMjEuNCA0MC40LDIxLjQgWiBNNDMuNiw2LjcgTDQzLjYsMTEuNCBDNDMuNiwxMS43IDQzLjMsMTIgNDMsMTIgTDM1LjksMTIgQzM1LjYsMTIgMzUuMywxMS43IDM1LjMsMTEuNCBMMzUuMyw2LjcgQzM1LjMsNi40IDM1LjYsNi4xIDM1LjksNi4xIEw0Myw2LjEgQzQzLjMsNi4yIDQzLjYsNi40IDQzLjYsNi43IFoiLz4KICAgICAgPHBhdGggZD0iTTQyLjEsMCBMMzYuMywwIEMzNiwwIDM1LjcsMC4zIDM1LjcsMC42IEwzNS43LDEuNSBDMzUuNywxLjggMzYsMi4xIDM2LjMsMi4xIEw0Mi4xLDIuMSBDNDIuNCwyLjEgNDIuNywxLjggNDIuNywxLjUgTDQyLjcsMC42IEM0Mi43LDAuMyA0Mi41LDAgNDIuMSwwIFoiLz4KICAgICAgPHBhdGggZD0iTTY0LjIsMC45IEw1Mi4yLDAuOSBDNTEuOSwwLjkgNTEuNiwxLjIgNTEuNiwxLjUgTDUxLjYsMi40IEM1MS42LDIuNyA1MS45LDMgNTIuMiwzIEw2NC4yLDMgQzY0LjUsMyA2NC44LDIuNyA2NC44LDIuNCBMNjQuOCwxLjUgQzY0LjgsMS4yIDY0LjUsMC45IDY0LjIsMC45IFoiLz4KICAgICAgPHBhdGggZD0iTTU5LjEsMTEuMiBMNjcuNSwxMS4yIEM2Ny44LDExLjIgNjguMSwxMC45IDY4LjEsMTAuNiBMNjguMSw5LjcgQzY4LjEsOS40IDY3LjgsOS4xIDY3LjUsOS4xIEw0OC45LDkuMSBDNDguNiw5LjEgNDguMyw5LjQgNDguMyw5LjcgTDQ4LjMsMTAuNiBDNDguMywxMC45IDQ4LjYsMTEuMiA0OC45LDExLjIgTDU0LjYsMTEuMiBDNTUuMSwxMS4yIDU1LjMsMTEuNyA1NS4xLDEyLjEgTDUxLjMsMTkgQzUxLjIsMTkuMiA1MS4xLDE5LjMgNTEuMSwxOS41IEM1MC44LDIwLjQgNTAuOSwyMS40IDUxLjUsMjIuMiBDNTIuMSwyMyA1My4xLDIzLjYgNTQuMiwyMy42IEw2NC42LDIzLjYgQzY1LjEsMjMuNiA2NS41LDIzLjQgNjUuNywyMyBDNjUuOSwyMi42IDY2LDIyLjEgNjUuOCwyMS43IEw2My40LDE3IEM2My4zLDE2LjcgNjIuOSwxNi42IDYyLjYsMTYuOCBMNjEuOCwxNy4yIEM2MS41LDE3LjMgNjEuNCwxNy43IDYxLjYsMTggTDYzLDIwLjggQzYzLjIsMjEuMiA2Mi45LDIxLjYgNjIuNSwyMS42IEw1NC4yLDIxLjYgQzUzLjgsMjEuNiA1My40LDIxLjQgNTMuMiwyMS4xIEM1My4xLDIxIDUyLjksMjAuNyA1MywyMC4zIEM1MywyMC4yIDUzLDIwLjIgNTMuMSwyMC4xIEw1Ny43LDEyIEM1OCwxMS41IDU4LjUsMTEuMiA1OS4xLDExLjIgWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="></a>提供CDN加速/云存储服务</div>
+    <p><a href="http://www.beian.miit.gov.cn/" target="_blank">鲁ICP备19047975号-2</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
