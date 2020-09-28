@@ -5,10 +5,7 @@
   
   
   <meta name="description" content="前言疫情都已经过去了还要每天打卡真的是不胜其烦，偶尔忘记还会被辅导员催命。反正也不让出去，干脆写个自动打卡的程序好了。
-思路基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。
-开工
-找接口
-登录页">
+思路基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。">
   
 
   
@@ -21,22 +18,22 @@
   
   <title>自动打卡V1 | 等风来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言疫情都已经过去了还要每天打卡真的是不胜其烦，偶尔忘记还会被辅导员催命。反正也不让出去，干脆写个自动打卡的程序好了。 思路基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。 开工 找接口 登录页面 F12，本来想着这登录应该就是 POST 个表单吧。结果仔细一看才发现，好家伙，全部 JS 实现">
+  <meta name="description" content="前言疫情都已经过去了还要每天打卡真的是不胜其烦，偶尔忘记还会被辅导员催命。反正也不让出去，干脆写个自动打卡的程序好了。 思路基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。">
 <meta name="keywords" content="PHP,自动打卡">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自动打卡V1">
 <meta property="og:url" content="http://calcifer.top/2020/08/20/自动打卡V1/index.html">
 <meta property="og:site_name" content="等风来">
-<meta property="og:description" content="前言疫情都已经过去了还要每天打卡真的是不胜其烦，偶尔忘记还会被辅导员催命。反正也不让出去，干脆写个自动打卡的程序好了。 思路基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。 开工 找接口 登录页面 F12，本来想着这登录应该就是 POST 个表单吧。结果仔细一看才发现，好家伙，全部 JS 实现">
+<meta property="og:description" content="前言疫情都已经过去了还要每天打卡真的是不胜其烦，偶尔忘记还会被辅导员催命。反正也不让出去，干脆写个自动打卡的程序好了。 思路基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://calcifer.top/2020/08/20/自动打卡V1/1.png">
 <meta property="og:image" content="http://calcifer.top/2020/08/20/自动打卡V1/2.png">
 <meta property="og:image" content="http://calcifer.top/2020/08/20/自动打卡V1/4.png">
 <meta property="og:image" content="http://calcifer.top/2020/08/20/自动打卡V1/1601261901590.jpg">
-<meta property="og:updated_time" content="2020-09-28T03:02:11.747Z">
+<meta property="og:updated_time" content="2020-09-28T10:37:44.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自动打卡V1">
-<meta name="twitter:description" content="前言疫情都已经过去了还要每天打卡真的是不胜其烦，偶尔忘记还会被辅导员催命。反正也不让出去，干脆写个自动打卡的程序好了。 思路基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。 开工 找接口 登录页面 F12，本来想着这登录应该就是 POST 个表单吧。结果仔细一看才发现，好家伙，全部 JS 实现">
+<meta name="twitter:description" content="前言疫情都已经过去了还要每天打卡真的是不胜其烦，偶尔忘记还会被辅导员催命。反正也不让出去，干脆写个自动打卡的程序好了。 思路基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。">
 <meta name="twitter:image" content="http://calcifer.top/2020/08/20/自动打卡V1/1.png">
   
   
@@ -110,7 +107,7 @@ var _hmt = _hmt || [];
             
             <a href="/2020/08/20/自动打卡V1/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/08/20/自动打卡V1/" data-id="ckfmaqi6d000mxgu8axxq5x1t" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/08/20/自动打卡V1/" data-id="ckfmeflqe000m74u8hsj1puoh" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -118,6 +115,7 @@ var _hmt = _hmt || [];
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>疫情都已经过去了还要每天打卡真的是不胜其烦，偶尔忘记还会被辅导员催命。反正也不让出去，干脆写个自动打卡的程序好了。</p>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。</p>
+<a id="more"></a>
 <h1 id="开工"><a href="#开工" class="headerlink" title="开工"></a>开工</h1><ol>
 <li><p>找接口</p>
 <p>登录页面 F12，本来想着这登录应该就是 POST 个表单吧。结果仔细一看才发现，好家伙，全部 JS 实现。没错，就是页面的内容全部都是 JS 填充的，CSS 样式全写在行内看的我脑壳痛，找遍整个页面就看见俩 input，根本没有表单的影，那应该就是 Ajax 发请求了。继续 F12 抓包，过滤 Type 为 xhr 请求，很容易就找到了 POST 的表单。心想着登录这算搞定了吧，然而定睛一看，提交的用户名是明文，密码却是一串乱码，很明显是经过 JS 加密了的。看到这不禁倒吸了一口凉气，它要是搞个啥奇葩加密算法那可就麻烦了，因为 JS 文件都是压缩过的，可读性非常差。那咋办呢，好在 Chrome 有一个录制的功能，可以记录录制开始到结束发生的所有事件，加密这个过程只能是在填完密码到发送请求之间完成的，那么要么是密码框 input 的离焦事件，要么是登录按钮的点击事件，后者的可能性更大。后续排查也证实，input 确实没有离焦事件。断网，开始录制，点击登录按钮，结束录制，查看调用树，果然发现了蛛丝马迹。</p>
