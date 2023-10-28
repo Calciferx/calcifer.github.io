@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   
@@ -11,11 +11,11 @@
 CS:IP 指示了CPU当前要读取指令的地址。8086CPU不支持使用mov指令修改CS:IP 的内容，需使用jmp指令。
 
 jmp 段地址: 偏移地址
-jmp 某一合法寄存器（此种用法只修改IP寄存器的内容）">
+jmp 某一合法寄存器（此种用法只修改IP寄存器的内容）" />
   
 
   
-  <meta name="keywords" content="关键字，关键字">
+  <meta name="keywords" content="关键字，关键字" />
   
   
   
@@ -24,23 +24,25 @@ jmp 某一合法寄存器（此种用法只修改IP寄存器的内容）">
   
   <title>8086ASM | 等风来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="8086CPU为16位处理器，寄存器最大宽度为16位，能够一次性处理、传输、暂时存储的信息的最大长度是16位。  8086CPU有20位地址总线，采用在内部使用两个16位地址合成的方法来形成一个20位的物理地址。物理地址 = 段地址 x 16 + 偏移地址  CS:IP 指示了CPU当前要读取指令的地址。8086CPU不支持使用mov指令修改CS:IP 的内容，需使用jmp指令。  jmp 段地">
-<meta name="keywords" content="8086ASM">
+  <meta name="description" content="8086CPU为16位处理器，寄存器最大宽度为16位，能够一次性处理、传输、暂时存储的信息的最大长度是16位。  8086CPU有20位地址总线，采用在内部使用两个16位地址合成的方法来形成一个20位的物理地址。物理地址 &#x3D; 段地址 x 16 + 偏移地址  CS:IP 指示了CPU当前要读取指令的地址。8086CPU不支持使用mov指令修改CS:IP 的内容，需使用jmp指令。  jmp 段地">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8086ASM">
 <meta property="og:url" content="http://calcifer.top/2020/09/26/8086ASM/index.html">
 <meta property="og:site_name" content="等风来">
-<meta property="og:description" content="8086CPU为16位处理器，寄存器最大宽度为16位，能够一次性处理、传输、暂时存储的信息的最大长度是16位。  8086CPU有20位地址总线，采用在内部使用两个16位地址合成的方法来形成一个20位的物理地址。物理地址 = 段地址 x 16 + 偏移地址  CS:IP 指示了CPU当前要读取指令的地址。8086CPU不支持使用mov指令修改CS:IP 的内容，需使用jmp指令。  jmp 段地">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-09-26T01:37:07.191Z">
+<meta property="og:description" content="8086CPU为16位处理器，寄存器最大宽度为16位，能够一次性处理、传输、暂时存储的信息的最大长度是16位。  8086CPU有20位地址总线，采用在内部使用两个16位地址合成的方法来形成一个20位的物理地址。物理地址 &#x3D; 段地址 x 16 + 偏移地址  CS:IP 指示了CPU当前要读取指令的地址。8086CPU不支持使用mov指令修改CS:IP 的内容，需使用jmp指令。  jmp 段地">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-09-26T01:34:48.000Z">
+<meta property="article:modified_time" content="2020-09-26T01:37:07.191Z">
+<meta property="article:author" content="Calcifer">
+<meta property="article:tag" content="8086ASM">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8086ASM">
-<meta name="twitter:description" content="8086CPU为16位处理器，寄存器最大宽度为16位，能够一次性处理、传输、暂时存储的信息的最大长度是16位。  8086CPU有20位地址总线，采用在内部使用两个16位地址合成的方法来形成一个20位的物理地址。物理地址 = 段地址 x 16 + 偏移地址  CS:IP 指示了CPU当前要读取指令的地址。8086CPU不支持使用mov指令修改CS:IP 的内容，需使用jmp指令。  jmp 段地">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
 
   
@@ -48,7 +50,7 @@ jmp 某一合法寄存器（此种用法只修改IP寄存器的内容）">
   <!--
   <script src='//push.zhanzhang.baidu.com/push.js'></script>
   -->
-</head></html>
+<meta name="generator" content="Hexo 6.3.0"></head>
 <body class="home blog custom-background custom-font-enabled single-author">
   <div id="page" class="hfeed site">
       <header id="masthead" class="site-header" role="banner">
@@ -57,9 +59,8 @@ jmp 某一合法寄存器（此种用法只修改IP寄存器的内容）">
         <a href="/" title="等风来" rel="home">等风来</a>
       </h1>
       
-        <h2 class="site-description">
-          <a href="/" id="subtitle">花开要守候一个冬季，只需一夜春风</a>
-        </h2>
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
       
     </hgroup>
 
@@ -108,7 +109,7 @@ var _hmt = _hmt || [];
             
             <a href="/2020/09/26/8086ASM/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/8086ASM/" data-id="cku70jq2e000mzwu8xnpux3wb" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/8086ASM/" data-id="clo9ztbln0001hswa4l95gcdw" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -124,7 +125,7 @@ var _hmt = _hmt || [];
 <li>jmp 段地址: 偏移地址</li>
 <li>jmp 某一合法寄存器（此种用法只修改IP寄存器的内容）</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 </li>
 <li><p>DS 寄存器存放要访问的内存数据的段地址，8086不支持将数据直接送入 段寄存器</p>
 </li>
@@ -139,49 +140,49 @@ var _hmt = _hmt || [];
 <li><p>在汇编源程序中，数据不能以字母开头，可以在前面加0</p>
 </li>
 <li><p>在汇编源程序中，访问内存单元要用指明段寄存器，除非偏移地址以寄存器的形式给出，此时默认段寄存器为ds。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov al,[0]  ;等价于mov al,0</span><br><span class="line">mov al,ds:[0]</span><br><span class="line">mov al,[bx]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov al,[0]  ;等价于mov al,0</span><br><span class="line">mov al,ds:[0]</span><br><span class="line">mov al,[bx]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>汇编源程序中，段名代表了段地址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ds,data ;data为段名，此种用法错误，8086不允许直接将数值送入段寄存器</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov ax,data</span><br><span class="line">mov ds,ax</span><br><span class="line">mov bx,ds:[6]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ds,data ;data为段名，此种用法错误，8086不允许直接将数值送入段寄存器</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov ax,data</span><br><span class="line">mov ds,ax</span><br><span class="line">mov bx,ds:[6]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在8086中，只有bx、si、di、bp这四个寄存器可以用在”[…]”中来进行内存单元的寻址，且bx和bp、si和di不可在一个”[…]”中同时出现</p>
 </li>
 <li><p>在”[…]”中使用寄存器bp而未显式给出段地址时，默认段地址在ss中</p>
 </li>
 <li><p>在没有寄存器名的情况下，用操作符 word ptr 或 byte ptr 指明内存单元的长度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov word ptr ds:[0],1</span><br><span class="line">inc byte ptr [bx]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov word ptr ds:[0],1</span><br><span class="line">inc byte ptr [bx]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>8086提供的如[bx+si+idata]的寻址方式为结构化数据的处理提供了方便，汇编语言提供了更贴切的书写方式，如：[bx].idata、[bx].idata[si]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dec.cp[i] //C语言</span><br><span class="line">[bx].10h[si] ;汇编语言</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dec.cp[i] //C语言</span><br><span class="line">[bx].10h[si] ;汇编语言</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>db 重复的次数 dup (重复的字节型数据)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db 3 dup (0) ;相当于db 0，0，0</span><br><span class="line">db 3 dup (0,1,2) ;相当于db 0,1,2,0,1,2,0,1,2</span><br><span class="line">db 3 dup (&apos;abc&apos;,&apos;ABC&apos;) ;相当于 db &apos;abcABCabcABCabcABC&apos;</span><br><span class="line">dw dd 同理</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db 3 dup (0) ;相当于db 0，0，0</span><br><span class="line">db 3 dup (0,1,2) ;相当于db 0,1,2,0,1,2,0,1,2</span><br><span class="line">db 3 dup (&#x27;abc&#x27;,&#x27;ABC&#x27;) ;相当于 db &#x27;abcABCabcABCabcABC&#x27;</span><br><span class="line">dw dd 同理</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>offset 获取标号的偏移地址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ax,offset start</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ax,offset start</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>div 除数为8位时，被除数为16位，默认存放在AX中，结果商存在AL中，余数存在AH中；除数为16位时，被除数位32位，默认存放在AX和DX中，AX中放低16位，DX放高16位，结果商存在AX中，余数存在DX中。</p>
 </li>
 <li><p>8086的转移行为有段内转移和段间转移，段内转移又分短转移和近转移，短转移的IP修改范围为 -128~127，近转移的修改范围为-32768~32767</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">jmp short 标号 ; 短转移，机器码中包含的是一个8位的 位移，范围-128~127</span><br><span class="line">jmp near ptr 标号 ;近转移，机器码中包含的是一个16位的 位移，范围-32768~32767</span><br><span class="line"></span><br><span class="line">前两种用的是给出相对于 jmp指令后第一个字节 的位移的方法，后三种用的是给出目的地址的方法。</span><br><span class="line"></span><br><span class="line">jmp 16位寄存器 ; 修改IP为该寄存器中的内容</span><br><span class="line">jmp word ptr 内存单元地址（段内转移） ; 修改IP为该内存单元地址处开始存放的一个字的内容</span><br><span class="line">jmp dword ptr 内存单元地址（段间转移） ; 从内存单元地址处开始存放着两个字，高地址处的字为段地址，低地址处为偏移地址</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jcxz 标号 ; 如果(cx=0),转移到标号处</span><br><span class="line">jcxz为有条件转移指令，所有的有条件转移指令都是短转移，在对应的机器码中包含转移的位移，而不是目的地址</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">loop 标号 ; 先执行(cx)=(cx)-1,如果(cx)≠0，转移到标号处</span><br><span class="line">loop指令为循环指令，所有的循环指令都是短转移，在对应的机器码中包含转移的位移，而不是目的地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">jmp short 标号 ; 短转移，机器码中包含的是一个8位的 位移，范围-128~127</span><br><span class="line">jmp near ptr 标号 ;近转移，机器码中包含的是一个16位的 位移，范围-32768~32767</span><br><span class="line"></span><br><span class="line">前两种用的是给出相对于 jmp指令后第一个字节 的位移的方法，后三种用的是给出目的地址的方法。</span><br><span class="line"></span><br><span class="line">jmp 16位寄存器 ; 修改IP为该寄存器中的内容</span><br><span class="line">jmp word ptr 内存单元地址（段内转移） ; 修改IP为该内存单元地址处开始存放的一个字的内容</span><br><span class="line">jmp dword ptr 内存单元地址（段间转移） ; 从内存单元地址处开始存放着两个字，高地址处的字为段地址，低地址处为偏移地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jcxz 标号 ; 如果(cx=0),转移到标号处</span><br><span class="line">jcxz为有条件转移指令，所有的有条件转移指令都是短转移，在对应的机器码中包含转移的位移，而不是目的地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">loop 标号 ; 先执行(cx)=(cx)-1,如果(cx)≠0，转移到标号处</span><br><span class="line">loop指令为循环指令，所有的循环指令都是短转移，在对应的机器码中包含转移的位移，而不是目的地址</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ret指令用栈中的数据，修改IP的内容，然后出栈</p>
 <p>retf指令用栈中的数据，修改CS和IP的内容，然后出栈，IP的在低地址，先出栈，CS的在高地址后出栈</p>
 </li>
 <li><p>call 将当前的IP或CS和IP压入栈中，然后跳转</p>
 <p><code>call 标号</code> : 将当前的IP压入栈中，然后跳转，相当于 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP </span><br><span class="line">jmp near ptr 标号</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP </span><br><span class="line">jmp near ptr 标号</span><br></pre></td></tr></table></figure>
 <p><code>call far ptr 标号</code> : 相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push CS</span><br><span class="line">push IP</span><br><span class="line">jmp far ptr 标号</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push CS</span><br><span class="line">push IP</span><br><span class="line">jmp far ptr 标号</span><br></pre></td></tr></table></figure>
 <p><code>call 16位寄存器</code> : 相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP</span><br><span class="line">jmp 16位寄存器</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP</span><br><span class="line">jmp 16位寄存器</span><br></pre></td></tr></table></figure>
 <p><code>call word ptr 内存单元地址</code> : 相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP</span><br><span class="line">jmp word ptr 内存单元地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push IP</span><br><span class="line">jmp word ptr 内存单元地址</span><br></pre></td></tr></table></figure>
 <p><code>call dword ptr 内存单元地址</code> : 相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push CS</span><br><span class="line">push IP</span><br><span class="line">jmp dword ptr 内存单元地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push CS</span><br><span class="line">push IP</span><br><span class="line">jmp dword ptr 内存单元地址</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>mul指令 两个相乘的数要么都是8位，要么都是16位，如果是8位乘法，一个默认放在AL中，另一个放在8位寄存器或内存字节单元中，结果放在AX中；如果是16位乘法，一个默认放在AX中，另一个放在16位寄存器或内存字单元中，结果低位在AX中，高位在DX中。</p>
 </li>
@@ -193,11 +194,11 @@ var _hmt = _hmt || [];
 <p>根据无符号数的比较结果进行转移的指令,常和cmp指令结合使用</p>
 <p>| 指令 | 含义         | 检测的相关标志位 |<br>| —- | ———— | —————- |<br>| je   | 等于则转移   | zf = 1           |<br>| jne  | 不等于则转移 | zf = 0           |<br>| jb   | 低于则转移   | cf = 1           |<br>| jnb  | 不低于则转移 | cf = 0           |<br>| ja   | 高于则转移   | cf = 0 且 zf = 0 |<br>| jna  | 不高于则转移 | cf = 1 或 zf = 1 |</p>
 <p>movsb 相当于 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov es:[di],byte ptr ds:[si] ;8086并不支持这样的指令，这里只是个描述</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov es:[di],byte ptr ds:[si] ;8086并不支持这样的指令，这里只是个描述</span><br></pre></td></tr></table></figure>
 <p>movsw 相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov es:[di],word ptr ds:[si] ;8086并不支持这样的指令，这里只是个描述</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov es:[di],word ptr ds:[si] ;8086并不支持这样的指令，这里只是个描述</span><br></pre></td></tr></table></figure>
 <p>movsb和movsw一般都和rep配合使用，rep movsb相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s:movsb</span><br><span class="line">  loop s</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s:movsb</span><br><span class="line">  loop s</span><br></pre></td></tr></table></figure>
 <p>pushf和popf，将标志寄存器的值压栈和出栈</p>
 <p>cld 将标志寄存器的df位 置0</p>
 <p>std 将标志寄存器的df位 置1</p>
@@ -213,7 +214,7 @@ var _hmt = _hmt || [];
 <li>(IP) = (N*4),(CS)=(N*4+2)</li>
 </ol>
 <p>中断处理程序的最后一步使用iret指令返回，iret指令相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pop IP</span><br><span class="line">pop CS</span><br><span class="line">popf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pop IP</span><br><span class="line">pop CS</span><br><span class="line">popf</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>CPU在执行完一条指令之后，如果检测到标志寄存器的TF位为1，则产生单步中断，中断类型码为1，debug的 T 命令（单步执行）就是借助于CPU提供的单步中断功能实现的。</p>
 </li>
@@ -237,9 +238,9 @@ var _hmt = _hmt || [];
 <p>端口地址通过地址总线发出。</p>
 <p>在in和out中只能使用ax或al来存放从端口读入或将要发送到端口的数据，访问8位端口时用al，访问16位端口时用ax。</p>
 <p>对0~255以内的端口进行读写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">in al,20h</span><br><span class="line">out 20h,al</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">in al,20h</span><br><span class="line">out 20h,al</span><br></pre></td></tr></table></figure>
 <p>对256~65535的端口进行读写时，端口号放在dx中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov dx,3f8h</span><br><span class="line">in al,dx</span><br><span class="line">out dx,al</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov dx,3f8h</span><br><span class="line">in al,dx</span><br><span class="line">out dx,al</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>shl X,n 将一个逻辑寄存器或内存单元中的数据X左移n位，移出的最后一位写入CF中，最低位用0填充。shr 右移，同理。</p>
 </li>
@@ -266,11 +267,11 @@ var _hmt = _hmt || [];
 <p>| 位数 | 表示按键   |<br>| —- | ———- |<br>| 0    | 右shift    |<br>| 1    | 左shift    |<br>| 2    | Ctrl       |<br>| 3    | Alt        |<br>| 4    | ScrollLock |<br>| 5    | NumLock    |<br>| 6    | CapsLock   |<br>| 7    | Insert     |</p>
 </li>
 <li><p>带冒号的标号仅仅表示内存单元的地址，不带冒号的标号还表示了内存单元的长度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">a db 1,2,3,4,5,6,7,8</span><br><span class="line">b dw 0</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">指令：mov ax,b</span><br><span class="line">相当于：mov ax,cs:[8]</span><br><span class="line"></span><br><span class="line">指令：mov b,2</span><br><span class="line">相当于：mov word ptr cs:[8],2</span><br><span class="line"></span><br><span class="line">指令：mov al,a[si]</span><br><span class="line">相当于：mov al,cs:0[si]</span><br><span class="line"></span><br><span class="line">指令：mov al,a[3]</span><br><span class="line">相当于：mov al，cs:0[3]</span><br><span class="line"></span><br><span class="line">指令：mov al,a[bx+si+3]</span><br><span class="line">相当于：mov al,cs:0[bx+si+3]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">a db 1,2,3,4,5,6,7,8</span><br><span class="line">b dw 0</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">指令：mov ax,b</span><br><span class="line">相当于：mov ax,cs:[8]</span><br><span class="line"></span><br><span class="line">指令：mov b,2</span><br><span class="line">相当于：mov word ptr cs:[8],2</span><br><span class="line"></span><br><span class="line">指令：mov al,a[si]</span><br><span class="line">相当于：mov al,cs:0[si]</span><br><span class="line"></span><br><span class="line">指令：mov al,a[3]</span><br><span class="line">相当于：mov al，cs:0[3]</span><br><span class="line"></span><br><span class="line">指令：mov al,a[bx+si+3]</span><br><span class="line">相当于：mov al,cs:0[bx+si+3]</span><br></pre></td></tr></table></figure>
 <p><strong>带冒号的地址标号，只能在代码段中使用，不能在其他段中使用</strong></p>
 <p>如果想在代码段中直接用数据标号访问数据，则需要用伪指令assume 将标号所在的段和一个段寄存器联系起来。否则编译器在编译的时候，无法确定标号的段地址在哪一个寄存器中。assume只是声明，不会给寄存器赋值，仍需在程序中使用指令对段寄存器进行赋值。</p>
 <p>可以将标号当作数据来定义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data segment</span><br><span class="line">   a db 1,2,3,4,5,6,7,8</span><br><span class="line">   b dw 0</span><br><span class="line">   c dw a,b</span><br><span class="line">   d dd a,b</span><br><span class="line">data ends</span><br><span class="line">相当于</span><br><span class="line">data segment</span><br><span class="line">   a db 1,2,3,4,5,6,7,8</span><br><span class="line">   b dw 0</span><br><span class="line">   c dw offset a,offset b</span><br><span class="line">   d dw offset a,seg a,offset a,seg b ;seg功能为取得某一标号的段地址</span><br><span class="line">data ends</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data segment</span><br><span class="line">   a db 1,2,3,4,5,6,7,8</span><br><span class="line">   b dw 0</span><br><span class="line">   c dw a,b</span><br><span class="line">   d dd a,b</span><br><span class="line">data ends</span><br><span class="line">相当于</span><br><span class="line">data segment</span><br><span class="line">   a db 1,2,3,4,5,6,7,8</span><br><span class="line">   b dw 0</span><br><span class="line">   c dw offset a,offset b</span><br><span class="line">   d dw offset a,seg a,offset a,seg b ;seg功能为取得某一标号的段地址</span><br><span class="line">data ends</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>int 16h中断例程的0号功能：</p>
 <ol>
@@ -295,12 +296,12 @@ var _hmt = _hmt || [];
     
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
-  <a class="article-category-link" href="/categories/汇编语言/">汇编语言</a>
+  <a class="article-category-link" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>
   </div>
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/8086ASM/">8086ASM</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/8086ASM/" rel="tag">8086ASM</a></li></ul>
 
     </footer>
 </article>
@@ -310,7 +311,7 @@ var _hmt = _hmt || [];
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/2020/09/26/MNIST数据集分类简单版本/" rel="prev"><span class="meta-nav">←</span> MNIST数据集分类简单版本</a></span>
+        <span class="nav-previous"><a href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/" rel="prev"><span class="meta-nav">←</span> MNIST数据集分类简单版本</a></span>
     
     
         <span class="nav-next"><a href="/2020/09/26/js/" rel="next">js <span class="meta-nav">→</span></a></span>
@@ -346,8 +347,8 @@ s.setAttribute('data-timestamp', +new Date());
   
     <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
     <div>
-        <input type="text" value name="s" id="s">
-        <input type="submit" id="searchsubmit" value="搜索">
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
     </div>
 </form></aside>
   
@@ -357,7 +358,7 @@ s.setAttribute('data-timestamp', +new Date());
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编语言/">汇编语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/牛刀小试/">牛刀小试</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲言碎语/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95/">牛刀小试</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
     </div>
   </aside>
 
@@ -369,19 +370,19 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
           <li>
-            <a href="/2020/09/28/自动打卡V2/">自动打卡V2</a>
+            <a href="/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/">自动打卡V2</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/非线性回归/">非线性回归</a>
+            <a href="/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">非线性回归</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/TensorFlow基础/">TensorFlow基础</a>
+            <a href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/">TensorFlow基础</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/MNIST数据集分类简单版本/">MNIST数据集分类简单版本</a>
+            <a href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/">MNIST数据集分类简单版本</a>
           </li>
         
           <li>
@@ -397,7 +398,7 @@ s.setAttribute('data-timestamp', +new Date());
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/8086ASM/">8086ASM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动打卡/">自动打卡</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性回归/">非线性回归</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/8086ASM/" rel="tag">8086ASM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/" rel="tag">MNIST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/" rel="tag">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" rel="tag">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" rel="tag">自动打卡</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="tag">非线性回归</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -406,7 +407,7 @@ s.setAttribute('data-timestamp', +new Date());
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/8086ASM/" style="font-size: 10px;">8086ASM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/机器学习/" style="font-size: 20px;">机器学习</a> <a href="/tags/杂七杂八/" style="font-size: 15px;">杂七杂八</a> <a href="/tags/笔记/" style="font-size: 15px;">笔记</a> <a href="/tags/自动打卡/" style="font-size: 15px;">自动打卡</a> <a href="/tags/非线性回归/" style="font-size: 10px;">非线性回归</a>
+      <a href="/tags/8086ASM/" style="font-size: 10px;">8086ASM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">机器学习</a> <a href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" style="font-size: 15px;">杂七杂八</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">笔记</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" style="font-size: 15px;">自动打卡</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">非线性回归</a>
     </div>
   </aside>
 
@@ -414,21 +415,27 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
       </div>
       <footer id="colophon" role="contentinfo">
-    <p>&copy; 2021 Calcifer All rights reserved.</p>
+    <p>&copy; 2023 Calcifer All rights reserved.</p>
     <p style="display: inline-block;">Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-    <div style="float: right">本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img style="vertical-align: top; height: 25px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAxMTEgMzgiPgogIDxnIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xKSI+CiAgICA8cGF0aCBkPSJNMzAuOCw0LjEgTDMwLjgsNC4xIEwzMC44LDQuMSBMMzAuOCw0LjEgTDMwLjgsNC4xIEMzMC4xLDMuNiAyOS40LDMuMSAyOC42LDIuNyBDMjguMSwyLjQgMjcuNCwyLjUgMjcsMyBMMjIuMyw5LjIgTDIyLDkuNiBDMjEuNSwxMC4zIDIwLjcsMTAuNiAxOS45LDEwLjYgTDE5LDEwLjYgQzE2LjcsMTAuNyAxNC40LDExLjkgMTIuOSwxMy45IEMxMS43LDE1LjUgMTEuMSwxNy40IDExLjIsMTkuMyBDMTEuMiwxOS42IDExLjQsMTkuOSAxMS43LDIwLjEgQzEyLjMsMjAuNCAxMi44LDIxIDEzLDIxLjcgQzEzLjIsMjIuOCAxMi41LDIzLjggMTEuNSwyNC4xIEMxMC4zLDI0LjUgOSwyMy43IDguNywyMi41IEM4LjUsMjEuOCA4LjcsMjEuMiA5LjEsMjAuNyBDOS4zLDIwLjQgOS40LDIwLjEgOS40LDE5LjcgQzkuMiwxNy4zIDkuOCwxNC44IDExLjQsMTIuNyBDMTMuNCwxMC4xIDE2LjQsOC43IDE5LjUsOC43IEMyMC4xLDguNyAyMC42LDguNCAyMSw3LjkgTDI1LjMsMi4yIEMyNS42LDEuOCAyNS40LDEuMSAyNC45LDEgQzE3LjcsLTEgOS43LDEuNCA0LjgsNy43IEMtMS40LDE1LjggMC4xLDI3LjUgOC4yLDMzLjggQzksMzQuNCA5LjcsMzQuOSAxMC42LDM1LjQgQzExLjEsMzUuNyAxMS44LDM1LjYgMTIuMiwzNS4xIEwxNi45LDI4LjkgTDE3LjIsMjguNSBDMTcuNywyNy44IDE4LjUsMjcuNSAxOS4zLDI3LjUgTDIwLjIsMjcuNSBDMjIuNSwyNy40IDI0LjgsMjYuMiAyNi4zLDI0LjIgQzI3LjUsMjIuNiAyOC4xLDIwLjcgMjgsMTguOCBDMjgsMTguNSAyNy44LDE4LjIgMjcuNSwxOCBDMjYuOSwxNy43IDI2LjQsMTcuMSAyNi4yLDE2LjQgQzI2LDE1LjMgMjYuNywxNC4zIDI3LjcsMTQgQzI4LjksMTMuNiAzMC4yLDE0LjQgMzAuNSwxNS42IEMzMC43LDE2LjMgMzAuNSwxNi45IDMwLjEsMTcuNCBDMjkuOSwxNy43IDI5LjgsMTggMjkuOCwxOC40IEMzMCwyMC44IDI5LjQsMjMuMyAyNy44LDI1LjQgQzI1LjgsMjggMjIuOCwyOS40IDE5LjcsMjkuNCBDMTkuMSwyOS40IDE4LjYsMjkuNyAxOC4yLDMwLjIgTDE0LDM1LjYgQzEzLjcsMzYgMTMuOSwzNi43IDE0LjQsMzYuOCBDMjEuNiwzOC45IDI5LjcsMzYuNSAzNC41LDMwLjEgQzQwLjcsMjIgMzksMTAuMyAzMC44LDQuMSBaIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MyA4KSI+CiAgICAgIDxwYXRoIGQ9Ik0xOC42LDIgTDE4LjYsMS42IEMxOC42LDEuMiAxOC4zLDEgMTgsMSBMMy41LDEgQzMuMiwxIDIuOSwxLjMgMi45LDEuNiBMMi45LDIuNSBDMi45LDIuOCAzLjIsMy4xIDMuNSwzLjEgTDE1LjgsMy4xIEMxNi4yLDMuMSAxNi40LDMuNCAxNi40LDMuOCBDMTYuMSw2LjEgMTUsMTAuNCAxMS42LDE0LjUgQzExLjQsMTQuOCAxMC45LDE0LjggMTAuNywxNC41IEM3LjksMTAuOSA3LDcuMiA2LjgsNS44IEM2LjcsNS41IDYuNSw1LjMgNi4yLDUuMyBMNS43LDUuMyBMNS4zLDUuMyBDNSw1LjMgNC43LDUuNiA0LjgsNiBDNS4xLDcuNiA2LjEsMTEuOSA5LjUsMTYgQzkuNywxNi4yIDkuNywxNi42IDkuNSwxNi44IEM1LjUsMjAuNSAxLjgsMjEuMyAwLjUsMjEuNSBDMC4yLDIxLjUgNy4xMDU0MjczNmUtMTUsMjEuOCA3LjEwNTQyNzM2ZS0xNSwyMi4xIEw3LjEwNTQyNzM2ZS0xNSwyMyBDNy4xMDU0MjczNmUtMTUsMjMuMyAwLjMsMjMuNiAwLjYsMjMuNiBDMi4xLDIzLjQgNi4zLDIyLjUgMTAuOCwxOC4zIEMxMSwxOC4xIDExLjQsMTguMSAxMS42LDE4LjMgQzEzLjgsMjAuMyAxNi42LDIyLjMgMjAuNCwyMy41IEMyMC43LDIzLjYgMjEsMjMuNCAyMS4xLDIzLjEgTDIxLjQsMjIuMyBDMjEuNSwyMiAyMS4zLDIxLjcgMjEsMjEuNiBDMTcuNSwyMC41IDE1LDE4LjcgMTMsMTYuOSBDMTIuOCwxNi43IDEyLjgsMTYuMyAxMywxNi4xIEMxOC41LDkuNCAxOC42LDIuMyAxOC42LDIgWiIvPgogICAgICA8cGF0aCBkPSJNMjguNiwwLjEgTDI3LjcsMC4xIEMyNy40LDAuMSAyNy4xLDAuNCAyNy4xLDAuNyBMMjcuMSwzLjggQzI3LjEsNC4xIDI2LjgsNC40IDI2LjUsNC40IEwyNC40LDQuNCBDMjQuMSw0LjQgMjMuOCw0LjcgMjMuOCw1IEwyMy44LDUuOSBDMjMuOCw2LjIgMjQuMSw2LjUgMjQuNCw2LjUgTDI2LjUsNi41IEMyNi44LDYuNSAyNy4xLDYuOCAyNy4xLDcuMSBMMjcuMSwxMS42IEMyNy4xLDExLjkgMjYuOCwxMi4yIDI2LjUsMTIuMiBMMjQuNCwxMi4yIEMyNC4xLDEyLjIgMjMuOCwxMi41IDIzLjgsMTIuOCBMMjMuOCwxMy43IEMyMy44LDE0IDI0LjEsMTQuMyAyNC40LDE0LjMgTDI2LjUsMTQuMyBDMjYuOCwxNC4zIDI3LjEsMTQuNiAyNy4xLDE0LjkgTDI3LjEsMTkuMiBDMjcuMSwyMC4xIDI2LjcsMjEuNiAyNC40LDIxLjggQzI0LjEsMjEuOCAyMy45LDIyLjEgMjMuOSwyMi40IEwyMy45LDIzIEMyMy45LDIzLjMgMjQuMiwyMy42IDI0LjUsMjMuNiBDMjYuOCwyMy40IDI5LjIsMjIuMSAyOS4yLDE4LjkgTDI5LjIsMTQuNiBDMjkuMiwxNC4zIDI5LjUsMTQgMjkuOCwxNCBMMzEuNywxNCBDMzIsMTQgMzIuMywxMy43IDMyLjMsMTMuNCBMMzIuMywxMi41IEMzMi4zLDEyLjIgMzIsMTEuOSAzMS43LDExLjkgTDI5LjgsMTEuOSBDMjkuNSwxMS45IDI5LjIsMTEuNiAyOS4yLDExLjMgTDI5LjIsNi44IEMyOS4yLDYuNSAyOS41LDYuMiAyOS44LDYuMiBMMzEuNyw2LjIgQzMyLDYuMiAzMi4zLDUuOSAzMi4zLDUuNiBMMzIuMyw0LjcgQzMyLjMsNC40IDMyLDQuMSAzMS43LDQuMSBMMjkuOCw0LjEgQzI5LjUsNC4xIDI5LjIsMy44IDI5LjIsMy41IEwyOS4yLDAuNiBDMjkuMiwwLjMgMjksMC4xIDI4LjYsMC4xIFoiLz4KICAgICAgPHBhdGggZD0iTTMzLjIsMjIuOCBDMzMuMiwyMy4xIDMzLjUsMjMuNCAzMy44LDIzLjQgTDQwLjMsMjMuNCBDNDMuMiwyMy40IDQ1LjUsMjEuMiA0NS41LDE4LjQgTDQ1LjUsNC43IEM0NS41LDQuNCA0NS4yLDQuMSA0NC45LDQuMSBMMzMuOCw0LjEgQzMzLjUsNC4xIDMzLjIsNC40IDMzLjIsNC43IEwzMy4yLDIyLjggWiBNNDAuNCwyMS40IEwzNS45LDIxLjQgQzM1LjYsMjEuNCAzNS4zLDIxLjEgMzUuMywyMC44IEwzNS4zLDE0LjYgQzM1LjMsMTQuMyAzNS42LDE0IDM1LjksMTQgTDQzLDE0IEM0My4zLDE0IDQzLjYsMTQuMyA0My42LDE0LjYgTDQzLjYsMTguNCBDNDMuNiwyMC4xIDQyLjEsMjEuNCA0MC40LDIxLjQgWiBNNDMuNiw2LjcgTDQzLjYsMTEuNCBDNDMuNiwxMS43IDQzLjMsMTIgNDMsMTIgTDM1LjksMTIgQzM1LjYsMTIgMzUuMywxMS43IDM1LjMsMTEuNCBMMzUuMyw2LjcgQzM1LjMsNi40IDM1LjYsNi4xIDM1LjksNi4xIEw0Myw2LjEgQzQzLjMsNi4yIDQzLjYsNi40IDQzLjYsNi43IFoiLz4KICAgICAgPHBhdGggZD0iTTQyLjEsMCBMMzYuMywwIEMzNiwwIDM1LjcsMC4zIDM1LjcsMC42IEwzNS43LDEuNSBDMzUuNywxLjggMzYsMi4xIDM2LjMsMi4xIEw0Mi4xLDIuMSBDNDIuNCwyLjEgNDIuNywxLjggNDIuNywxLjUgTDQyLjcsMC42IEM0Mi43LDAuMyA0Mi41LDAgNDIuMSwwIFoiLz4KICAgICAgPHBhdGggZD0iTTY0LjIsMC45IEw1Mi4yLDAuOSBDNTEuOSwwLjkgNTEuNiwxLjIgNTEuNiwxLjUgTDUxLjYsMi40IEM1MS42LDIuNyA1MS45LDMgNTIuMiwzIEw2NC4yLDMgQzY0LjUsMyA2NC44LDIuNyA2NC44LDIuNCBMNjQuOCwxLjUgQzY0LjgsMS4yIDY0LjUsMC45IDY0LjIsMC45IFoiLz4KICAgICAgPHBhdGggZD0iTTU5LjEsMTEuMiBMNjcuNSwxMS4yIEM2Ny44LDExLjIgNjguMSwxMC45IDY4LjEsMTAuNiBMNjguMSw5LjcgQzY4LjEsOS40IDY3LjgsOS4xIDY3LjUsOS4xIEw0OC45LDkuMSBDNDguNiw5LjEgNDguMyw5LjQgNDguMyw5LjcgTDQ4LjMsMTAuNiBDNDguMywxMC45IDQ4LjYsMTEuMiA0OC45LDExLjIgTDU0LjYsMTEuMiBDNTUuMSwxMS4yIDU1LjMsMTEuNyA1NS4xLDEyLjEgTDUxLjMsMTkgQzUxLjIsMTkuMiA1MS4xLDE5LjMgNTEuMSwxOS41IEM1MC44LDIwLjQgNTAuOSwyMS40IDUxLjUsMjIuMiBDNTIuMSwyMyA1My4xLDIzLjYgNTQuMiwyMy42IEw2NC42LDIzLjYgQzY1LjEsMjMuNiA2NS41LDIzLjQgNjUuNywyMyBDNjUuOSwyMi42IDY2LDIyLjEgNjUuOCwyMS43IEw2My40LDE3IEM2My4zLDE2LjcgNjIuOSwxNi42IDYyLjYsMTYuOCBMNjEuOCwxNy4yIEM2MS41LDE3LjMgNjEuNCwxNy43IDYxLjYsMTggTDYzLDIwLjggQzYzLjIsMjEuMiA2Mi45LDIxLjYgNjIuNSwyMS42IEw1NC4yLDIxLjYgQzUzLjgsMjEuNiA1My40LDIxLjQgNTMuMiwyMS4xIEM1My4xLDIxIDUyLjksMjAuNyA1MywyMC4zIEM1MywyMC4yIDUzLDIwLjIgNTMuMSwyMC4xIEw1Ny43LDEyIEM1OCwxMS41IDU4LjUsMTEuMiA1OS4xLDExLjIgWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="></a>提供CDN加速/云存储服务</div>
-    <p><a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备19047975号-2</a></p>
+    <div style="float: right">本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img style="vertical-align: top; height: 25px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAxMTEgMzgiPgogIDxnIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xKSI+CiAgICA8cGF0aCBkPSJNMzAuOCw0LjEgTDMwLjgsNC4xIEwzMC44LDQuMSBMMzAuOCw0LjEgTDMwLjgsNC4xIEMzMC4xLDMuNiAyOS40LDMuMSAyOC42LDIuNyBDMjguMSwyLjQgMjcuNCwyLjUgMjcsMyBMMjIuMyw5LjIgTDIyLDkuNiBDMjEuNSwxMC4zIDIwLjcsMTAuNiAxOS45LDEwLjYgTDE5LDEwLjYgQzE2LjcsMTAuNyAxNC40LDExLjkgMTIuOSwxMy45IEMxMS43LDE1LjUgMTEuMSwxNy40IDExLjIsMTkuMyBDMTEuMiwxOS42IDExLjQsMTkuOSAxMS43LDIwLjEgQzEyLjMsMjAuNCAxMi44LDIxIDEzLDIxLjcgQzEzLjIsMjIuOCAxMi41LDIzLjggMTEuNSwyNC4xIEMxMC4zLDI0LjUgOSwyMy43IDguNywyMi41IEM4LjUsMjEuOCA4LjcsMjEuMiA5LjEsMjAuNyBDOS4zLDIwLjQgOS40LDIwLjEgOS40LDE5LjcgQzkuMiwxNy4zIDkuOCwxNC44IDExLjQsMTIuNyBDMTMuNCwxMC4xIDE2LjQsOC43IDE5LjUsOC43IEMyMC4xLDguNyAyMC42LDguNCAyMSw3LjkgTDI1LjMsMi4yIEMyNS42LDEuOCAyNS40LDEuMSAyNC45LDEgQzE3LjcsLTEgOS43LDEuNCA0LjgsNy43IEMtMS40LDE1LjggMC4xLDI3LjUgOC4yLDMzLjggQzksMzQuNCA5LjcsMzQuOSAxMC42LDM1LjQgQzExLjEsMzUuNyAxMS44LDM1LjYgMTIuMiwzNS4xIEwxNi45LDI4LjkgTDE3LjIsMjguNSBDMTcuNywyNy44IDE4LjUsMjcuNSAxOS4zLDI3LjUgTDIwLjIsMjcuNSBDMjIuNSwyNy40IDI0LjgsMjYuMiAyNi4zLDI0LjIgQzI3LjUsMjIuNiAyOC4xLDIwLjcgMjgsMTguOCBDMjgsMTguNSAyNy44LDE4LjIgMjcuNSwxOCBDMjYuOSwxNy43IDI2LjQsMTcuMSAyNi4yLDE2LjQgQzI2LDE1LjMgMjYuNywxNC4zIDI3LjcsMTQgQzI4LjksMTMuNiAzMC4yLDE0LjQgMzAuNSwxNS42IEMzMC43LDE2LjMgMzAuNSwxNi45IDMwLjEsMTcuNCBDMjkuOSwxNy43IDI5LjgsMTggMjkuOCwxOC40IEMzMCwyMC44IDI5LjQsMjMuMyAyNy44LDI1LjQgQzI1LjgsMjggMjIuOCwyOS40IDE5LjcsMjkuNCBDMTkuMSwyOS40IDE4LjYsMjkuNyAxOC4yLDMwLjIgTDE0LDM1LjYgQzEzLjcsMzYgMTMuOSwzNi43IDE0LjQsMzYuOCBDMjEuNiwzOC45IDI5LjcsMzYuNSAzNC41LDMwLjEgQzQwLjcsMjIgMzksMTAuMyAzMC44LDQuMSBaIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MyA4KSI+CiAgICAgIDxwYXRoIGQ9Ik0xOC42LDIgTDE4LjYsMS42IEMxOC42LDEuMiAxOC4zLDEgMTgsMSBMMy41LDEgQzMuMiwxIDIuOSwxLjMgMi45LDEuNiBMMi45LDIuNSBDMi45LDIuOCAzLjIsMy4xIDMuNSwzLjEgTDE1LjgsMy4xIEMxNi4yLDMuMSAxNi40LDMuNCAxNi40LDMuOCBDMTYuMSw2LjEgMTUsMTAuNCAxMS42LDE0LjUgQzExLjQsMTQuOCAxMC45LDE0LjggMTAuNywxNC41IEM3LjksMTAuOSA3LDcuMiA2LjgsNS44IEM2LjcsNS41IDYuNSw1LjMgNi4yLDUuMyBMNS43LDUuMyBMNS4zLDUuMyBDNSw1LjMgNC43LDUuNiA0LjgsNiBDNS4xLDcuNiA2LjEsMTEuOSA5LjUsMTYgQzkuNywxNi4yIDkuNywxNi42IDkuNSwxNi44IEM1LjUsMjAuNSAxLjgsMjEuMyAwLjUsMjEuNSBDMC4yLDIxLjUgNy4xMDU0MjczNmUtMTUsMjEuOCA3LjEwNTQyNzM2ZS0xNSwyMi4xIEw3LjEwNTQyNzM2ZS0xNSwyMyBDNy4xMDU0MjczNmUtMTUsMjMuMyAwLjMsMjMuNiAwLjYsMjMuNiBDMi4xLDIzLjQgNi4zLDIyLjUgMTAuOCwxOC4zIEMxMSwxOC4xIDExLjQsMTguMSAxMS42LDE4LjMgQzEzLjgsMjAuMyAxNi42LDIyLjMgMjAuNCwyMy41IEMyMC43LDIzLjYgMjEsMjMuNCAyMS4xLDIzLjEgTDIxLjQsMjIuMyBDMjEuNSwyMiAyMS4zLDIxLjcgMjEsMjEuNiBDMTcuNSwyMC41IDE1LDE4LjcgMTMsMTYuOSBDMTIuOCwxNi43IDEyLjgsMTYuMyAxMywxNi4xIEMxOC41LDkuNCAxOC42LDIuMyAxOC42LDIgWiIvPgogICAgICA8cGF0aCBkPSJNMjguNiwwLjEgTDI3LjcsMC4xIEMyNy40LDAuMSAyNy4xLDAuNCAyNy4xLDAuNyBMMjcuMSwzLjggQzI3LjEsNC4xIDI2LjgsNC40IDI2LjUsNC40IEwyNC40LDQuNCBDMjQuMSw0LjQgMjMuOCw0LjcgMjMuOCw1IEwyMy44LDUuOSBDMjMuOCw2LjIgMjQuMSw2LjUgMjQuNCw2LjUgTDI2LjUsNi41IEMyNi44LDYuNSAyNy4xLDYuOCAyNy4xLDcuMSBMMjcuMSwxMS42IEMyNy4xLDExLjkgMjYuOCwxMi4yIDI2LjUsMTIuMiBMMjQuNCwxMi4yIEMyNC4xLDEyLjIgMjMuOCwxMi41IDIzLjgsMTIuOCBMMjMuOCwxMy43IEMyMy44LDE0IDI0LjEsMTQuMyAyNC40LDE0LjMgTDI2LjUsMTQuMyBDMjYuOCwxNC4zIDI3LjEsMTQuNiAyNy4xLDE0LjkgTDI3LjEsMTkuMiBDMjcuMSwyMC4xIDI2LjcsMjEuNiAyNC40LDIxLjggQzI0LjEsMjEuOCAyMy45LDIyLjEgMjMuOSwyMi40IEwyMy45LDIzIEMyMy45LDIzLjMgMjQuMiwyMy42IDI0LjUsMjMuNiBDMjYuOCwyMy40IDI5LjIsMjIuMSAyOS4yLDE4LjkgTDI5LjIsMTQuNiBDMjkuMiwxNC4zIDI5LjUsMTQgMjkuOCwxNCBMMzEuNywxNCBDMzIsMTQgMzIuMywxMy43IDMyLjMsMTMuNCBMMzIuMywxMi41IEMzMi4zLDEyLjIgMzIsMTEuOSAzMS43LDExLjkgTDI5LjgsMTEuOSBDMjkuNSwxMS45IDI5LjIsMTEuNiAyOS4yLDExLjMgTDI5LjIsNi44IEMyOS4yLDYuNSAyOS41LDYuMiAyOS44LDYuMiBMMzEuNyw2LjIgQzMyLDYuMiAzMi4zLDUuOSAzMi4zLDUuNiBMMzIuMyw0LjcgQzMyLjMsNC40IDMyLDQuMSAzMS43LDQuMSBMMjkuOCw0LjEgQzI5LjUsNC4xIDI5LjIsMy44IDI5LjIsMy41IEwyOS4yLDAuNiBDMjkuMiwwLjMgMjksMC4xIDI4LjYsMC4xIFoiLz4KICAgICAgPHBhdGggZD0iTTMzLjIsMjIuOCBDMzMuMiwyMy4xIDMzLjUsMjMuNCAzMy44LDIzLjQgTDQwLjMsMjMuNCBDNDMuMiwyMy40IDQ1LjUsMjEuMiA0NS41LDE4LjQgTDQ1LjUsNC43IEM0NS41LDQuNCA0NS4yLDQuMSA0NC45LDQuMSBMMzMuOCw0LjEgQzMzLjUsNC4xIDMzLjIsNC40IDMzLjIsNC43IEwzMy4yLDIyLjggWiBNNDAuNCwyMS40IEwzNS45LDIxLjQgQzM1LjYsMjEuNCAzNS4zLDIxLjEgMzUuMywyMC44IEwzNS4zLDE0LjYgQzM1LjMsMTQuMyAzNS42LDE0IDM1LjksMTQgTDQzLDE0IEM0My4zLDE0IDQzLjYsMTQuMyA0My42LDE0LjYgTDQzLjYsMTguNCBDNDMuNiwyMC4xIDQyLjEsMjEuNCA0MC40LDIxLjQgWiBNNDMuNiw2LjcgTDQzLjYsMTEuNCBDNDMuNiwxMS43IDQzLjMsMTIgNDMsMTIgTDM1LjksMTIgQzM1LjYsMTIgMzUuMywxMS43IDM1LjMsMTEuNCBMMzUuMyw2LjcgQzM1LjMsNi40IDM1LjYsNi4xIDM1LjksNi4xIEw0Myw2LjEgQzQzLjMsNi4yIDQzLjYsNi40IDQzLjYsNi43IFoiLz4KICAgICAgPHBhdGggZD0iTTQyLjEsMCBMMzYuMywwIEMzNiwwIDM1LjcsMC4zIDM1LjcsMC42IEwzNS43LDEuNSBDMzUuNywxLjggMzYsMi4xIDM2LjMsMi4xIEw0Mi4xLDIuMSBDNDIuNCwyLjEgNDIuNywxLjggNDIuNywxLjUgTDQyLjcsMC42IEM0Mi43LDAuMyA0Mi41LDAgNDIuMSwwIFoiLz4KICAgICAgPHBhdGggZD0iTTY0LjIsMC45IEw1Mi4yLDAuOSBDNTEuOSwwLjkgNTEuNiwxLjIgNTEuNiwxLjUgTDUxLjYsMi40IEM1MS42LDIuNyA1MS45LDMgNTIuMiwzIEw2NC4yLDMgQzY0LjUsMyA2NC44LDIuNyA2NC44LDIuNCBMNjQuOCwxLjUgQzY0LjgsMS4yIDY0LjUsMC45IDY0LjIsMC45IFoiLz4KICAgICAgPHBhdGggZD0iTTU5LjEsMTEuMiBMNjcuNSwxMS4yIEM2Ny44LDExLjIgNjguMSwxMC45IDY4LjEsMTAuNiBMNjguMSw5LjcgQzY4LjEsOS40IDY3LjgsOS4xIDY3LjUsOS4xIEw0OC45LDkuMSBDNDguNiw5LjEgNDguMyw5LjQgNDguMyw5LjcgTDQ4LjMsMTAuNiBDNDguMywxMC45IDQ4LjYsMTEuMiA0OC45LDExLjIgTDU0LjYsMTEuMiBDNTUuMSwxMS4yIDU1LjMsMTEuNyA1NS4xLDEyLjEgTDUxLjMsMTkgQzUxLjIsMTkuMiA1MS4xLDE5LjMgNTEuMSwxOS41IEM1MC44LDIwLjQgNTAuOSwyMS40IDUxLjUsMjIuMiBDNTIuMSwyMyA1My4xLDIzLjYgNTQuMiwyMy42IEw2NC42LDIzLjYgQzY1LjEsMjMuNiA2NS41LDIzLjQgNjUuNywyMyBDNjUuOSwyMi42IDY2LDIyLjEgNjUuOCwyMS43IEw2My40LDE3IEM2My4zLDE2LjcgNjIuOSwxNi42IDYyLjYsMTYuOCBMNjEuOCwxNy4yIEM2MS41LDE3LjMgNjEuNCwxNy43IDYxLjYsMTggTDYzLDIwLjggQzYzLjIsMjEuMiA2Mi45LDIxLjYgNjIuNSwyMS42IEw1NC4yLDIxLjYgQzUzLjgsMjEuNiA1My40LDIxLjQgNTMuMiwyMS4xIEM1My4xLDIxIDUyLjksMjAuNyA1MywyMC4zIEM1MywyMC4yIDUzLDIwLjIgNTMuMSwyMC4xIEw1Ny43LDEyIEM1OCwxMS41IDU4LjUsMTEuMiA1OS4xLDExLjIgWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="/></a>提供CDN加速/云存储服务</div>
+    <p><a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2022015403号</a></p>
 </footer>
     <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
 
 <script src="/js/jquery-3.3.1.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
 
 <script src="/js/navigation.js"></script>
 

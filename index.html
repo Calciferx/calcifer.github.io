@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   
 
   
-  <meta name="keywords" content="关键字，关键字">
+  <meta name="keywords" content="关键字，关键字" />
   
   
   
@@ -15,19 +15,21 @@
   
   <title>等风来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="关键字，关键字">
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="等风来">
 <meta property="og:url" content="http://calcifer.top/index.html">
 <meta property="og:site_name" content="等风来">
-<meta property="og:locale" content="default">
+<meta property="og:locale">
+<meta property="article:author" content="Calcifer">
+<meta property="article:tag" content="关键字，关键字">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="等风来">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
 
   
@@ -35,7 +37,7 @@
   <!--
   <script src='//push.zhanzhang.baidu.com/push.js'></script>
   -->
-</head></html>
+<meta name="generator" content="Hexo 6.3.0"></head>
 <body class="home blog custom-background custom-font-enabled single-author">
   <div id="page" class="hfeed site">
       <header id="masthead" class="site-header" role="banner">
@@ -44,9 +46,8 @@
         <a href="/" title="等风来" rel="home">等风来</a>
       </h1>
       
-        <h2 class="site-description">
-          <a href="/" id="subtitle">花开要守候一个冬季，只需一夜春风</a>
-        </h2>
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
       
     </hgroup>
 
@@ -88,36 +89,36 @@ var _hmt = _hmt || [];
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/2020/09/28/自动打卡V2/">自动打卡V2</a>
+      <a class="article-title" href="/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/">自动打卡V2</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="/2020/09/28/自动打卡V2/#comments" class="leave-reply">评论</a>
+            <a href="/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/28/自动打卡V2/" data-id="cku70jq2b000hzwu86y9gvo2a" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/" data-id="clo9ztbmq003fhswaackabsrm" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
         <h1 id="AutoClockInV2"><a href="#AutoClockInV2" class="headerlink" title="AutoClockInV2"></a>AutoClockInV2</h1><p>自动打卡第二版</p>
-<p>GitHub: <a href="https://github.com/Calciferx/AutoClockInV2" target="_blank" rel="noopener">https://github.com/Calciferx/AutoClockInV2</a></p>
+<p>GitHub: <a target="_blank" rel="noopener" href="https://github.com/Calciferx/AutoClockInV2">https://github.com/Calciferx/AutoClockInV2</a></p>
 <p>开学后学校启用了新版的钉钉打卡，名曰“钉钉打卡”，其实只是通过钉钉的APP绑定校园卡账户，使用钉钉账号自动登录，服务端还是学校自己建的，而且校园卡账户的登录入口依然可用。既然如此，那我直接模拟登录校园卡账户即可。和之前稍有不同的是，这次的服务端使用了认证中心，所有的请求会先跳到认证中心认证，如果已登录，也就是带有 Cookie，那么认证中心会在请求参数中添加 ticket, 并302到最开始请求的地址，如果没登录就跳转到登录界面，登录完成后再添加 ticket 跳回最初请求的地址。除此之外打卡时提交的数据格式也和之前完全不同（忍不住吐槽一下，填表界面的数据居然传了一个巨大的 json，巨大到什么程度呢，里面包含了中国所有的省市县，而且出现了不止一次！）。</p>
 <p>登录完成，拿到认证中心的Cookie</p>
-<p><img src="/2020/09/28/自动打卡V2/image-20200928162841224.png" alt="image-20200928162841224"></p>
+<p><img src="/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/image-20200928162841224.png" alt="image-20200928162841224"></p>
         
           <p class="article-more-link">
-            <a href="/2020/09/28/自动打卡V2/#more" class="more-link">More <span class="meta-nav">→</span></a>
+            <a href="/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/#more" class="more-link">More <span class="meta-nav">→</span></a>
           </p>
         
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2020/09/28/自动打卡V2/">
+    <a href="/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/">
     <time datetime="2020-09-28T08:03:33.000Z" class="entry-date">
         2020-09-28
     </time>
@@ -125,12 +126,12 @@ var _hmt = _hmt || [];
     
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
-  <a class="article-category-link" href="/categories/牛刀小试/">牛刀小试</a>
+  <a class="article-category-link" href="/categories/%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95/">牛刀小试</a>
   </div>
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动打卡/">自动打卡</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" rel="tag">自动打卡</a></li></ul>
 
     </footer>
 </article>
@@ -149,35 +150,34 @@ var _hmt = _hmt || [];
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/2020/09/26/非线性回归/">非线性回归</a>
+      <a class="article-title" href="/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">非线性回归</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="/2020/09/26/非线性回归/#comments" class="leave-reply">评论</a>
+            <a href="/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/非线性回归/" data-id="cku70jq2f000ozwu8gsxpb6ex" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" data-id="clo9ztbmr003ihswa2rmufwgm" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
         <h1 id="非线性回归"><a href="#非线性回归" class="headerlink" title="非线性回归"></a>非线性回归</h1><ol>
-<li>代码<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用numpy生成200个随机点</span></span><br><span class="line">x_data = np.linspace(<span class="number">-0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)[:,np.newaxis]</span><br><span class="line">noise = np.random.normal(<span class="number">0</span>,<span class="number">0.02</span>,x_data.shape)</span><br><span class="line">y_data = np.square(x_data) + noise</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义两个placeholder</span></span><br><span class="line">x = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">1</span>])</span><br><span class="line">y = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义神经网络中间层</span></span><br><span class="line">Weights_L1 = tf.Variable(tf.random_normal([<span class="number">1</span>,<span class="number">10</span>]))</span><br><span class="line">biases_L1 = tf.Variable(tf.zeros([<span class="number">1</span>,<span class="number">10</span>]))</span><br><span class="line">Wx_plus_b_L1 = tf.matmul(x,Weights_L1) + biases_L1</span><br><span class="line">L1 = tf.nn.tanh(Wx_plus_b_L1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义神经网络输出层</span></span><br><span class="line">Weights_L2 = tf.Variable(tf.random_normal([<span class="number">10</span>,<span class="number">1</span>]))</span><br><span class="line">biases_L2 = tf.Variable(tf.zeros([<span class="number">1</span>,<span class="number">1</span>]))</span><br><span class="line">Wx_plus_b_L2 = tf.matmul(L1,Weights_L2) + biases_L2</span><br><span class="line">prediction = tf.nn.tanh(Wx_plus_b_L2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#二次代价函数</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-prediction))</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用梯度下降法训练</span></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.1</span>).minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    <span class="comment">#变量初始化</span></span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">2000</span>):</span><br><span class="line">        sess.run(train_step,feed_dict=&#123;x:x_data,y:y_data&#125;)</span><br><span class="line">        </span><br><span class="line">    <span class="comment">#获得预测值</span></span><br><span class="line">    prediction_value = sess.run(prediction,feed_dict=&#123;x:x_data&#125;)</span><br><span class="line">    <span class="comment">#画图</span></span><br><span class="line">    plt.figure()</span><br><span class="line">    plt.scatter(x_data,y_data)</span><br><span class="line">    plt.plot(x_data,prediction_value,<span class="string">'r-'</span>,lw=<span class="number">5</span>) <span class="comment">#红色、实线</span></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<li><p>代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用numpy生成200个随机点</span></span><br><span class="line">x_data = np.linspace(-<span class="number">0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)[:,np.newaxis]</span><br><span class="line">noise = np.random.normal(<span class="number">0</span>,<span class="number">0.02</span>,x_data.shape)</span><br><span class="line">y_data = np.square(x_data) + noise</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义两个placeholder</span></span><br><span class="line">x = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">1</span>])</span><br><span class="line">y = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义神经网络中间层</span></span><br><span class="line">Weights_L1 = tf.Variable(tf.random_normal([<span class="number">1</span>,<span class="number">10</span>]))</span><br><span class="line">biases_L1 = tf.Variable(tf.zeros([<span class="number">1</span>,<span class="number">10</span>]))</span><br><span class="line">Wx_plus_b_L1 = tf.matmul(x,Weights_L1) + biases_L1</span><br><span class="line">L1 = tf.nn.tanh(Wx_plus_b_L1)</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义神经网络输出层</span></span><br><span class="line">Weights_L2 = tf.Variable(tf.random_normal([<span class="number">10</span>,<span class="number">1</span>]))</span><br><span class="line">biases_L2 = tf.Variable(tf.zeros([<span class="number">1</span>,<span class="number">1</span>]))</span><br><span class="line">Wx_plus_b_L2 = tf.matmul(L1,Weights_L2) + biases_L2</span><br><span class="line">prediction = tf.nn.tanh(Wx_plus_b_L2)</span><br><span class="line"></span><br><span class="line"><span class="comment">#二次代价函数</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-prediction))</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用梯度下降法训练</span></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.1</span>).minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    <span class="comment">#变量初始化</span></span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2000</span>):</span><br><span class="line">        sess.run(train_step,feed_dict=&#123;x:x_data,y:y_data&#125;)</span><br><span class="line">        </span><br><span class="line">    <span class="comment">#获得预测值</span></span><br><span class="line">    prediction_value = sess.run(prediction,feed_dict=&#123;x:x_data&#125;)</span><br><span class="line">    <span class="comment">#画图</span></span><br><span class="line">    plt.figure()</span><br><span class="line">    plt.scatter(x_data,y_data)</span><br><span class="line">    plt.plot(x_data,prediction_value,<span class="string">&#x27;r-&#x27;</span>,lw=<span class="number">5</span>) <span class="comment">#红色、实线</span></span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure></li></ol>
         
           <p class="article-more-link">
-            <a href="/2020/09/26/非线性回归/#more" class="more-link">More <span class="meta-nav">→</span></a>
+            <a href="/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/#more" class="more-link">More <span class="meta-nav">→</span></a>
           </p>
         
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2020/09/26/非线性回归/">
+    <a href="/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
     <time datetime="2020-09-26T01:51:24.000Z" class="entry-date">
         2020-09-26
     </time>
@@ -185,12 +185,12 @@ var _hmt = _hmt || [];
     
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
-  <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+  <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
   </div>
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/非线性回归/">非线性回归</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="tag">非线性回归</a></li></ul>
 
     </footer>
 </article>
@@ -209,16 +209,16 @@ var _hmt = _hmt || [];
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/2020/09/26/TensorFlow基础/">TensorFlow基础</a>
+      <a class="article-title" href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/">TensorFlow基础</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="/2020/09/26/TensorFlow基础/#comments" class="leave-reply">评论</a>
+            <a href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/TensorFlow基础/" data-id="cku70jq2h000tzwu8eq1e5eua" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/" data-id="clo9ztbm0000nhswaac538e9z" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -226,7 +226,7 @@ var _hmt = _hmt || [];
       
         <h1 id="TensorFlow-基础"><a href="#TensorFlow-基础" class="headerlink" title="TensorFlow 基础"></a>TensorFlow 基础</h1><ol>
 <li><p><strong>np.newaxis 增加一个维度 </strong></p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 numpy 生成200个随机点</span></span><br><span class="line">x_data = np.linspace(<span class="number">-0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)</span><br><span class="line"><span class="comment">#结果的shape为(200,)</span></span><br><span class="line">x_data = np.linspace(<span class="number">-0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)[:,np.newaxis]</span><br><span class="line"><span class="comment">#结果的shape为(200,1)</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 numpy 生成200个随机点</span></span><br><span class="line">x_data = np.linspace(-<span class="number">0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)</span><br><span class="line"><span class="comment">#结果的shape为(200,)</span></span><br><span class="line">x_data = np.linspace(-<span class="number">0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)[:,np.newaxis]</span><br><span class="line"><span class="comment">#结果的shape为(200,1)</span></span><br></pre></td></tr></table></figure>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">array(</span><br><span class="line">  [[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>],</span><br><span class="line">   [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>],</span><br><span class="line">   [<span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>, <span class="number">34</span>],</span><br><span class="line">   [<span class="number">41</span>, <span class="number">42</span>, <span class="number">43</span>, <span class="number">44</span>],</span><br><span class="line">   [<span class="number">51</span>, <span class="number">52</span>, <span class="number">53</span>, <span class="number">54</span>],</span><br><span class="line">   [<span class="number">61</span>, <span class="number">62</span>, <span class="number">63</span>, <span class="number">64</span>],</span><br><span class="line">   [<span class="number">71</span>, <span class="number">72</span>, <span class="number">73</span>, <span class="number">74</span>],</span><br><span class="line">   [<span class="number">81</span>, <span class="number">82</span>, <span class="number">83</span>, <span class="number">84</span>],</span><br><span class="line">   [<span class="number">91</span>, <span class="number">92</span>, <span class="number">93</span>, <span class="number">94</span>]])</span><br></pre></td></tr></table></figure>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array[:,<span class="number">0</span>]的结果为</span><br></pre></td></tr></table></figure>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array([<span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span>, <span class="number">41</span>, <span class="number">51</span>, <span class="number">61</span>, <span class="number">71</span>, <span class="number">81</span>, <span class="number">91</span>])</span><br><span class="line"><span class="comment">#即取array的第一列元素组成一个行向量</span></span><br><span class="line"><span class="comment">#以上操作只适用于numpy定义的array，直接由Python定义的普通array不支持这种操作</span></span><br></pre></td></tr></table></figure>
@@ -234,14 +234,14 @@ var _hmt = _hmt || [];
 </ol>
         
           <p class="article-more-link">
-            <a href="/2020/09/26/TensorFlow基础/#more" class="more-link">More <span class="meta-nav">→</span></a>
+            <a href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/#more" class="more-link">More <span class="meta-nav">→</span></a>
           </p>
         
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2020/09/26/TensorFlow基础/">
+    <a href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/">
     <time datetime="2020-09-26T01:43:47.000Z" class="entry-date">
         2020-09-26
     </time>
@@ -249,12 +249,12 @@ var _hmt = _hmt || [];
     
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
-  <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+  <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
   </div>
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/" rel="tag">TensorFlow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
 
     </footer>
 </article>
@@ -273,16 +273,16 @@ var _hmt = _hmt || [];
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/2020/09/26/MNIST数据集分类简单版本/">MNIST数据集分类简单版本</a>
+      <a class="article-title" href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/">MNIST数据集分类简单版本</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="/2020/09/26/MNIST数据集分类简单版本/#comments" class="leave-reply">评论</a>
+            <a href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/MNIST数据集分类简单版本/" data-id="cku70jq1w0005zwu8puidlugm" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/" data-id="clo9ztblv000bhswa9i74431r" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -290,19 +290,19 @@ var _hmt = _hmt || [];
       
         <h1 id="MNIST数据集分类简单版本"><a href="#MNIST数据集分类简单版本" class="headerlink" title="MNIST数据集分类简单版本"></a>MNIST数据集分类简单版本</h1><ol>
 <li><p>代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"></span><br><span class="line"><span class="comment">#载入数据集</span></span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data"</span>,one_hot = <span class="literal">True</span>)</span><br><span class="line"><span class="comment">#每个批次的大小</span></span><br><span class="line">batch_size = <span class="number">100</span></span><br><span class="line"><span class="comment">#计算一共有多少个批次</span></span><br><span class="line">n_batch = mnist.train.num_examples // batch_size</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义两个placeholder</span></span><br><span class="line">x = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">784</span>])</span><br><span class="line">y = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个简单的神经网络</span></span><br><span class="line">w = tf.Variable(tf.zeros([<span class="number">784</span>,<span class="number">10</span>]))</span><br><span class="line">b = tf.Variable(tf.zeros([<span class="number">10</span>]))</span><br><span class="line">prediction = tf.nn.softmax(tf.matmul(x,w)+b)</span><br><span class="line"></span><br><span class="line"><span class="comment">#二次代价函数</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-prediction))</span><br><span class="line"><span class="comment">#使用梯度下降法</span></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.2</span>).minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始化变量</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"><span class="comment">#结果存放在一个布尔型列表中</span></span><br><span class="line">correct_prediction = tf.equal(tf.argmax(y,<span class="number">1</span>),tf.argmax(prediction,<span class="number">1</span>))<span class="comment">#argmax返回一维张量中最大的值所在的位置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#求准确率</span></span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> range(<span class="number">21</span>):</span><br><span class="line">        <span class="keyword">for</span> batch <span class="keyword">in</span> range(n_batch):</span><br><span class="line">            batch_xs,batch_ys = mnist.train.next_batch(batch_size)</span><br><span class="line">            sess.run(train_step,feed_dict = &#123;x:batch_xs,y:batch_ys&#125;)</span><br><span class="line">            </span><br><span class="line">        acc = sess.run(accuracy,feed_dict = &#123;x:mnist.test.images,y:mnist.test.labels&#125;)</span><br><span class="line">        print(<span class="string">"Iter"</span> + str(epoch) + <span class="string">",Testing Accuracy"</span> + str(acc))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"></span><br><span class="line"><span class="comment">#载入数据集</span></span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">&quot;MNIST_data&quot;</span>,one_hot = <span class="literal">True</span>)</span><br><span class="line"><span class="comment">#每个批次的大小</span></span><br><span class="line">batch_size = <span class="number">100</span></span><br><span class="line"><span class="comment">#计算一共有多少个批次</span></span><br><span class="line">n_batch = mnist.train.num_examples // batch_size</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义两个placeholder</span></span><br><span class="line">x = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">784</span>])</span><br><span class="line">y = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个简单的神经网络</span></span><br><span class="line">w = tf.Variable(tf.zeros([<span class="number">784</span>,<span class="number">10</span>]))</span><br><span class="line">b = tf.Variable(tf.zeros([<span class="number">10</span>]))</span><br><span class="line">prediction = tf.nn.softmax(tf.matmul(x,w)+b)</span><br><span class="line"></span><br><span class="line"><span class="comment">#二次代价函数</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-prediction))</span><br><span class="line"><span class="comment">#使用梯度下降法</span></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.2</span>).minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始化变量</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"><span class="comment">#结果存放在一个布尔型列表中</span></span><br><span class="line">correct_prediction = tf.equal(tf.argmax(y,<span class="number">1</span>),tf.argmax(prediction,<span class="number">1</span>))<span class="comment">#argmax返回一维张量中最大的值所在的位置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#求准确率</span></span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">21</span>):</span><br><span class="line">        <span class="keyword">for</span> batch <span class="keyword">in</span> <span class="built_in">range</span>(n_batch):</span><br><span class="line">            batch_xs,batch_ys = mnist.train.next_batch(batch_size)</span><br><span class="line">            sess.run(train_step,feed_dict = &#123;x:batch_xs,y:batch_ys&#125;)</span><br><span class="line">            </span><br><span class="line">        acc = sess.run(accuracy,feed_dict = &#123;x:mnist.test.images,y:mnist.test.labels&#125;)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Iter&quot;</span> + <span class="built_in">str</span>(epoch) + <span class="string">&quot;,Testing Accuracy&quot;</span> + <span class="built_in">str</span>(acc))</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
 </li>
 </ol>
         
           <p class="article-more-link">
-            <a href="/2020/09/26/MNIST数据集分类简单版本/#more" class="more-link">More <span class="meta-nav">→</span></a>
+            <a href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/#more" class="more-link">More <span class="meta-nav">→</span></a>
           </p>
         
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2020/09/26/MNIST数据集分类简单版本/">
+    <a href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/">
     <time datetime="2020-09-26T01:39:56.000Z" class="entry-date">
         2020-09-26
     </time>
@@ -310,12 +310,12 @@ var _hmt = _hmt || [];
     
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
-  <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+  <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
   </div>
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MNIST/" rel="tag">MNIST</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
 
     </footer>
 </article>
@@ -343,7 +343,7 @@ var _hmt = _hmt || [];
             
             <a href="/2020/09/26/8086ASM/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/8086ASM/" data-id="cku70jq2e000mzwu8xnpux3wb" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/8086ASM/" data-id="clo9ztbln0001hswa4l95gcdw" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -376,12 +376,12 @@ var _hmt = _hmt || [];
     
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
-  <a class="article-category-link" href="/categories/汇编语言/">汇编语言</a>
+  <a class="article-category-link" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>
   </div>
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/8086ASM/">8086ASM</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/8086ASM/" rel="tag">8086ASM</a></li></ul>
 
     </footer>
 </article>
@@ -409,7 +409,7 @@ var _hmt = _hmt || [];
             
             <a href="/2020/09/26/js/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/js/" data-id="cku70jq27000czwu8i2pjyd1h" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/js/" data-id="clo9ztbm1000qhswa8fm17y9q" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -420,7 +420,7 @@ var _hmt = _hmt || [];
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">typeof</span> a; <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">typeof</span> a  <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>用构造方法定义数组时，一个参数表示数组大小，多个参数表示数组元素</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>); <span class="comment">//定义一个长度为5的数组，元素为undefined</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>); <span class="comment">//定义一个数组[5,2,3]</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">//定义一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr = []; <span class="comment">//定义一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>]; <span class="comment">// 定义一个数组[5,2,3]</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="string">"red"</span>,<span class="literal">true</span>]; <span class="comment">//数组元素类型可以不同</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>); <span class="comment">//定义一个长度为5的数组，元素为undefined</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>); <span class="comment">//定义一个数组[5,2,3]</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(); <span class="comment">//定义一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr = []; <span class="comment">//定义一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>]; <span class="comment">// 定义一个数组[5,2,3]</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="string">&quot;red&quot;</span>,<span class="literal">true</span>]; <span class="comment">//数组元素类型可以不同</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">8</span>; <span class="comment">//数组长度为1</span></span><br><span class="line">arr[<span class="number">2</span>] = <span class="number">8</span>; <span class="comment">//数组长度为3，arr[1]为undefined</span></span><br></pre></td></tr></table></figure></li></ol>
         
           <p class="article-more-link">
@@ -444,7 +444,7 @@ var _hmt = _hmt || [];
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/" rel="tag">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
 
     </footer>
 </article>
@@ -472,7 +472,7 @@ var _hmt = _hmt || [];
             
             <a href="/2020/08/25/C-Tips/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/08/25/C-Tips/" data-id="cku70jq1t0002zwu8w9cb602l" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/08/25/C-Tips/" data-id="clo9ztblt0007hswa5ym15zij" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -482,7 +482,7 @@ var _hmt = _hmt || [];
 <li><p>int占用的位数与实现有关</p>
 </li>
 <li><p>C++有一种C语言没有的初始化语法</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> owls = <span class="number">101</span> <span class="comment">// 传统C语言初始化语法</span></span><br><span class="line"><span class="keyword">int</span> wrens(<span class="number">432</span>) <span class="comment">// C++特有的初始化语法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> owls = <span class="number">101</span> <span class="comment">// 传统C语言初始化语法</span></span><br><span class="line"><span class="type">int</span> <span class="built_in">wrens</span>(<span class="number">432</span>) <span class="comment">// C++特有的初始化语法</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>C 语言中三目运算符返回的是值，所以不能作为左值使用，而C++中三目运算符可直接返回变量本身，因此可以出现在程序的任何地方。</p>
 <p><strong>注意：如果三目运算符可能的返回值中有一个是常量值，则不能作为左值使用。</strong></p>
@@ -513,7 +513,7 @@ var _hmt = _hmt || [];
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
 
     </footer>
 </article>
@@ -532,16 +532,16 @@ var _hmt = _hmt || [];
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/2020/08/20/自动打卡V1/">自动打卡V1</a>
+      <a class="article-title" href="/2020/08/20/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V1/">自动打卡V1</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="/2020/08/20/自动打卡V1/#comments" class="leave-reply">评论</a>
+            <a href="/2020/08/20/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V1/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/08/20/自动打卡V1/" data-id="cku70jq2j000vzwu847t59os1" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/08/20/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V1/" data-id="clo9ztbmq003ehswafghb9f71" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -551,14 +551,14 @@ var _hmt = _hmt || [];
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>基本思路很简单，开始想的就是先模拟登录然后提交表单打卡，crontab定时执行就行了呗，但是实现起来却没有想的那么容易。纸上得来终觉浅，绝知此事要躬行啊。</p>
         
           <p class="article-more-link">
-            <a href="/2020/08/20/自动打卡V1/#more" class="more-link">More <span class="meta-nav">→</span></a>
+            <a href="/2020/08/20/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V1/#more" class="more-link">More <span class="meta-nav">→</span></a>
           </p>
         
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2020/08/20/自动打卡V1/">
+    <a href="/2020/08/20/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V1/">
     <time datetime="2020-08-20T02:22:11.000Z" class="entry-date">
         2020-08-20
     </time>
@@ -566,12 +566,12 @@ var _hmt = _hmt || [];
     
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
-  <a class="article-category-link" href="/categories/牛刀小试/">牛刀小试</a>
+  <a class="article-category-link" href="/categories/%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95/">牛刀小试</a>
   </div>
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自动打卡/">自动打卡</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" rel="tag">自动打卡</a></li></ul>
 
     </footer>
 </article>
@@ -599,7 +599,7 @@ var _hmt = _hmt || [];
             
             <a href="/2019/04/19/Python-Tips/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/04/19/Python-Tips/" data-id="cku70jq25000bzwu8wz6nkg9m" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/04/19/Python-Tips/" data-id="clo9ztblx000ghswahzlfgge8" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -640,7 +640,7 @@ var _hmt = _hmt || [];
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
 </article>
@@ -659,16 +659,16 @@ var _hmt = _hmt || [];
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/2019/03/08/Mybatis笔记/">Mybatis笔记</a>
+      <a class="article-title" href="/2019/03/08/Mybatis%E7%AC%94%E8%AE%B0/">Mybatis笔记</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="/2019/03/08/Mybatis笔记/#comments" class="leave-reply">评论</a>
+            <a href="/2019/03/08/Mybatis%E7%AC%94%E8%AE%B0/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Mybatis笔记/" data-id="cku70jq1y0006zwu8yj7b659u" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2019/03/08/Mybatis%E7%AC%94%E8%AE%B0/" data-id="clo9ztblu0009hswa1ng60rmv" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -700,19 +700,17 @@ var _hmt = _hmt || [];
 <p>​</p>
 </li>
 <li><p>在Mybatis-config.xml中引入jdbc.properties资源文件</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入外部资源文件，resource：相对路径，url：绝对路径 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"jdbc.properties"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入外部资源文件，resource：相对路径，url：绝对路径 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">&quot;jdbc.properties&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></li></ol>
         
           <p class="article-more-link">
-            <a href="/2019/03/08/Mybatis笔记/#more" class="more-link">More <span class="meta-nav">→</span></a>
+            <a href="/2019/03/08/Mybatis%E7%AC%94%E8%AE%B0/#more" class="more-link">More <span class="meta-nav">→</span></a>
           </p>
         
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2019/03/08/Mybatis笔记/">
+    <a href="/2019/03/08/Mybatis%E7%AC%94%E8%AE%B0/">
     <time datetime="2019-03-08T14:10:49.000Z" class="entry-date">
         2019-03-08
     </time>
@@ -725,7 +723,7 @@ var _hmt = _hmt || [];
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/">Mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
 </article>
@@ -739,7 +737,7 @@ var _hmt = _hmt || [];
   
     <nav id="pagination">
       <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
       </nav>
     </nav>
   
@@ -749,8 +747,8 @@ var _hmt = _hmt || [];
   
     <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
     <div>
-        <input type="text" value name="s" id="s">
-        <input type="submit" id="searchsubmit" value="搜索">
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
     </div>
 </form></aside>
   
@@ -760,7 +758,7 @@ var _hmt = _hmt || [];
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编语言/">汇编语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/牛刀小试/">牛刀小试</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲言碎语/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95/">牛刀小试</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
     </div>
   </aside>
 
@@ -772,19 +770,19 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
-            <a href="/2020/09/28/自动打卡V2/">自动打卡V2</a>
+            <a href="/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/">自动打卡V2</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/非线性回归/">非线性回归</a>
+            <a href="/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">非线性回归</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/TensorFlow基础/">TensorFlow基础</a>
+            <a href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/">TensorFlow基础</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/MNIST数据集分类简单版本/">MNIST数据集分类简单版本</a>
+            <a href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/">MNIST数据集分类简单版本</a>
           </li>
         
           <li>
@@ -800,7 +798,7 @@ var _hmt = _hmt || [];
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/8086ASM/">8086ASM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动打卡/">自动打卡</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性回归/">非线性回归</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/8086ASM/" rel="tag">8086ASM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/" rel="tag">MNIST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/" rel="tag">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" rel="tag">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" rel="tag">自动打卡</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="tag">非线性回归</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -809,7 +807,7 @@ var _hmt = _hmt || [];
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/8086ASM/" style="font-size: 10px;">8086ASM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/机器学习/" style="font-size: 20px;">机器学习</a> <a href="/tags/杂七杂八/" style="font-size: 15px;">杂七杂八</a> <a href="/tags/笔记/" style="font-size: 15px;">笔记</a> <a href="/tags/自动打卡/" style="font-size: 15px;">自动打卡</a> <a href="/tags/非线性回归/" style="font-size: 10px;">非线性回归</a>
+      <a href="/tags/8086ASM/" style="font-size: 10px;">8086ASM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">机器学习</a> <a href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" style="font-size: 15px;">杂七杂八</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">笔记</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" style="font-size: 15px;">自动打卡</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">非线性回归</a>
     </div>
   </aside>
 
@@ -817,21 +815,27 @@ var _hmt = _hmt || [];
 </div>
       </div>
       <footer id="colophon" role="contentinfo">
-    <p>&copy; 2021 Calcifer All rights reserved.</p>
+    <p>&copy; 2023 Calcifer All rights reserved.</p>
     <p style="display: inline-block;">Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-    <div style="float: right">本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img style="vertical-align: top; height: 25px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAxMTEgMzgiPgogIDxnIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xKSI+CiAgICA8cGF0aCBkPSJNMzAuOCw0LjEgTDMwLjgsNC4xIEwzMC44LDQuMSBMMzAuOCw0LjEgTDMwLjgsNC4xIEMzMC4xLDMuNiAyOS40LDMuMSAyOC42LDIuNyBDMjguMSwyLjQgMjcuNCwyLjUgMjcsMyBMMjIuMyw5LjIgTDIyLDkuNiBDMjEuNSwxMC4zIDIwLjcsMTAuNiAxOS45LDEwLjYgTDE5LDEwLjYgQzE2LjcsMTAuNyAxNC40LDExLjkgMTIuOSwxMy45IEMxMS43LDE1LjUgMTEuMSwxNy40IDExLjIsMTkuMyBDMTEuMiwxOS42IDExLjQsMTkuOSAxMS43LDIwLjEgQzEyLjMsMjAuNCAxMi44LDIxIDEzLDIxLjcgQzEzLjIsMjIuOCAxMi41LDIzLjggMTEuNSwyNC4xIEMxMC4zLDI0LjUgOSwyMy43IDguNywyMi41IEM4LjUsMjEuOCA4LjcsMjEuMiA5LjEsMjAuNyBDOS4zLDIwLjQgOS40LDIwLjEgOS40LDE5LjcgQzkuMiwxNy4zIDkuOCwxNC44IDExLjQsMTIuNyBDMTMuNCwxMC4xIDE2LjQsOC43IDE5LjUsOC43IEMyMC4xLDguNyAyMC42LDguNCAyMSw3LjkgTDI1LjMsMi4yIEMyNS42LDEuOCAyNS40LDEuMSAyNC45LDEgQzE3LjcsLTEgOS43LDEuNCA0LjgsNy43IEMtMS40LDE1LjggMC4xLDI3LjUgOC4yLDMzLjggQzksMzQuNCA5LjcsMzQuOSAxMC42LDM1LjQgQzExLjEsMzUuNyAxMS44LDM1LjYgMTIuMiwzNS4xIEwxNi45LDI4LjkgTDE3LjIsMjguNSBDMTcuNywyNy44IDE4LjUsMjcuNSAxOS4zLDI3LjUgTDIwLjIsMjcuNSBDMjIuNSwyNy40IDI0LjgsMjYuMiAyNi4zLDI0LjIgQzI3LjUsMjIuNiAyOC4xLDIwLjcgMjgsMTguOCBDMjgsMTguNSAyNy44LDE4LjIgMjcuNSwxOCBDMjYuOSwxNy43IDI2LjQsMTcuMSAyNi4yLDE2LjQgQzI2LDE1LjMgMjYuNywxNC4zIDI3LjcsMTQgQzI4LjksMTMuNiAzMC4yLDE0LjQgMzAuNSwxNS42IEMzMC43LDE2LjMgMzAuNSwxNi45IDMwLjEsMTcuNCBDMjkuOSwxNy43IDI5LjgsMTggMjkuOCwxOC40IEMzMCwyMC44IDI5LjQsMjMuMyAyNy44LDI1LjQgQzI1LjgsMjggMjIuOCwyOS40IDE5LjcsMjkuNCBDMTkuMSwyOS40IDE4LjYsMjkuNyAxOC4yLDMwLjIgTDE0LDM1LjYgQzEzLjcsMzYgMTMuOSwzNi43IDE0LjQsMzYuOCBDMjEuNiwzOC45IDI5LjcsMzYuNSAzNC41LDMwLjEgQzQwLjcsMjIgMzksMTAuMyAzMC44LDQuMSBaIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MyA4KSI+CiAgICAgIDxwYXRoIGQ9Ik0xOC42LDIgTDE4LjYsMS42IEMxOC42LDEuMiAxOC4zLDEgMTgsMSBMMy41LDEgQzMuMiwxIDIuOSwxLjMgMi45LDEuNiBMMi45LDIuNSBDMi45LDIuOCAzLjIsMy4xIDMuNSwzLjEgTDE1LjgsMy4xIEMxNi4yLDMuMSAxNi40LDMuNCAxNi40LDMuOCBDMTYuMSw2LjEgMTUsMTAuNCAxMS42LDE0LjUgQzExLjQsMTQuOCAxMC45LDE0LjggMTAuNywxNC41IEM3LjksMTAuOSA3LDcuMiA2LjgsNS44IEM2LjcsNS41IDYuNSw1LjMgNi4yLDUuMyBMNS43LDUuMyBMNS4zLDUuMyBDNSw1LjMgNC43LDUuNiA0LjgsNiBDNS4xLDcuNiA2LjEsMTEuOSA5LjUsMTYgQzkuNywxNi4yIDkuNywxNi42IDkuNSwxNi44IEM1LjUsMjAuNSAxLjgsMjEuMyAwLjUsMjEuNSBDMC4yLDIxLjUgNy4xMDU0MjczNmUtMTUsMjEuOCA3LjEwNTQyNzM2ZS0xNSwyMi4xIEw3LjEwNTQyNzM2ZS0xNSwyMyBDNy4xMDU0MjczNmUtMTUsMjMuMyAwLjMsMjMuNiAwLjYsMjMuNiBDMi4xLDIzLjQgNi4zLDIyLjUgMTAuOCwxOC4zIEMxMSwxOC4xIDExLjQsMTguMSAxMS42LDE4LjMgQzEzLjgsMjAuMyAxNi42LDIyLjMgMjAuNCwyMy41IEMyMC43LDIzLjYgMjEsMjMuNCAyMS4xLDIzLjEgTDIxLjQsMjIuMyBDMjEuNSwyMiAyMS4zLDIxLjcgMjEsMjEuNiBDMTcuNSwyMC41IDE1LDE4LjcgMTMsMTYuOSBDMTIuOCwxNi43IDEyLjgsMTYuMyAxMywxNi4xIEMxOC41LDkuNCAxOC42LDIuMyAxOC42LDIgWiIvPgogICAgICA8cGF0aCBkPSJNMjguNiwwLjEgTDI3LjcsMC4xIEMyNy40LDAuMSAyNy4xLDAuNCAyNy4xLDAuNyBMMjcuMSwzLjggQzI3LjEsNC4xIDI2LjgsNC40IDI2LjUsNC40IEwyNC40LDQuNCBDMjQuMSw0LjQgMjMuOCw0LjcgMjMuOCw1IEwyMy44LDUuOSBDMjMuOCw2LjIgMjQuMSw2LjUgMjQuNCw2LjUgTDI2LjUsNi41IEMyNi44LDYuNSAyNy4xLDYuOCAyNy4xLDcuMSBMMjcuMSwxMS42IEMyNy4xLDExLjkgMjYuOCwxMi4yIDI2LjUsMTIuMiBMMjQuNCwxMi4yIEMyNC4xLDEyLjIgMjMuOCwxMi41IDIzLjgsMTIuOCBMMjMuOCwxMy43IEMyMy44LDE0IDI0LjEsMTQuMyAyNC40LDE0LjMgTDI2LjUsMTQuMyBDMjYuOCwxNC4zIDI3LjEsMTQuNiAyNy4xLDE0LjkgTDI3LjEsMTkuMiBDMjcuMSwyMC4xIDI2LjcsMjEuNiAyNC40LDIxLjggQzI0LjEsMjEuOCAyMy45LDIyLjEgMjMuOSwyMi40IEwyMy45LDIzIEMyMy45LDIzLjMgMjQuMiwyMy42IDI0LjUsMjMuNiBDMjYuOCwyMy40IDI5LjIsMjIuMSAyOS4yLDE4LjkgTDI5LjIsMTQuNiBDMjkuMiwxNC4zIDI5LjUsMTQgMjkuOCwxNCBMMzEuNywxNCBDMzIsMTQgMzIuMywxMy43IDMyLjMsMTMuNCBMMzIuMywxMi41IEMzMi4zLDEyLjIgMzIsMTEuOSAzMS43LDExLjkgTDI5LjgsMTEuOSBDMjkuNSwxMS45IDI5LjIsMTEuNiAyOS4yLDExLjMgTDI5LjIsNi44IEMyOS4yLDYuNSAyOS41LDYuMiAyOS44LDYuMiBMMzEuNyw2LjIgQzMyLDYuMiAzMi4zLDUuOSAzMi4zLDUuNiBMMzIuMyw0LjcgQzMyLjMsNC40IDMyLDQuMSAzMS43LDQuMSBMMjkuOCw0LjEgQzI5LjUsNC4xIDI5LjIsMy44IDI5LjIsMy41IEwyOS4yLDAuNiBDMjkuMiwwLjMgMjksMC4xIDI4LjYsMC4xIFoiLz4KICAgICAgPHBhdGggZD0iTTMzLjIsMjIuOCBDMzMuMiwyMy4xIDMzLjUsMjMuNCAzMy44LDIzLjQgTDQwLjMsMjMuNCBDNDMuMiwyMy40IDQ1LjUsMjEuMiA0NS41LDE4LjQgTDQ1LjUsNC43IEM0NS41LDQuNCA0NS4yLDQuMSA0NC45LDQuMSBMMzMuOCw0LjEgQzMzLjUsNC4xIDMzLjIsNC40IDMzLjIsNC43IEwzMy4yLDIyLjggWiBNNDAuNCwyMS40IEwzNS45LDIxLjQgQzM1LjYsMjEuNCAzNS4zLDIxLjEgMzUuMywyMC44IEwzNS4zLDE0LjYgQzM1LjMsMTQuMyAzNS42LDE0IDM1LjksMTQgTDQzLDE0IEM0My4zLDE0IDQzLjYsMTQuMyA0My42LDE0LjYgTDQzLjYsMTguNCBDNDMuNiwyMC4xIDQyLjEsMjEuNCA0MC40LDIxLjQgWiBNNDMuNiw2LjcgTDQzLjYsMTEuNCBDNDMuNiwxMS43IDQzLjMsMTIgNDMsMTIgTDM1LjksMTIgQzM1LjYsMTIgMzUuMywxMS43IDM1LjMsMTEuNCBMMzUuMyw2LjcgQzM1LjMsNi40IDM1LjYsNi4xIDM1LjksNi4xIEw0Myw2LjEgQzQzLjMsNi4yIDQzLjYsNi40IDQzLjYsNi43IFoiLz4KICAgICAgPHBhdGggZD0iTTQyLjEsMCBMMzYuMywwIEMzNiwwIDM1LjcsMC4zIDM1LjcsMC42IEwzNS43LDEuNSBDMzUuNywxLjggMzYsMi4xIDM2LjMsMi4xIEw0Mi4xLDIuMSBDNDIuNCwyLjEgNDIuNywxLjggNDIuNywxLjUgTDQyLjcsMC42IEM0Mi43LDAuMyA0Mi41LDAgNDIuMSwwIFoiLz4KICAgICAgPHBhdGggZD0iTTY0LjIsMC45IEw1Mi4yLDAuOSBDNTEuOSwwLjkgNTEuNiwxLjIgNTEuNiwxLjUgTDUxLjYsMi40IEM1MS42LDIuNyA1MS45LDMgNTIuMiwzIEw2NC4yLDMgQzY0LjUsMyA2NC44LDIuNyA2NC44LDIuNCBMNjQuOCwxLjUgQzY0LjgsMS4yIDY0LjUsMC45IDY0LjIsMC45IFoiLz4KICAgICAgPHBhdGggZD0iTTU5LjEsMTEuMiBMNjcuNSwxMS4yIEM2Ny44LDExLjIgNjguMSwxMC45IDY4LjEsMTAuNiBMNjguMSw5LjcgQzY4LjEsOS40IDY3LjgsOS4xIDY3LjUsOS4xIEw0OC45LDkuMSBDNDguNiw5LjEgNDguMyw5LjQgNDguMyw5LjcgTDQ4LjMsMTAuNiBDNDguMywxMC45IDQ4LjYsMTEuMiA0OC45LDExLjIgTDU0LjYsMTEuMiBDNTUuMSwxMS4yIDU1LjMsMTEuNyA1NS4xLDEyLjEgTDUxLjMsMTkgQzUxLjIsMTkuMiA1MS4xLDE5LjMgNTEuMSwxOS41IEM1MC44LDIwLjQgNTAuOSwyMS40IDUxLjUsMjIuMiBDNTIuMSwyMyA1My4xLDIzLjYgNTQuMiwyMy42IEw2NC42LDIzLjYgQzY1LjEsMjMuNiA2NS41LDIzLjQgNjUuNywyMyBDNjUuOSwyMi42IDY2LDIyLjEgNjUuOCwyMS43IEw2My40LDE3IEM2My4zLDE2LjcgNjIuOSwxNi42IDYyLjYsMTYuOCBMNjEuOCwxNy4yIEM2MS41LDE3LjMgNjEuNCwxNy43IDYxLjYsMTggTDYzLDIwLjggQzYzLjIsMjEuMiA2Mi45LDIxLjYgNjIuNSwyMS42IEw1NC4yLDIxLjYgQzUzLjgsMjEuNiA1My40LDIxLjQgNTMuMiwyMS4xIEM1My4xLDIxIDUyLjksMjAuNyA1MywyMC4zIEM1MywyMC4yIDUzLDIwLjIgNTMuMSwyMC4xIEw1Ny43LDEyIEM1OCwxMS41IDU4LjUsMTEuMiA1OS4xLDExLjIgWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="></a>提供CDN加速/云存储服务</div>
-    <p><a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备19047975号-2</a></p>
+    <div style="float: right">本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img style="vertical-align: top; height: 25px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAxMTEgMzgiPgogIDxnIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xKSI+CiAgICA8cGF0aCBkPSJNMzAuOCw0LjEgTDMwLjgsNC4xIEwzMC44LDQuMSBMMzAuOCw0LjEgTDMwLjgsNC4xIEMzMC4xLDMuNiAyOS40LDMuMSAyOC42LDIuNyBDMjguMSwyLjQgMjcuNCwyLjUgMjcsMyBMMjIuMyw5LjIgTDIyLDkuNiBDMjEuNSwxMC4zIDIwLjcsMTAuNiAxOS45LDEwLjYgTDE5LDEwLjYgQzE2LjcsMTAuNyAxNC40LDExLjkgMTIuOSwxMy45IEMxMS43LDE1LjUgMTEuMSwxNy40IDExLjIsMTkuMyBDMTEuMiwxOS42IDExLjQsMTkuOSAxMS43LDIwLjEgQzEyLjMsMjAuNCAxMi44LDIxIDEzLDIxLjcgQzEzLjIsMjIuOCAxMi41LDIzLjggMTEuNSwyNC4xIEMxMC4zLDI0LjUgOSwyMy43IDguNywyMi41IEM4LjUsMjEuOCA4LjcsMjEuMiA5LjEsMjAuNyBDOS4zLDIwLjQgOS40LDIwLjEgOS40LDE5LjcgQzkuMiwxNy4zIDkuOCwxNC44IDExLjQsMTIuNyBDMTMuNCwxMC4xIDE2LjQsOC43IDE5LjUsOC43IEMyMC4xLDguNyAyMC42LDguNCAyMSw3LjkgTDI1LjMsMi4yIEMyNS42LDEuOCAyNS40LDEuMSAyNC45LDEgQzE3LjcsLTEgOS43LDEuNCA0LjgsNy43IEMtMS40LDE1LjggMC4xLDI3LjUgOC4yLDMzLjggQzksMzQuNCA5LjcsMzQuOSAxMC42LDM1LjQgQzExLjEsMzUuNyAxMS44LDM1LjYgMTIuMiwzNS4xIEwxNi45LDI4LjkgTDE3LjIsMjguNSBDMTcuNywyNy44IDE4LjUsMjcuNSAxOS4zLDI3LjUgTDIwLjIsMjcuNSBDMjIuNSwyNy40IDI0LjgsMjYuMiAyNi4zLDI0LjIgQzI3LjUsMjIuNiAyOC4xLDIwLjcgMjgsMTguOCBDMjgsMTguNSAyNy44LDE4LjIgMjcuNSwxOCBDMjYuOSwxNy43IDI2LjQsMTcuMSAyNi4yLDE2LjQgQzI2LDE1LjMgMjYuNywxNC4zIDI3LjcsMTQgQzI4LjksMTMuNiAzMC4yLDE0LjQgMzAuNSwxNS42IEMzMC43LDE2LjMgMzAuNSwxNi45IDMwLjEsMTcuNCBDMjkuOSwxNy43IDI5LjgsMTggMjkuOCwxOC40IEMzMCwyMC44IDI5LjQsMjMuMyAyNy44LDI1LjQgQzI1LjgsMjggMjIuOCwyOS40IDE5LjcsMjkuNCBDMTkuMSwyOS40IDE4LjYsMjkuNyAxOC4yLDMwLjIgTDE0LDM1LjYgQzEzLjcsMzYgMTMuOSwzNi43IDE0LjQsMzYuOCBDMjEuNiwzOC45IDI5LjcsMzYuNSAzNC41LDMwLjEgQzQwLjcsMjIgMzksMTAuMyAzMC44LDQuMSBaIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MyA4KSI+CiAgICAgIDxwYXRoIGQ9Ik0xOC42LDIgTDE4LjYsMS42IEMxOC42LDEuMiAxOC4zLDEgMTgsMSBMMy41LDEgQzMuMiwxIDIuOSwxLjMgMi45LDEuNiBMMi45LDIuNSBDMi45LDIuOCAzLjIsMy4xIDMuNSwzLjEgTDE1LjgsMy4xIEMxNi4yLDMuMSAxNi40LDMuNCAxNi40LDMuOCBDMTYuMSw2LjEgMTUsMTAuNCAxMS42LDE0LjUgQzExLjQsMTQuOCAxMC45LDE0LjggMTAuNywxNC41IEM3LjksMTAuOSA3LDcuMiA2LjgsNS44IEM2LjcsNS41IDYuNSw1LjMgNi4yLDUuMyBMNS43LDUuMyBMNS4zLDUuMyBDNSw1LjMgNC43LDUuNiA0LjgsNiBDNS4xLDcuNiA2LjEsMTEuOSA5LjUsMTYgQzkuNywxNi4yIDkuNywxNi42IDkuNSwxNi44IEM1LjUsMjAuNSAxLjgsMjEuMyAwLjUsMjEuNSBDMC4yLDIxLjUgNy4xMDU0MjczNmUtMTUsMjEuOCA3LjEwNTQyNzM2ZS0xNSwyMi4xIEw3LjEwNTQyNzM2ZS0xNSwyMyBDNy4xMDU0MjczNmUtMTUsMjMuMyAwLjMsMjMuNiAwLjYsMjMuNiBDMi4xLDIzLjQgNi4zLDIyLjUgMTAuOCwxOC4zIEMxMSwxOC4xIDExLjQsMTguMSAxMS42LDE4LjMgQzEzLjgsMjAuMyAxNi42LDIyLjMgMjAuNCwyMy41IEMyMC43LDIzLjYgMjEsMjMuNCAyMS4xLDIzLjEgTDIxLjQsMjIuMyBDMjEuNSwyMiAyMS4zLDIxLjcgMjEsMjEuNiBDMTcuNSwyMC41IDE1LDE4LjcgMTMsMTYuOSBDMTIuOCwxNi43IDEyLjgsMTYuMyAxMywxNi4xIEMxOC41LDkuNCAxOC42LDIuMyAxOC42LDIgWiIvPgogICAgICA8cGF0aCBkPSJNMjguNiwwLjEgTDI3LjcsMC4xIEMyNy40LDAuMSAyNy4xLDAuNCAyNy4xLDAuNyBMMjcuMSwzLjggQzI3LjEsNC4xIDI2LjgsNC40IDI2LjUsNC40IEwyNC40LDQuNCBDMjQuMSw0LjQgMjMuOCw0LjcgMjMuOCw1IEwyMy44LDUuOSBDMjMuOCw2LjIgMjQuMSw2LjUgMjQuNCw2LjUgTDI2LjUsNi41IEMyNi44LDYuNSAyNy4xLDYuOCAyNy4xLDcuMSBMMjcuMSwxMS42IEMyNy4xLDExLjkgMjYuOCwxMi4yIDI2LjUsMTIuMiBMMjQuNCwxMi4yIEMyNC4xLDEyLjIgMjMuOCwxMi41IDIzLjgsMTIuOCBMMjMuOCwxMy43IEMyMy44LDE0IDI0LjEsMTQuMyAyNC40LDE0LjMgTDI2LjUsMTQuMyBDMjYuOCwxNC4zIDI3LjEsMTQuNiAyNy4xLDE0LjkgTDI3LjEsMTkuMiBDMjcuMSwyMC4xIDI2LjcsMjEuNiAyNC40LDIxLjggQzI0LjEsMjEuOCAyMy45LDIyLjEgMjMuOSwyMi40IEwyMy45LDIzIEMyMy45LDIzLjMgMjQuMiwyMy42IDI0LjUsMjMuNiBDMjYuOCwyMy40IDI5LjIsMjIuMSAyOS4yLDE4LjkgTDI5LjIsMTQuNiBDMjkuMiwxNC4zIDI5LjUsMTQgMjkuOCwxNCBMMzEuNywxNCBDMzIsMTQgMzIuMywxMy43IDMyLjMsMTMuNCBMMzIuMywxMi41IEMzMi4zLDEyLjIgMzIsMTEuOSAzMS43LDExLjkgTDI5LjgsMTEuOSBDMjkuNSwxMS45IDI5LjIsMTEuNiAyOS4yLDExLjMgTDI5LjIsNi44IEMyOS4yLDYuNSAyOS41LDYuMiAyOS44LDYuMiBMMzEuNyw2LjIgQzMyLDYuMiAzMi4zLDUuOSAzMi4zLDUuNiBMMzIuMyw0LjcgQzMyLjMsNC40IDMyLDQuMSAzMS43LDQuMSBMMjkuOCw0LjEgQzI5LjUsNC4xIDI5LjIsMy44IDI5LjIsMy41IEwyOS4yLDAuNiBDMjkuMiwwLjMgMjksMC4xIDI4LjYsMC4xIFoiLz4KICAgICAgPHBhdGggZD0iTTMzLjIsMjIuOCBDMzMuMiwyMy4xIDMzLjUsMjMuNCAzMy44LDIzLjQgTDQwLjMsMjMuNCBDNDMuMiwyMy40IDQ1LjUsMjEuMiA0NS41LDE4LjQgTDQ1LjUsNC43IEM0NS41LDQuNCA0NS4yLDQuMSA0NC45LDQuMSBMMzMuOCw0LjEgQzMzLjUsNC4xIDMzLjIsNC40IDMzLjIsNC43IEwzMy4yLDIyLjggWiBNNDAuNCwyMS40IEwzNS45LDIxLjQgQzM1LjYsMjEuNCAzNS4zLDIxLjEgMzUuMywyMC44IEwzNS4zLDE0LjYgQzM1LjMsMTQuMyAzNS42LDE0IDM1LjksMTQgTDQzLDE0IEM0My4zLDE0IDQzLjYsMTQuMyA0My42LDE0LjYgTDQzLjYsMTguNCBDNDMuNiwyMC4xIDQyLjEsMjEuNCA0MC40LDIxLjQgWiBNNDMuNiw2LjcgTDQzLjYsMTEuNCBDNDMuNiwxMS43IDQzLjMsMTIgNDMsMTIgTDM1LjksMTIgQzM1LjYsMTIgMzUuMywxMS43IDM1LjMsMTEuNCBMMzUuMyw2LjcgQzM1LjMsNi40IDM1LjYsNi4xIDM1LjksNi4xIEw0Myw2LjEgQzQzLjMsNi4yIDQzLjYsNi40IDQzLjYsNi43IFoiLz4KICAgICAgPHBhdGggZD0iTTQyLjEsMCBMMzYuMywwIEMzNiwwIDM1LjcsMC4zIDM1LjcsMC42IEwzNS43LDEuNSBDMzUuNywxLjggMzYsMi4xIDM2LjMsMi4xIEw0Mi4xLDIuMSBDNDIuNCwyLjEgNDIuNywxLjggNDIuNywxLjUgTDQyLjcsMC42IEM0Mi43LDAuMyA0Mi41LDAgNDIuMSwwIFoiLz4KICAgICAgPHBhdGggZD0iTTY0LjIsMC45IEw1Mi4yLDAuOSBDNTEuOSwwLjkgNTEuNiwxLjIgNTEuNiwxLjUgTDUxLjYsMi40IEM1MS42LDIuNyA1MS45LDMgNTIuMiwzIEw2NC4yLDMgQzY0LjUsMyA2NC44LDIuNyA2NC44LDIuNCBMNjQuOCwxLjUgQzY0LjgsMS4yIDY0LjUsMC45IDY0LjIsMC45IFoiLz4KICAgICAgPHBhdGggZD0iTTU5LjEsMTEuMiBMNjcuNSwxMS4yIEM2Ny44LDExLjIgNjguMSwxMC45IDY4LjEsMTAuNiBMNjguMSw5LjcgQzY4LjEsOS40IDY3LjgsOS4xIDY3LjUsOS4xIEw0OC45LDkuMSBDNDguNiw5LjEgNDguMyw5LjQgNDguMyw5LjcgTDQ4LjMsMTAuNiBDNDguMywxMC45IDQ4LjYsMTEuMiA0OC45LDExLjIgTDU0LjYsMTEuMiBDNTUuMSwxMS4yIDU1LjMsMTEuNyA1NS4xLDEyLjEgTDUxLjMsMTkgQzUxLjIsMTkuMiA1MS4xLDE5LjMgNTEuMSwxOS41IEM1MC44LDIwLjQgNTAuOSwyMS40IDUxLjUsMjIuMiBDNTIuMSwyMyA1My4xLDIzLjYgNTQuMiwyMy42IEw2NC42LDIzLjYgQzY1LjEsMjMuNiA2NS41LDIzLjQgNjUuNywyMyBDNjUuOSwyMi42IDY2LDIyLjEgNjUuOCwyMS43IEw2My40LDE3IEM2My4zLDE2LjcgNjIuOSwxNi42IDYyLjYsMTYuOCBMNjEuOCwxNy4yIEM2MS41LDE3LjMgNjEuNCwxNy43IDYxLjYsMTggTDYzLDIwLjggQzYzLjIsMjEuMiA2Mi45LDIxLjYgNjIuNSwyMS42IEw1NC4yLDIxLjYgQzUzLjgsMjEuNiA1My40LDIxLjQgNTMuMiwyMS4xIEM1My4xLDIxIDUyLjksMjAuNyA1MywyMC4zIEM1MywyMC4yIDUzLDIwLjIgNTMuMSwyMC4xIEw1Ny43LDEyIEM1OCwxMS41IDU4LjUsMTEuMiA1OS4xLDExLjIgWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="/></a>提供CDN加速/云存储服务</div>
+    <p><a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2022015403号</a></p>
 </footer>
     <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
 
 <script src="/js/jquery-3.3.1.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
 
 <script src="/js/navigation.js"></script>
 

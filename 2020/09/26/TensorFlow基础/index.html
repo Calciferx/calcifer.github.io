@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   
@@ -9,11 +9,11 @@ np.newaxis 增加一个维度
  12345#使用 numpy 生成200个随机点x_data = np.linspace(-0.5,0.5,200)#结果的shape为(200,)x_data = np.linspace(-0.5,0.5,200)[:,np.newaxis]#结果的shape为(200,1)
  12345678910array(  [[11, 12, 13, 14],   [21, 22, 23, 24],   [31, 32, 33, 34],   [41, 42, 43, 44],   [51, 52, 53, 54],   [61, 62, 63, 64],   [71, 72, 73, 74],   [81, 82, 83, 84],   [91, 92, 93, 94]])
   1array[:,0]的结果为
- 123array([11, 21, 31, 41, 51, 61, 71, 81, 91])#即取array的第一列元素组成一个行向量#以上操作只适用于numpy定义的array，直接由Python定义的普通array不支持这种操作">
+ 123array([11, 21, 31, 41, 51, 61, 71, 81, 91])#即取array的第一列元素组成一个行向量#以上操作只适用于numpy定义的array，直接由Python定义的普通array不支持这种操作" />
   
 
   
-  <meta name="keywords" content="关键字，关键字">
+  <meta name="keywords" content="关键字，关键字" />
   
   
   
@@ -22,42 +22,45 @@ np.newaxis 增加一个维度
   
   <title>TensorFlow基础 | 等风来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="TensorFlow 基础 np.newaxis 增加一个维度   12345#使用 numpy 生成200个随机点x_data = np.linspace(-0.5,0.5,200)#结果的shape为(200,)x_data = np.linspace(-0.5,0.5,200)[:,np.newaxis]#结果的shape为(200,1)  12345678910array(  [[11,">
-<meta name="keywords" content="机器学习,TensorFlow">
+  <meta name="description" content="TensorFlow 基础 np.newaxis 增加一个维度   12345#使用 numpy 生成200个随机点x_data &#x3D; np.linspace(-0.5,0.5,200)#结果的shape为(200,)x_data &#x3D; np.linspace(-0.5,0.5,200)[:,np.newaxis]#结果的shape为(200,1)  12345678910array(  [[11,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TensorFlow基础">
-<meta property="og:url" content="http://calcifer.top/2020/09/26/TensorFlow基础/index.html">
+<meta property="og:url" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="等风来">
-<meta property="og:description" content="TensorFlow 基础 np.newaxis 增加一个维度   12345#使用 numpy 生成200个随机点x_data = np.linspace(-0.5,0.5,200)#结果的shape为(200,)x_data = np.linspace(-0.5,0.5,200)[:,np.newaxis]#结果的shape为(200,1)  12345678910array(  [[11,">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/tensor.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/sigmoid.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/overfitting.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/overfitting2.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/dropout.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/SGD.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/Momentum.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/NAG.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/Adagrad.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/RMSprop.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/Adadelta.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/Adam.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/pooling.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/rnn.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/梯度消失.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/LSTM.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/lstm2.png">
-<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/rnn2.png">
-<meta property="og:updated_time" content="2020-09-26T01:55:06.167Z">
+<meta property="og:description" content="TensorFlow 基础 np.newaxis 增加一个维度   12345#使用 numpy 生成200个随机点x_data &#x3D; np.linspace(-0.5,0.5,200)#结果的shape为(200,)x_data &#x3D; np.linspace(-0.5,0.5,200)[:,np.newaxis]#结果的shape为(200,1)  12345678910array(  [[11,">
+<meta property="og:locale">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/tensor.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/sigmoid.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/overfitting.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/overfitting2.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/dropout.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/SGD.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/Momentum.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/NAG.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/Adagrad.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/RMSprop.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/Adadelta.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/Adam.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/pooling.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/rnn.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/LSTM.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/lstm2.png">
+<meta property="og:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/rnn2.png">
+<meta property="article:published_time" content="2020-09-26T01:43:47.000Z">
+<meta property="article:modified_time" content="2020-09-26T01:55:06.167Z">
+<meta property="article:author" content="Calcifer">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="TensorFlow">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TensorFlow基础">
-<meta name="twitter:description" content="TensorFlow 基础 np.newaxis 增加一个维度   12345#使用 numpy 生成200个随机点x_data = np.linspace(-0.5,0.5,200)#结果的shape为(200,)x_data = np.linspace(-0.5,0.5,200)[:,np.newaxis]#结果的shape为(200,1)  12345678910array(  [[11,">
-<meta name="twitter:image" content="http://calcifer.top/2020/09/26/TensorFlow基础/tensor.png">
+<meta name="twitter:image" content="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/tensor.png">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
   
 
   
@@ -65,7 +68,7 @@ np.newaxis 增加一个维度
   <!--
   <script src='//push.zhanzhang.baidu.com/push.js'></script>
   -->
-</head></html>
+<meta name="generator" content="Hexo 6.3.0"></head>
 <body class="home blog custom-background custom-font-enabled single-author">
   <div id="page" class="hfeed site">
       <header id="masthead" class="site-header" role="banner">
@@ -74,9 +77,8 @@ np.newaxis 增加一个维度
         <a href="/" title="等风来" rel="home">等风来</a>
       </h1>
       
-        <h2 class="site-description">
-          <a href="/" id="subtitle">花开要守候一个冬季，只需一夜春风</a>
-        </h2>
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
       
     </hgroup>
 
@@ -123,9 +125,9 @@ var _hmt = _hmt || [];
         
         <div class="comments-link">
             
-            <a href="/2020/09/26/TensorFlow基础/#comments" class="leave-reply">评论</a>
+            <a href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/TensorFlow基础/" data-id="cku70jq2h000tzwu8eq1e5eua" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://calcifer.top/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/" data-id="clo9ztbm0000nhswaac538e9z" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -133,15 +135,15 @@ var _hmt = _hmt || [];
       
         <h1 id="TensorFlow-基础"><a href="#TensorFlow-基础" class="headerlink" title="TensorFlow 基础"></a>TensorFlow 基础</h1><ol>
 <li><p><strong>np.newaxis 增加一个维度 </strong></p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 numpy 生成200个随机点</span></span><br><span class="line">x_data = np.linspace(<span class="number">-0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)</span><br><span class="line"><span class="comment">#结果的shape为(200,)</span></span><br><span class="line">x_data = np.linspace(<span class="number">-0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)[:,np.newaxis]</span><br><span class="line"><span class="comment">#结果的shape为(200,1)</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 numpy 生成200个随机点</span></span><br><span class="line">x_data = np.linspace(-<span class="number">0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)</span><br><span class="line"><span class="comment">#结果的shape为(200,)</span></span><br><span class="line">x_data = np.linspace(-<span class="number">0.5</span>,<span class="number">0.5</span>,<span class="number">200</span>)[:,np.newaxis]</span><br><span class="line"><span class="comment">#结果的shape为(200,1)</span></span><br></pre></td></tr></table></figure>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">array(</span><br><span class="line">  [[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>],</span><br><span class="line">   [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">24</span>],</span><br><span class="line">   [<span class="number">31</span>, <span class="number">32</span>, <span class="number">33</span>, <span class="number">34</span>],</span><br><span class="line">   [<span class="number">41</span>, <span class="number">42</span>, <span class="number">43</span>, <span class="number">44</span>],</span><br><span class="line">   [<span class="number">51</span>, <span class="number">52</span>, <span class="number">53</span>, <span class="number">54</span>],</span><br><span class="line">   [<span class="number">61</span>, <span class="number">62</span>, <span class="number">63</span>, <span class="number">64</span>],</span><br><span class="line">   [<span class="number">71</span>, <span class="number">72</span>, <span class="number">73</span>, <span class="number">74</span>],</span><br><span class="line">   [<span class="number">81</span>, <span class="number">82</span>, <span class="number">83</span>, <span class="number">84</span>],</span><br><span class="line">   [<span class="number">91</span>, <span class="number">92</span>, <span class="number">93</span>, <span class="number">94</span>]])</span><br></pre></td></tr></table></figure>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array[:,<span class="number">0</span>]的结果为</span><br></pre></td></tr></table></figure>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array([<span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span>, <span class="number">41</span>, <span class="number">51</span>, <span class="number">61</span>, <span class="number">71</span>, <span class="number">81</span>, <span class="number">91</span>])</span><br><span class="line"><span class="comment">#即取array的第一列元素组成一个行向量</span></span><br><span class="line"><span class="comment">#以上操作只适用于numpy定义的array，直接由Python定义的普通array不支持这种操作</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 <ol start="2">
-<li><p><strong>tensor </strong><br> <img src="/2020/09/26/TensorFlow基础/tensor.png" alt="tensor" title="tensor"></p>
+<li><p><strong>tensor </strong><br> <img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/tensor.png" alt="tensor" title="tensor"></p>
 </li>
 <li><p><strong>one-hot vectors  </strong><br> 除了某一位数字是1以外，其余维度数字都是0的向量。<br> 比如将标签0表示为([1,0,0,0,0,0,0,0,0,0]),标签3表示为([0,0,0,1,0,0,0,0,0,0])</p>
 </li>
@@ -159,7 +161,7 @@ var _hmt = _hmt || [];
 <p>假如使用梯度下降法（Gradient descent）来调整权值参数的大小，权值w和偏置b的梯度推导如下：<br>$$<br>\dfrac{\partial C}{\partial w} = (a - y)\sigma’(z)x<br>$$</p>
 <p>$$<br>\dfrac{\partial C}{\partial b} = (a  - y)\sigma’(z)<br>$$<br>其中，z表示神经元的输入，$\sigma$表示激活函数。w和b的梯度跟激活函数的梯度城正比，激活函数的梯度越大，w和b大小调整得越快，训练收敛得就越快。</p>
 <p>假设激活函数时sigmoid函数：</p>
-<p><img src="/2020/09/26/TensorFlow基础/sigmoid.png" alt="1570689426187"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/sigmoid.png" alt="1570689426187"></p>
 <p>假设目标是收敛到1。A点为0.82离目标较近，梯度比较大，权值调整比较大。B点为0.98离目标比较近，梯度比较小，权值调整比较小，调整方案合理。</p>
 <p>假设目标是收敛到0。A点为0.82离目标较近，梯度比较大，权值调整比较大。B点为0.98离目标比较远，梯度比较小，权值调整比较小，调整方案不合理。</p>
 </li>
@@ -178,8 +180,8 @@ var _hmt = _hmt || [];
 <p>tf.nn.softmax_cross_entropy_with_logits()来表示跟softmax搭配使用的交叉熵。</p>
 </li>
 <li><p><strong>过拟合</strong></p>
-<p><img src="/2020/09/26/TensorFlow基础/overfitting.png" alt="1570707771028"></p>
-<p><img src="/2020/09/26/TensorFlow基础/overfitting2.png" alt="1570707901402"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/overfitting.png" alt="1570707771028"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/overfitting2.png" alt="1570707901402"></p>
 <p>解决方法：</p>
 <ul>
 <li><p>增加数据集</p>
@@ -188,7 +190,7 @@ var _hmt = _hmt || [];
 </li>
 <li><p>Dropout</p>
 <p>训练时使用部分神经元，测试时使用全部神经元。</p>
-<p><img src="/2020/09/26/TensorFlow基础/dropout.png" alt="1570708384041"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/dropout.png" alt="1570708384041"></p>
 </li>
 </ul>
 </li>
@@ -229,42 +231,42 @@ var _hmt = _hmt || [];
 </li>
 <li><p><strong>几种优化方法</strong></p>
 <ul>
-<li><p>SGD：<img src="/2020/09/26/TensorFlow基础/SGD.png" alt="1570799630899"></p>
+<li><p>SGD：<img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/SGD.png" alt="1570799630899"></p>
 <p>(随机梯度下降法)</p>
 </li>
 <li><p>Momentum:</p>
-<p><img src="/2020/09/26/TensorFlow基础/Momentum.png" alt="1570799741163"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/Momentum.png" alt="1570799741163"></p>
 <p>当前权值的改变会受到上一次权值改变的影响，类似于小球向下滚动的时候带上了惯性。这样<br>可以加快小球的向下的速度。</p>
 <p><strong>(带惯性的小球)</strong></p>
 </li>
 <li><p>NAG(Nesterov accelerated gradient):</p>
-<p><img src="/2020/09/26/TensorFlow基础/NAG.png" alt="1570799819060"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/NAG.png" alt="1570799819060"></p>
 <p>NAG在TF中跟Momentum合并在同一个函数tf.train.MomentumOptimizer中，可以通过参<br>数配置启用。<br>在Momentun中小球会盲目地跟从下坡的梯度，容易发生错误，所以我们需要一个更聪明的<br>小球，这个小球提前知道它要去哪里，它还要知道走到坡底的时候速度慢下来而不是又冲上另<br>一个坡。γvt−1会用来修改W的值，计算W−γvt−1可以表示小球下一个位置大概在哪里。从<br>而我们可以提前计算下一个位置的梯度，然后使用到当前位置。</p>
 <p><strong>(聪明的小球)</strong></p>
 </li>
 <li><p>Adagrad:</p>
-<p><img src="/2020/09/26/TensorFlow基础/Adagrad.png" alt="1570799867593"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/Adagrad.png" alt="1570799867593"></p>
 <p>它是基于SGD的一种算法，它的核心思想是对比较常见的数据给予它比较小的学习率去调整<br>参数，对于比较罕见的数据给予它比较大的学习率去调整参数。它很适合应用于数据稀疏的数<br>据集（比如一个图片数据集，有10000张狗的照片，10000张猫的照片，只有100张大象的照<br>片）。<br>Adagrad主要的优势在于不需要人为的调节学习率，它可以自动调节。它的缺点在于，随着<br>迭代次数的增多，学习率也会越来越低，最终会趋向于0。</p>
 <p><strong>(数据越常见，学习率越小；数据越罕见，学习率越大)</strong></p>
 </li>
 <li><p>RMSprop:</p>
-<p><img src="/2020/09/26/TensorFlow基础/RMSprop.png" alt="1570799937610"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/RMSprop.png" alt="1570799937610"></p>
 <p>RMSprop借鉴了一些Adagrad的思想，不过这里RMSprop只用到了前t-1次梯度平方的平均<br>值加上当前梯度的平方的和的开平方作为学习率的分母。这样RMSprop不会出现学习率越来<br>越低的问题，而且也能自己调节学习率，并且可以有一个比较好的效果。</p>
 <p><strong>（解决了Adagrad学习率越来越低的问题）</strong></p>
 </li>
 <li><p>Adadelta:</p>
-<p><img src="/2020/09/26/TensorFlow基础/Adadelta.png" alt="1570799991409"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/Adadelta.png" alt="1570799991409"></p>
 <p>使用Adadelta我们甚至不需要设置一个默认学习率，在Adadelta不需要使用学习率也可以达<br>到一个非常好的效果。</p>
 </li>
 <li><p>Adam:</p>
-<p><img src="/2020/09/26/TensorFlow基础/Adam.png" alt="1570800553086"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/Adam.png" alt="1570800553086"></p>
 <p>就像Adadelta和RMSprop一样Adam会存储之前衰减的平方梯度，同时它也会保存之前衰减<br>的梯度。经过一些处理之后再使用类似Adadelta和RMSprop的方式更新参数。</p>
 </li>
 </ul>
 </li>
 <li><p>卷积神经网络（CNN）</p>
 <p>池化：</p>
-<p><img src="/2020/09/26/TensorFlow基础/pooling.png" alt="1570878660043"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/pooling.png" alt="1570878660043"></p>
 <p>对于卷积：</p>
 <p>SAME PADDING：给平面外部补0使得卷积窗口采样后得到一个跟原来平面大小相同的平面</p>
 <p>VALID PADDING：不会超出平面外部，卷积窗口采样后得到一个比原来平面小的平面</p>
@@ -273,29 +275,29 @@ var _hmt = _hmt || [];
 <p>VALID PADDING：不会超出平面外部</p>
 </li>
 <li><p>RNN(Recurrent Neural Network)</p>
-<p><img src="/2020/09/26/TensorFlow基础/rnn.png" alt="1571106430943"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/rnn.png" alt="1571106430943"></p>
 <p>梯度消失：</p>
-<p><img src="/2020/09/26/TensorFlow基础/梯度消失.png" alt="1571106502584"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/梯度消失.png" alt="1571106502584"></p>
 <p>LSTM(Long Short Term Memory):</p>
-<p><img src="/2020/09/26/TensorFlow基础/LSTM.png" alt="1571106612811"></p>
-<p><img src="/2020/09/26/TensorFlow基础/lstm2.png" alt="1571119558391"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/LSTM.png" alt="1571106612811"></p>
+<p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/lstm2.png" alt="1571119558391"></p>
 </li>
-<li><p><img src="/2020/09/26/TensorFlow基础/rnn2.png" alt="1571193697469"></p>
+<li><p><img src="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/rnn2.png" alt="1571193697469"></p>
 <p>i<sub>t</sub> : 输入门</p>
 <p>f<sub>t</sub> : 忘记门</p>
 <p>c<sub>t</sub> : cell的输出</p>
 <p>o<sub>t</sub> : 输出门</p>
 <p>h<sub>t</sub> : block的输出</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义RNN网络</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">RNN</span><span class="params">(X,weights,biases)</span>:</span></span><br><span class="line">    <span class="comment"># inputs=[batch_size, max_time, n_inputs]</span></span><br><span class="line">    inputs = tf.reshape(X,[<span class="number">-1</span>,max_time,n_inputs])</span><br><span class="line">    <span class="comment">#定义LSTM基本CELL</span></span><br><span class="line">    lstm_cell = tf.contrib.rnn.BasicLSTMCell(lstm_size)</span><br><span class="line"><span class="comment">#     final_state[state, batch_size, cell.state_size]</span></span><br><span class="line"><span class="comment">#     final_state[0]是cell state</span></span><br><span class="line"><span class="comment">#     final_state[1]是hidden_state</span></span><br><span class="line"><span class="comment">#     output: The RNN output 'Tensor'.</span></span><br><span class="line"><span class="comment">#         If time_major == False (default), this will be a 'Tensor' shaped:</span></span><br><span class="line"><span class="comment">#             '[batch_size, max_time, cell.output_size]'.</span></span><br><span class="line"><span class="comment">#         If time_major == True, this will be a 'Tensor' shaped:</span></span><br><span class="line"><span class="comment">#             '[max_time, batch_size, cell.output_size]'.</span></span><br><span class="line">    outputs,final_state = tf.nn.dynamic_rnn(lstm_cell,inputs,dtype=tf.float32)</span><br><span class="line">    results = tf.nn.softmax(tf.matmul(final_state[<span class="number">1</span>],weights) + biases)</span><br><span class="line">    <span class="keyword">return</span> results</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义RNN网络</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">RNN</span>(<span class="params">X,weights,biases</span>):</span><br><span class="line">    <span class="comment"># inputs=[batch_size, max_time, n_inputs]</span></span><br><span class="line">    inputs = tf.reshape(X,[-<span class="number">1</span>,max_time,n_inputs])</span><br><span class="line">    <span class="comment">#定义LSTM基本CELL</span></span><br><span class="line">    lstm_cell = tf.contrib.rnn.BasicLSTMCell(lstm_size)</span><br><span class="line"><span class="comment">#     final_state[state, batch_size, cell.state_size]</span></span><br><span class="line"><span class="comment">#     final_state[0]是cell state</span></span><br><span class="line"><span class="comment">#     final_state[1]是hidden_state</span></span><br><span class="line"><span class="comment">#     output: The RNN output &#x27;Tensor&#x27;.</span></span><br><span class="line"><span class="comment">#         If time_major == False (default), this will be a &#x27;Tensor&#x27; shaped:</span></span><br><span class="line"><span class="comment">#             &#x27;[batch_size, max_time, cell.output_size]&#x27;.</span></span><br><span class="line"><span class="comment">#         If time_major == True, this will be a &#x27;Tensor&#x27; shaped:</span></span><br><span class="line"><span class="comment">#             &#x27;[max_time, batch_size, cell.output_size]&#x27;.</span></span><br><span class="line">    outputs,final_state = tf.nn.dynamic_rnn(lstm_cell,inputs,dtype=tf.float32)</span><br><span class="line">    results = tf.nn.softmax(tf.matmul(final_state[<span class="number">1</span>],weights) + biases)</span><br><span class="line">    <span class="keyword">return</span> results</span><br></pre></td></tr></table></figure>
 <p>output是每一次block的输出，max_time为最大值时的output等于final_state[1]</p>
 </li>
 <li><p>import tensorflow 时报错 <code>DLL load failed with error code -1073741795</code></p>
 <p>重装conda，重装TF，更换python版本，更换TF版本均无效</p>
 <p>错误原因：CPU缺少AVX指令集，而使用pip安装tensorflow时自动下载的依赖是使用AVX指令集预编译的wheel。处理器是否支持AVX可使用CPU-Z工具验证</p>
 <p>解决方法：重新安装使用SSE2预编译的wheel</p>
-<p>下载地址：<a href="https://github.com/fo40225/tensorflow-windows-wheel" target="_blank" rel="noopener">https://github.com/fo40225/tensorflow-windows-wheel</a></p>
-<p>参考：<a href="https://stackoverflow.com/questions/49113497/python-tensorflow-import-dll-load-failed" target="_blank" rel="noopener">https://stackoverflow.com/questions/49113497/python-tensorflow-import-dll-load-failed</a></p>
-<p><a href="https://github.com/tensorflow/tensorflow/issues/17386" target="_blank" rel="noopener">https://github.com/tensorflow/tensorflow/issues/17386</a></p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/fo40225/tensorflow-windows-wheel">https://github.com/fo40225/tensorflow-windows-wheel</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/49113497/python-tensorflow-import-dll-load-failed">https://stackoverflow.com/questions/49113497/python-tensorflow-import-dll-load-failed</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tensorflow/tensorflow/issues/17386">https://github.com/tensorflow/tensorflow/issues/17386</a></p>
 </li>
 </ol>
 
@@ -303,7 +305,7 @@ var _hmt = _hmt || [];
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2020/09/26/TensorFlow基础/">
+    <a href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/">
     <time datetime="2020-09-26T01:43:47.000Z" class="entry-date">
         2020-09-26
     </time>
@@ -311,12 +313,12 @@ var _hmt = _hmt || [];
     
   <span class="article-delim">&#8226;</span>
   <div class="article-category">
-  <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+  <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
   </div>
 
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/" rel="tag">TensorFlow</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
 
     </footer>
 </article>
@@ -326,10 +328,10 @@ var _hmt = _hmt || [];
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/2020/09/26/非线性回归/" rel="prev"><span class="meta-nav">←</span> 非线性回归</a></span>
+        <span class="nav-previous"><a href="/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="prev"><span class="meta-nav">←</span> 非线性回归</a></span>
     
     
-        <span class="nav-next"><a href="/2020/09/26/MNIST数据集分类简单版本/" rel="next">MNIST数据集分类简单版本 <span class="meta-nav">→</span></a></span>
+        <span class="nav-next"><a href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/" rel="next">MNIST数据集分类简单版本 <span class="meta-nav">→</span></a></span>
     
 </nav><!-- .nav-single -->
 
@@ -362,8 +364,8 @@ s.setAttribute('data-timestamp', +new Date());
   
     <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
     <div>
-        <input type="text" value name="s" id="s">
-        <input type="submit" id="searchsubmit" value="搜索">
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
     </div>
 </form></aside>
   
@@ -373,7 +375,7 @@ s.setAttribute('data-timestamp', +new Date());
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编语言/">汇编语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/牛刀小试/">牛刀小试</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲言碎语/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Mybatis/">Mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring/">Spring</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%89%9B%E5%88%80%E5%B0%8F%E8%AF%95/">牛刀小试</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%97%B2%E8%A8%80%E7%A2%8E%E8%AF%AD/">闲言碎语</a><span class="category-list-count">2</span></li></ul>
     </div>
   </aside>
 
@@ -385,19 +387,19 @@ s.setAttribute('data-timestamp', +new Date());
       <ul>
         
           <li>
-            <a href="/2020/09/28/自动打卡V2/">自动打卡V2</a>
+            <a href="/2020/09/28/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1V2/">自动打卡V2</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/非线性回归/">非线性回归</a>
+            <a href="/2020/09/26/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">非线性回归</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/TensorFlow基础/">TensorFlow基础</a>
+            <a href="/2020/09/26/TensorFlow%E5%9F%BA%E7%A1%80/">TensorFlow基础</a>
           </li>
         
           <li>
-            <a href="/2020/09/26/MNIST数据集分类简单版本/">MNIST数据集分类简单版本</a>
+            <a href="/2020/09/26/MNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%B1%BB%E7%AE%80%E5%8D%95%E7%89%88%E6%9C%AC/">MNIST数据集分类简单版本</a>
           </li>
         
           <li>
@@ -413,7 +415,7 @@ s.setAttribute('data-timestamp', +new Date());
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/8086ASM/">8086ASM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂七杂八/">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动打卡/">自动打卡</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/非线性回归/">非线性回归</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/8086ASM/" rel="tag">8086ASM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/" rel="tag">MNIST</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/" rel="tag">TensorFlow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/" rel="tag">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" rel="tag">杂七杂八</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" rel="tag">自动打卡</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="tag">非线性回归</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -422,7 +424,7 @@ s.setAttribute('data-timestamp', +new Date());
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/8086ASM/" style="font-size: 10px;">8086ASM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/学习笔记/" style="font-size: 20px;">学习笔记</a> <a href="/tags/机器学习/" style="font-size: 20px;">机器学习</a> <a href="/tags/杂七杂八/" style="font-size: 15px;">杂七杂八</a> <a href="/tags/笔记/" style="font-size: 15px;">笔记</a> <a href="/tags/自动打卡/" style="font-size: 15px;">自动打卡</a> <a href="/tags/非线性回归/" style="font-size: 10px;">非线性回归</a>
+      <a href="/tags/8086ASM/" style="font-size: 10px;">8086ASM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 20px;">机器学习</a> <a href="/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" style="font-size: 15px;">杂七杂八</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">笔记</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/" style="font-size: 15px;">自动打卡</a> <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" style="font-size: 10px;">非线性回归</a>
     </div>
   </aside>
 
@@ -430,21 +432,27 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
       </div>
       <footer id="colophon" role="contentinfo">
-    <p>&copy; 2021 Calcifer All rights reserved.</p>
+    <p>&copy; 2023 Calcifer All rights reserved.</p>
     <p style="display: inline-block;">Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-    <div style="float: right">本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img style="vertical-align: top; height: 25px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAxMTEgMzgiPgogIDxnIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xKSI+CiAgICA8cGF0aCBkPSJNMzAuOCw0LjEgTDMwLjgsNC4xIEwzMC44LDQuMSBMMzAuOCw0LjEgTDMwLjgsNC4xIEMzMC4xLDMuNiAyOS40LDMuMSAyOC42LDIuNyBDMjguMSwyLjQgMjcuNCwyLjUgMjcsMyBMMjIuMyw5LjIgTDIyLDkuNiBDMjEuNSwxMC4zIDIwLjcsMTAuNiAxOS45LDEwLjYgTDE5LDEwLjYgQzE2LjcsMTAuNyAxNC40LDExLjkgMTIuOSwxMy45IEMxMS43LDE1LjUgMTEuMSwxNy40IDExLjIsMTkuMyBDMTEuMiwxOS42IDExLjQsMTkuOSAxMS43LDIwLjEgQzEyLjMsMjAuNCAxMi44LDIxIDEzLDIxLjcgQzEzLjIsMjIuOCAxMi41LDIzLjggMTEuNSwyNC4xIEMxMC4zLDI0LjUgOSwyMy43IDguNywyMi41IEM4LjUsMjEuOCA4LjcsMjEuMiA5LjEsMjAuNyBDOS4zLDIwLjQgOS40LDIwLjEgOS40LDE5LjcgQzkuMiwxNy4zIDkuOCwxNC44IDExLjQsMTIuNyBDMTMuNCwxMC4xIDE2LjQsOC43IDE5LjUsOC43IEMyMC4xLDguNyAyMC42LDguNCAyMSw3LjkgTDI1LjMsMi4yIEMyNS42LDEuOCAyNS40LDEuMSAyNC45LDEgQzE3LjcsLTEgOS43LDEuNCA0LjgsNy43IEMtMS40LDE1LjggMC4xLDI3LjUgOC4yLDMzLjggQzksMzQuNCA5LjcsMzQuOSAxMC42LDM1LjQgQzExLjEsMzUuNyAxMS44LDM1LjYgMTIuMiwzNS4xIEwxNi45LDI4LjkgTDE3LjIsMjguNSBDMTcuNywyNy44IDE4LjUsMjcuNSAxOS4zLDI3LjUgTDIwLjIsMjcuNSBDMjIuNSwyNy40IDI0LjgsMjYuMiAyNi4zLDI0LjIgQzI3LjUsMjIuNiAyOC4xLDIwLjcgMjgsMTguOCBDMjgsMTguNSAyNy44LDE4LjIgMjcuNSwxOCBDMjYuOSwxNy43IDI2LjQsMTcuMSAyNi4yLDE2LjQgQzI2LDE1LjMgMjYuNywxNC4zIDI3LjcsMTQgQzI4LjksMTMuNiAzMC4yLDE0LjQgMzAuNSwxNS42IEMzMC43LDE2LjMgMzAuNSwxNi45IDMwLjEsMTcuNCBDMjkuOSwxNy43IDI5LjgsMTggMjkuOCwxOC40IEMzMCwyMC44IDI5LjQsMjMuMyAyNy44LDI1LjQgQzI1LjgsMjggMjIuOCwyOS40IDE5LjcsMjkuNCBDMTkuMSwyOS40IDE4LjYsMjkuNyAxOC4yLDMwLjIgTDE0LDM1LjYgQzEzLjcsMzYgMTMuOSwzNi43IDE0LjQsMzYuOCBDMjEuNiwzOC45IDI5LjcsMzYuNSAzNC41LDMwLjEgQzQwLjcsMjIgMzksMTAuMyAzMC44LDQuMSBaIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MyA4KSI+CiAgICAgIDxwYXRoIGQ9Ik0xOC42LDIgTDE4LjYsMS42IEMxOC42LDEuMiAxOC4zLDEgMTgsMSBMMy41LDEgQzMuMiwxIDIuOSwxLjMgMi45LDEuNiBMMi45LDIuNSBDMi45LDIuOCAzLjIsMy4xIDMuNSwzLjEgTDE1LjgsMy4xIEMxNi4yLDMuMSAxNi40LDMuNCAxNi40LDMuOCBDMTYuMSw2LjEgMTUsMTAuNCAxMS42LDE0LjUgQzExLjQsMTQuOCAxMC45LDE0LjggMTAuNywxNC41IEM3LjksMTAuOSA3LDcuMiA2LjgsNS44IEM2LjcsNS41IDYuNSw1LjMgNi4yLDUuMyBMNS43LDUuMyBMNS4zLDUuMyBDNSw1LjMgNC43LDUuNiA0LjgsNiBDNS4xLDcuNiA2LjEsMTEuOSA5LjUsMTYgQzkuNywxNi4yIDkuNywxNi42IDkuNSwxNi44IEM1LjUsMjAuNSAxLjgsMjEuMyAwLjUsMjEuNSBDMC4yLDIxLjUgNy4xMDU0MjczNmUtMTUsMjEuOCA3LjEwNTQyNzM2ZS0xNSwyMi4xIEw3LjEwNTQyNzM2ZS0xNSwyMyBDNy4xMDU0MjczNmUtMTUsMjMuMyAwLjMsMjMuNiAwLjYsMjMuNiBDMi4xLDIzLjQgNi4zLDIyLjUgMTAuOCwxOC4zIEMxMSwxOC4xIDExLjQsMTguMSAxMS42LDE4LjMgQzEzLjgsMjAuMyAxNi42LDIyLjMgMjAuNCwyMy41IEMyMC43LDIzLjYgMjEsMjMuNCAyMS4xLDIzLjEgTDIxLjQsMjIuMyBDMjEuNSwyMiAyMS4zLDIxLjcgMjEsMjEuNiBDMTcuNSwyMC41IDE1LDE4LjcgMTMsMTYuOSBDMTIuOCwxNi43IDEyLjgsMTYuMyAxMywxNi4xIEMxOC41LDkuNCAxOC42LDIuMyAxOC42LDIgWiIvPgogICAgICA8cGF0aCBkPSJNMjguNiwwLjEgTDI3LjcsMC4xIEMyNy40LDAuMSAyNy4xLDAuNCAyNy4xLDAuNyBMMjcuMSwzLjggQzI3LjEsNC4xIDI2LjgsNC40IDI2LjUsNC40IEwyNC40LDQuNCBDMjQuMSw0LjQgMjMuOCw0LjcgMjMuOCw1IEwyMy44LDUuOSBDMjMuOCw2LjIgMjQuMSw2LjUgMjQuNCw2LjUgTDI2LjUsNi41IEMyNi44LDYuNSAyNy4xLDYuOCAyNy4xLDcuMSBMMjcuMSwxMS42IEMyNy4xLDExLjkgMjYuOCwxMi4yIDI2LjUsMTIuMiBMMjQuNCwxMi4yIEMyNC4xLDEyLjIgMjMuOCwxMi41IDIzLjgsMTIuOCBMMjMuOCwxMy43IEMyMy44LDE0IDI0LjEsMTQuMyAyNC40LDE0LjMgTDI2LjUsMTQuMyBDMjYuOCwxNC4zIDI3LjEsMTQuNiAyNy4xLDE0LjkgTDI3LjEsMTkuMiBDMjcuMSwyMC4xIDI2LjcsMjEuNiAyNC40LDIxLjggQzI0LjEsMjEuOCAyMy45LDIyLjEgMjMuOSwyMi40IEwyMy45LDIzIEMyMy45LDIzLjMgMjQuMiwyMy42IDI0LjUsMjMuNiBDMjYuOCwyMy40IDI5LjIsMjIuMSAyOS4yLDE4LjkgTDI5LjIsMTQuNiBDMjkuMiwxNC4zIDI5LjUsMTQgMjkuOCwxNCBMMzEuNywxNCBDMzIsMTQgMzIuMywxMy43IDMyLjMsMTMuNCBMMzIuMywxMi41IEMzMi4zLDEyLjIgMzIsMTEuOSAzMS43LDExLjkgTDI5LjgsMTEuOSBDMjkuNSwxMS45IDI5LjIsMTEuNiAyOS4yLDExLjMgTDI5LjIsNi44IEMyOS4yLDYuNSAyOS41LDYuMiAyOS44LDYuMiBMMzEuNyw2LjIgQzMyLDYuMiAzMi4zLDUuOSAzMi4zLDUuNiBMMzIuMyw0LjcgQzMyLjMsNC40IDMyLDQuMSAzMS43LDQuMSBMMjkuOCw0LjEgQzI5LjUsNC4xIDI5LjIsMy44IDI5LjIsMy41IEwyOS4yLDAuNiBDMjkuMiwwLjMgMjksMC4xIDI4LjYsMC4xIFoiLz4KICAgICAgPHBhdGggZD0iTTMzLjIsMjIuOCBDMzMuMiwyMy4xIDMzLjUsMjMuNCAzMy44LDIzLjQgTDQwLjMsMjMuNCBDNDMuMiwyMy40IDQ1LjUsMjEuMiA0NS41LDE4LjQgTDQ1LjUsNC43IEM0NS41LDQuNCA0NS4yLDQuMSA0NC45LDQuMSBMMzMuOCw0LjEgQzMzLjUsNC4xIDMzLjIsNC40IDMzLjIsNC43IEwzMy4yLDIyLjggWiBNNDAuNCwyMS40IEwzNS45LDIxLjQgQzM1LjYsMjEuNCAzNS4zLDIxLjEgMzUuMywyMC44IEwzNS4zLDE0LjYgQzM1LjMsMTQuMyAzNS42LDE0IDM1LjksMTQgTDQzLDE0IEM0My4zLDE0IDQzLjYsMTQuMyA0My42LDE0LjYgTDQzLjYsMTguNCBDNDMuNiwyMC4xIDQyLjEsMjEuNCA0MC40LDIxLjQgWiBNNDMuNiw2LjcgTDQzLjYsMTEuNCBDNDMuNiwxMS43IDQzLjMsMTIgNDMsMTIgTDM1LjksMTIgQzM1LjYsMTIgMzUuMywxMS43IDM1LjMsMTEuNCBMMzUuMyw2LjcgQzM1LjMsNi40IDM1LjYsNi4xIDM1LjksNi4xIEw0Myw2LjEgQzQzLjMsNi4yIDQzLjYsNi40IDQzLjYsNi43IFoiLz4KICAgICAgPHBhdGggZD0iTTQyLjEsMCBMMzYuMywwIEMzNiwwIDM1LjcsMC4zIDM1LjcsMC42IEwzNS43LDEuNSBDMzUuNywxLjggMzYsMi4xIDM2LjMsMi4xIEw0Mi4xLDIuMSBDNDIuNCwyLjEgNDIuNywxLjggNDIuNywxLjUgTDQyLjcsMC42IEM0Mi43LDAuMyA0Mi41LDAgNDIuMSwwIFoiLz4KICAgICAgPHBhdGggZD0iTTY0LjIsMC45IEw1Mi4yLDAuOSBDNTEuOSwwLjkgNTEuNiwxLjIgNTEuNiwxLjUgTDUxLjYsMi40IEM1MS42LDIuNyA1MS45LDMgNTIuMiwzIEw2NC4yLDMgQzY0LjUsMyA2NC44LDIuNyA2NC44LDIuNCBMNjQuOCwxLjUgQzY0LjgsMS4yIDY0LjUsMC45IDY0LjIsMC45IFoiLz4KICAgICAgPHBhdGggZD0iTTU5LjEsMTEuMiBMNjcuNSwxMS4yIEM2Ny44LDExLjIgNjguMSwxMC45IDY4LjEsMTAuNiBMNjguMSw5LjcgQzY4LjEsOS40IDY3LjgsOS4xIDY3LjUsOS4xIEw0OC45LDkuMSBDNDguNiw5LjEgNDguMyw5LjQgNDguMyw5LjcgTDQ4LjMsMTAuNiBDNDguMywxMC45IDQ4LjYsMTEuMiA0OC45LDExLjIgTDU0LjYsMTEuMiBDNTUuMSwxMS4yIDU1LjMsMTEuNyA1NS4xLDEyLjEgTDUxLjMsMTkgQzUxLjIsMTkuMiA1MS4xLDE5LjMgNTEuMSwxOS41IEM1MC44LDIwLjQgNTAuOSwyMS40IDUxLjUsMjIuMiBDNTIuMSwyMyA1My4xLDIzLjYgNTQuMiwyMy42IEw2NC42LDIzLjYgQzY1LjEsMjMuNiA2NS41LDIzLjQgNjUuNywyMyBDNjUuOSwyMi42IDY2LDIyLjEgNjUuOCwyMS43IEw2My40LDE3IEM2My4zLDE2LjcgNjIuOSwxNi42IDYyLjYsMTYuOCBMNjEuOCwxNy4yIEM2MS41LDE3LjMgNjEuNCwxNy43IDYxLjYsMTggTDYzLDIwLjggQzYzLjIsMjEuMiA2Mi45LDIxLjYgNjIuNSwyMS42IEw1NC4yLDIxLjYgQzUzLjgsMjEuNiA1My40LDIxLjQgNTMuMiwyMS4xIEM1My4xLDIxIDUyLjksMjAuNyA1MywyMC4zIEM1MywyMC4yIDUzLDIwLjIgNTMuMSwyMC4xIEw1Ny43LDEyIEM1OCwxMS41IDU4LjUsMTEuMiA1OS4xLDExLjIgWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="></a>提供CDN加速/云存储服务</div>
-    <p><a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备19047975号-2</a></p>
+    <div style="float: right">本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img style="vertical-align: top; height: 25px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAxMTEgMzgiPgogIDxnIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xKSI+CiAgICA8cGF0aCBkPSJNMzAuOCw0LjEgTDMwLjgsNC4xIEwzMC44LDQuMSBMMzAuOCw0LjEgTDMwLjgsNC4xIEMzMC4xLDMuNiAyOS40LDMuMSAyOC42LDIuNyBDMjguMSwyLjQgMjcuNCwyLjUgMjcsMyBMMjIuMyw5LjIgTDIyLDkuNiBDMjEuNSwxMC4zIDIwLjcsMTAuNiAxOS45LDEwLjYgTDE5LDEwLjYgQzE2LjcsMTAuNyAxNC40LDExLjkgMTIuOSwxMy45IEMxMS43LDE1LjUgMTEuMSwxNy40IDExLjIsMTkuMyBDMTEuMiwxOS42IDExLjQsMTkuOSAxMS43LDIwLjEgQzEyLjMsMjAuNCAxMi44LDIxIDEzLDIxLjcgQzEzLjIsMjIuOCAxMi41LDIzLjggMTEuNSwyNC4xIEMxMC4zLDI0LjUgOSwyMy43IDguNywyMi41IEM4LjUsMjEuOCA4LjcsMjEuMiA5LjEsMjAuNyBDOS4zLDIwLjQgOS40LDIwLjEgOS40LDE5LjcgQzkuMiwxNy4zIDkuOCwxNC44IDExLjQsMTIuNyBDMTMuNCwxMC4xIDE2LjQsOC43IDE5LjUsOC43IEMyMC4xLDguNyAyMC42LDguNCAyMSw3LjkgTDI1LjMsMi4yIEMyNS42LDEuOCAyNS40LDEuMSAyNC45LDEgQzE3LjcsLTEgOS43LDEuNCA0LjgsNy43IEMtMS40LDE1LjggMC4xLDI3LjUgOC4yLDMzLjggQzksMzQuNCA5LjcsMzQuOSAxMC42LDM1LjQgQzExLjEsMzUuNyAxMS44LDM1LjYgMTIuMiwzNS4xIEwxNi45LDI4LjkgTDE3LjIsMjguNSBDMTcuNywyNy44IDE4LjUsMjcuNSAxOS4zLDI3LjUgTDIwLjIsMjcuNSBDMjIuNSwyNy40IDI0LjgsMjYuMiAyNi4zLDI0LjIgQzI3LjUsMjIuNiAyOC4xLDIwLjcgMjgsMTguOCBDMjgsMTguNSAyNy44LDE4LjIgMjcuNSwxOCBDMjYuOSwxNy43IDI2LjQsMTcuMSAyNi4yLDE2LjQgQzI2LDE1LjMgMjYuNywxNC4zIDI3LjcsMTQgQzI4LjksMTMuNiAzMC4yLDE0LjQgMzAuNSwxNS42IEMzMC43LDE2LjMgMzAuNSwxNi45IDMwLjEsMTcuNCBDMjkuOSwxNy43IDI5LjgsMTggMjkuOCwxOC40IEMzMCwyMC44IDI5LjQsMjMuMyAyNy44LDI1LjQgQzI1LjgsMjggMjIuOCwyOS40IDE5LjcsMjkuNCBDMTkuMSwyOS40IDE4LjYsMjkuNyAxOC4yLDMwLjIgTDE0LDM1LjYgQzEzLjcsMzYgMTMuOSwzNi43IDE0LjQsMzYuOCBDMjEuNiwzOC45IDI5LjcsMzYuNSAzNC41LDMwLjEgQzQwLjcsMjIgMzksMTAuMyAzMC44LDQuMSBaIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MyA4KSI+CiAgICAgIDxwYXRoIGQ9Ik0xOC42LDIgTDE4LjYsMS42IEMxOC42LDEuMiAxOC4zLDEgMTgsMSBMMy41LDEgQzMuMiwxIDIuOSwxLjMgMi45LDEuNiBMMi45LDIuNSBDMi45LDIuOCAzLjIsMy4xIDMuNSwzLjEgTDE1LjgsMy4xIEMxNi4yLDMuMSAxNi40LDMuNCAxNi40LDMuOCBDMTYuMSw2LjEgMTUsMTAuNCAxMS42LDE0LjUgQzExLjQsMTQuOCAxMC45LDE0LjggMTAuNywxNC41IEM3LjksMTAuOSA3LDcuMiA2LjgsNS44IEM2LjcsNS41IDYuNSw1LjMgNi4yLDUuMyBMNS43LDUuMyBMNS4zLDUuMyBDNSw1LjMgNC43LDUuNiA0LjgsNiBDNS4xLDcuNiA2LjEsMTEuOSA5LjUsMTYgQzkuNywxNi4yIDkuNywxNi42IDkuNSwxNi44IEM1LjUsMjAuNSAxLjgsMjEuMyAwLjUsMjEuNSBDMC4yLDIxLjUgNy4xMDU0MjczNmUtMTUsMjEuOCA3LjEwNTQyNzM2ZS0xNSwyMi4xIEw3LjEwNTQyNzM2ZS0xNSwyMyBDNy4xMDU0MjczNmUtMTUsMjMuMyAwLjMsMjMuNiAwLjYsMjMuNiBDMi4xLDIzLjQgNi4zLDIyLjUgMTAuOCwxOC4zIEMxMSwxOC4xIDExLjQsMTguMSAxMS42LDE4LjMgQzEzLjgsMjAuMyAxNi42LDIyLjMgMjAuNCwyMy41IEMyMC43LDIzLjYgMjEsMjMuNCAyMS4xLDIzLjEgTDIxLjQsMjIuMyBDMjEuNSwyMiAyMS4zLDIxLjcgMjEsMjEuNiBDMTcuNSwyMC41IDE1LDE4LjcgMTMsMTYuOSBDMTIuOCwxNi43IDEyLjgsMTYuMyAxMywxNi4xIEMxOC41LDkuNCAxOC42LDIuMyAxOC42LDIgWiIvPgogICAgICA8cGF0aCBkPSJNMjguNiwwLjEgTDI3LjcsMC4xIEMyNy40LDAuMSAyNy4xLDAuNCAyNy4xLDAuNyBMMjcuMSwzLjggQzI3LjEsNC4xIDI2LjgsNC40IDI2LjUsNC40IEwyNC40LDQuNCBDMjQuMSw0LjQgMjMuOCw0LjcgMjMuOCw1IEwyMy44LDUuOSBDMjMuOCw2LjIgMjQuMSw2LjUgMjQuNCw2LjUgTDI2LjUsNi41IEMyNi44LDYuNSAyNy4xLDYuOCAyNy4xLDcuMSBMMjcuMSwxMS42IEMyNy4xLDExLjkgMjYuOCwxMi4yIDI2LjUsMTIuMiBMMjQuNCwxMi4yIEMyNC4xLDEyLjIgMjMuOCwxMi41IDIzLjgsMTIuOCBMMjMuOCwxMy43IEMyMy44LDE0IDI0LjEsMTQuMyAyNC40LDE0LjMgTDI2LjUsMTQuMyBDMjYuOCwxNC4zIDI3LjEsMTQuNiAyNy4xLDE0LjkgTDI3LjEsMTkuMiBDMjcuMSwyMC4xIDI2LjcsMjEuNiAyNC40LDIxLjggQzI0LjEsMjEuOCAyMy45LDIyLjEgMjMuOSwyMi40IEwyMy45LDIzIEMyMy45LDIzLjMgMjQuMiwyMy42IDI0LjUsMjMuNiBDMjYuOCwyMy40IDI5LjIsMjIuMSAyOS4yLDE4LjkgTDI5LjIsMTQuNiBDMjkuMiwxNC4zIDI5LjUsMTQgMjkuOCwxNCBMMzEuNywxNCBDMzIsMTQgMzIuMywxMy43IDMyLjMsMTMuNCBMMzIuMywxMi41IEMzMi4zLDEyLjIgMzIsMTEuOSAzMS43LDExLjkgTDI5LjgsMTEuOSBDMjkuNSwxMS45IDI5LjIsMTEuNiAyOS4yLDExLjMgTDI5LjIsNi44IEMyOS4yLDYuNSAyOS41LDYuMiAyOS44LDYuMiBMMzEuNyw2LjIgQzMyLDYuMiAzMi4zLDUuOSAzMi4zLDUuNiBMMzIuMyw0LjcgQzMyLjMsNC40IDMyLDQuMSAzMS43LDQuMSBMMjkuOCw0LjEgQzI5LjUsNC4xIDI5LjIsMy44IDI5LjIsMy41IEwyOS4yLDAuNiBDMjkuMiwwLjMgMjksMC4xIDI4LjYsMC4xIFoiLz4KICAgICAgPHBhdGggZD0iTTMzLjIsMjIuOCBDMzMuMiwyMy4xIDMzLjUsMjMuNCAzMy44LDIzLjQgTDQwLjMsMjMuNCBDNDMuMiwyMy40IDQ1LjUsMjEuMiA0NS41LDE4LjQgTDQ1LjUsNC43IEM0NS41LDQuNCA0NS4yLDQuMSA0NC45LDQuMSBMMzMuOCw0LjEgQzMzLjUsNC4xIDMzLjIsNC40IDMzLjIsNC43IEwzMy4yLDIyLjggWiBNNDAuNCwyMS40IEwzNS45LDIxLjQgQzM1LjYsMjEuNCAzNS4zLDIxLjEgMzUuMywyMC44IEwzNS4zLDE0LjYgQzM1LjMsMTQuMyAzNS42LDE0IDM1LjksMTQgTDQzLDE0IEM0My4zLDE0IDQzLjYsMTQuMyA0My42LDE0LjYgTDQzLjYsMTguNCBDNDMuNiwyMC4xIDQyLjEsMjEuNCA0MC40LDIxLjQgWiBNNDMuNiw2LjcgTDQzLjYsMTEuNCBDNDMuNiwxMS43IDQzLjMsMTIgNDMsMTIgTDM1LjksMTIgQzM1LjYsMTIgMzUuMywxMS43IDM1LjMsMTEuNCBMMzUuMyw2LjcgQzM1LjMsNi40IDM1LjYsNi4xIDM1LjksNi4xIEw0Myw2LjEgQzQzLjMsNi4yIDQzLjYsNi40IDQzLjYsNi43IFoiLz4KICAgICAgPHBhdGggZD0iTTQyLjEsMCBMMzYuMywwIEMzNiwwIDM1LjcsMC4zIDM1LjcsMC42IEwzNS43LDEuNSBDMzUuNywxLjggMzYsMi4xIDM2LjMsMi4xIEw0Mi4xLDIuMSBDNDIuNCwyLjEgNDIuNywxLjggNDIuNywxLjUgTDQyLjcsMC42IEM0Mi43LDAuMyA0Mi41LDAgNDIuMSwwIFoiLz4KICAgICAgPHBhdGggZD0iTTY0LjIsMC45IEw1Mi4yLDAuOSBDNTEuOSwwLjkgNTEuNiwxLjIgNTEuNiwxLjUgTDUxLjYsMi40IEM1MS42LDIuNyA1MS45LDMgNTIuMiwzIEw2NC4yLDMgQzY0LjUsMyA2NC44LDIuNyA2NC44LDIuNCBMNjQuOCwxLjUgQzY0LjgsMS4yIDY0LjUsMC45IDY0LjIsMC45IFoiLz4KICAgICAgPHBhdGggZD0iTTU5LjEsMTEuMiBMNjcuNSwxMS4yIEM2Ny44LDExLjIgNjguMSwxMC45IDY4LjEsMTAuNiBMNjguMSw5LjcgQzY4LjEsOS40IDY3LjgsOS4xIDY3LjUsOS4xIEw0OC45LDkuMSBDNDguNiw5LjEgNDguMyw5LjQgNDguMyw5LjcgTDQ4LjMsMTAuNiBDNDguMywxMC45IDQ4LjYsMTEuMiA0OC45LDExLjIgTDU0LjYsMTEuMiBDNTUuMSwxMS4yIDU1LjMsMTEuNyA1NS4xLDEyLjEgTDUxLjMsMTkgQzUxLjIsMTkuMiA1MS4xLDE5LjMgNTEuMSwxOS41IEM1MC44LDIwLjQgNTAuOSwyMS40IDUxLjUsMjIuMiBDNTIuMSwyMyA1My4xLDIzLjYgNTQuMiwyMy42IEw2NC42LDIzLjYgQzY1LjEsMjMuNiA2NS41LDIzLjQgNjUuNywyMyBDNjUuOSwyMi42IDY2LDIyLjEgNjUuOCwyMS43IEw2My40LDE3IEM2My4zLDE2LjcgNjIuOSwxNi42IDYyLjYsMTYuOCBMNjEuOCwxNy4yIEM2MS41LDE3LjMgNjEuNCwxNy43IDYxLjYsMTggTDYzLDIwLjggQzYzLjIsMjEuMiA2Mi45LDIxLjYgNjIuNSwyMS42IEw1NC4yLDIxLjYgQzUzLjgsMjEuNiA1My40LDIxLjQgNTMuMiwyMS4xIEM1My4xLDIxIDUyLjksMjAuNyA1MywyMC4zIEM1MywyMC4yIDUzLDIwLjIgNTMuMSwyMC4xIEw1Ny43LDEyIEM1OCwxMS41IDU4LjUsMTEuMiA1OS4xLDExLjIgWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg=="/></a>提供CDN加速/云存储服务</div>
+    <p><a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2022015403号</a></p>
 </footer>
     <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
 
 <script src="/js/jquery-3.3.1.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
 
 <script src="/js/navigation.js"></script>
 
